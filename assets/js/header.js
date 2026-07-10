@@ -201,8 +201,40 @@
 <li class="nav-item">
 <a class="nav-link" href="n8n-hosting.html">n8n Hosting</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="domain.html">Domain</a>
+<li class="nav-item has-sub-level-1 navigation-3">
+<a class="nav-link" href="#">Domain</a>
+<ul class="navigation-3__menu navigation-3__menu-short flex-column">
+<li>
+<a class="navigation-2__menu-link link d-flex align-items-start gap-3" href="domain.html">
+<span class="d-grid place-content-center w-10 h-10 bg-primary rounded-circle flex-shrink-0">
+<iconify-icon class="fs-20 text-white" icon="solar:globus-outline"></iconify-icon>
+</span>
+<span class="d-block flex-grow-1">
+<span class="navigation-2__menu-title d-block fw-bold">
+										Domain Registration
+									</span>
+<span class="navigation-2__menu-text line-clamp line-clamp--2 fs-14">
+										Register your perfect domain name
+									</span>
+</span>
+</a>
+</li>
+<li>
+<a class="navigation-2__menu-link link d-flex align-items-start gap-3" href="http://my.cloudhoste.eu/index.php?rp=/domain/pricing">
+<span class="d-grid place-content-center w-10 h-10 bg-success rounded-circle flex-shrink-0">
+<iconify-icon class="fs-20 text-white" icon="solar:tag-price-broken"></iconify-icon>
+</span>
+<span class="d-block flex-grow-1">
+<span class="navigation-2__menu-title d-block fw-bold">
+										Domain Pricing
+									</span>
+<span class="navigation-2__menu-text line-clamp line-clamp--2 fs-14">
+										View pricing and extensions list
+									</span>
+</span>
+</a>
+</li>
+</ul>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="http://my.cloudhoste.eu/contact.php">Contact Us</a>

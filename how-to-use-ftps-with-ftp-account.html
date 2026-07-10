@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" data-theme="domain" lang="en">
+<head>
+<title>How to Use FTPS With a EuroHost Panel FTP Account | CloudHoste</title>
+<meta content="Step-by-step guide to configuring secure FTPS connections over TLS using your EuroHost Panel FTP account and FTP clients like FileZilla." name="description"/>
+<meta content="web hosting, cloud server, SSD VPS, dedicated hosting, n8n automation, EU hosting, secure cloud, GDPR hosting, FTPS, FTP over TLS, filezilla TLS, EuroHost Panel, port 21, SFTP vs FTPS" name="keywords"/>
+<meta content="CloudHoste" name="author"/>
+<link href="https://cloudhoste.eu/how-to-use-ftps-with-ftp-account.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="How to Use FTPS With a EuroHost Panel FTP Account | CloudHoste" property="og:title"/>
+<meta content="Step-by-step guide to configuring secure FTPS connections over TLS using your EuroHost Panel FTP account and FTP clients like FileZilla." property="og:description"/>
+<meta content="https://cloudhoste.eu/how-to-use-ftps-with-ftp-account.html" property="og:url"/>
+<meta content="CloudHoste" property="og:site_name"/>
+<meta content="en_EU" property="og:locale"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How to Use FTPS With a EuroHost Panel FTP Account | CloudHoste" name="twitter:title"/>
+<meta content="Step-by-step guide to configuring secure FTPS connections over TLS using your EuroHost Panel FTP account and FTP clients like FileZilla." name="twitter:description"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" name="twitter:image"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="assets/css/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/css/simplebar.css" rel="stylesheet"/>
+<link href="assets/css/swiper-bundle.css" rel="stylesheet"/>
+<link href="assets/css/prism.css" rel="stylesheet"/>
+<link href="assets/css/ff-1.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-light dark:bg-dark-subtle">
+<div class="preloader">
+<div class="preloader__content">
+<img alt="Eurohost official brand logo - light theme" class="img-fluid preloader__img" src="assets/img/logo-light.svg"/>
+</div>
+</div>
+<style>
+    .mini-header {
+        font-size: 13px;
+        background-color: #0f172a; /* Sleek dark slate background */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mini-header a {
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+    .mini-header a:hover {
+        color: #fff !important;
+    }
+</style>
+<div class="header-wrapper fixed-top shadow-sm">
+<div class="mini-header py-2 text-white-50">
+<div class="container-fluid px-4 px-md-8 px-lg-12 d-flex justify-content-between align-items-center">
+<div class="d-flex align-items-center gap-3">
+<a class="d-flex align-items-center gap-1.5" href="mailto:support@cloudhoste.eu">
+<iconify-icon class="fs-16 align-middle" icon="solar:letter-broken"></iconify-icon>
+                    support@cloudhoste.eu
+                </a>
+
+</div>
+<div class="d-flex align-items-center gap-4">
+<a href="knowledge-base.html">Support</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+<div id="global-header"></div>
+<script src="assets/js/header.js"></script>
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        max-width: 380px;
+        background-color: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 20px;
+        z-index: 9999;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        transform: translateY(120%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: none;
+    }
+    .cookie-banner.show {
+        display: block;
+        transform: translateY(0);
+    }
+    .cookie-banner p {
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin-bottom: 16px;
+    }
+    .cookie-banner a {
+        color: #f67a3c !important;
+        text-decoration: underline !important;
+    }
+    .cookie-banner a:hover {
+        color: #ff8e54 !important;
+    }
+    .cookie-btn-accept {
+        background-color: #f67a3c;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    .cookie-btn-accept:hover {
+        background-color: #ff8e54;
+    }
+    .cookie-btn-decline {
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .cookie-btn-decline:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+    }
+</style>
+<div class="cookie-banner" id="cookieConsent">
+<p>
+        We use cookies to optimize your hosting experience and analyze traffic in compliance with EU regulations. 
+        Read our <a href="privacy-policy.html">Privacy Policy</a> for more details.
+    </p>
+<div class="d-flex justify-content-end gap-2">
+<button class="cookie-btn-decline" id="declineCookies">Decline</button>
+<button class="cookie-btn-accept text-white" id="acceptCookies">Accept All</button>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var banner = document.getElementById("cookieConsent");
+        var acceptBtn = document.getElementById("acceptCookies");
+        var declineBtn = document.getElementById("declineCookies");
+
+        if (!localStorage.getItem("cookieConsent")) {
+            setTimeout(function () {
+                banner.classList.add("show");
+            }, 1500);
+        }
+
+        acceptBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "accepted");
+            banner.classList.remove("show");
+            setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+
+        declineBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "declined");
+            banner.classList.remove("show");
+            setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+    });
+</script>
+</div>
+<!-- Banner -->
+<div class="banner-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10">
+<h1 class="mb-3 text-light text-center">Hosting Knowledge Base</h1>
+<p class="mb-8 text-light text-center max-text-12 mx-auto">
+					In depth walkthroughs to help you get the most out of your website and
+					hosting experience
+				</p>
+<div class="search-filter search-filter--light bg-white rounded-1 max-text-15 mx-auto">
+<input class="form-control search-filter__input placeholder::text-dark-subtle text-dark" placeholder="Search Now..." type="text"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
+<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
+						Search
+					</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner End -->
+<!-- Info Categories  -->
+<div class="section-space-bottom position-relative mt-n60">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="section-space-y bg-white dark:bg-dark rounded-4 px-4 px-md-12 px-lg-20 px-xxl-30">
+<div class="row justify-content-center">
+<div class="col-xl-10">
+<ol class="breadcrumb breadcrumb-modifier mb-4">
+<li class="breadcrumb-item">
+<a class="link fs-14 text-heading fw-medium" href="index.html">
+										Home
+									</a>
+</li>
+<li class="breadcrumb-item text-heading">
+<iconify-icon class="align-middle fs-14" icon="bi:chevron-right"></iconify-icon>
+</li>
+<li aria-current="page" class="breadcrumb-item fs-14 fw-medium active text-secondary">
+									EuroHost Panel
+								</li>
+</ol>
+<div class="section-space-sm-bottom">
+<h2 class="mb-4">How to Use FTPS With a EuroHost Panel FTP Account</h2>
+<p class="fs-16 text-body">
+									FTPS encrypts your FTP login and file transfers in transit, and an existing EuroHost Panel FTP account already supports it – you turn it on in your FTP client, not in EuroHost Panel. Open the account’s connection details in the panel (server host, Port 21, username), then set your client to use explicit FTP over TLS on that same port. There is nothing extra to enable on the panel side.
+								</p>
+<div class="alert alert-info border-info-subtle text-info-emphasis d-flex align-items-start gap-3 my-4">
+	<iconify-icon icon="lucide:info" class="fs-24 mt-1"></iconify-icon>
+	<div>
+		<strong>IMPORTANT NOTE:</strong> FTPS is not SFTP. FTPS is FTP-over-TLS on port 21 (explicit), while SFTP is SSH-based on port 22.
+	</div>
+</div>
+
+<!-- Visual Table of Contents Card -->
+<div class="card border border-light-subtle rounded-3 p-4 bg-light bg-opacity-50 my-5 shadow-sm">
+	<h6 class="mb-3 text-heading"><iconify-icon icon="lucide:list" class="me-2 align-middle"></iconify-icon>Table of Contents</h6>
+	<ul class="list gap-2 mb-0 fs-14">
+		<li><a href="#overview" class="text-secondary hover:text-primary">1. Overview: Who This is For & What Problem This Solves</a></li>
+		<li><a href="#how-it-works" class="text-secondary hover:text-primary">2. How EuroHost Panel Solves This</a></li>
+		<li><a href="#before-start" class="text-secondary hover:text-primary">3. Before You Start Checklist</a></li>
+		<li><a href="#step-by-step" class="text-secondary hover:text-primary">4. Step-by-Step Connection Guide</a></li>
+		<li><a href="#troubleshooting" class="text-secondary hover:text-primary">5. Troubleshooting & Limitations</a></li>
+		<li><a href="#when-to-use" class="text-secondary hover:text-primary">6. When to Use / When Not to Use</a></li>
+		<li><a href="#faq" class="text-secondary hover:text-primary">7. Frequently Asked Questions (FAQ)</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="overview" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Overview: Who This is For & What Problem This Solves</h4>
+<p class="text-body mb-4">
+	This guide is for website owners and developers who want their FTP credentials and uploads encrypted in transit rather than sent in clear text. If you already have an FTP account in EuroHost Panel and connect with a tool like FileZilla, this walkthrough shows how to switch that same account to encrypted transfers – no new account or plan required.
+</p>
+<p class="text-body">
+	Plain FTP sends your username, password, and files as unencrypted text. Anyone watching the network between you and the server (especially on shared or public Wi-Fi) can read those credentials and intercept your data. FTPS wraps the session in TLS, securing both the login phase and the data channel.
+</p>
+</div>
+
+<div id="how-it-works" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">How EuroHost Panel Solves This</h4>
+<p class="text-body mb-4">
+	Your EuroHost Panel FTP account acts as the credential; encryption is configured entirely on the client side. There is no separate "FTPS" toggle in the control panel. When your client requests an upgraded secure session, the server accepts the TLS request on Port 21 automatically.
+</p>
+<p class="text-body">
+	First, a standard EuroHost Panel FTP account handles both plain and encrypted sessions using the same host, port, and username—eliminating the need to manage duplicate accounts. Second, because encryption is a client-side parameter, you remain in control of security: by configuring your FTP client to require explicit TLS, you prevent the client from falling back to insecure, clear-text connections.
+</p>
+</div>
+
+<div id="before-start" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Before You Start Checklist</h4>
+<p class="text-body mb-4">
+	Ensure you have configured:
+</p>
+<div class="row g-3 fs-14">
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100 bg-body-secondary border-light-subtle">
+			<h6><iconify-icon icon="lucide:shield" class="text-primary me-2 align-middle"></iconify-icon>Account Control</h6>
+			<p class="text-secondary mb-0">Ensure you have access to the EuroHost Panel User Interface (not the Admin Interface).</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100 bg-body-secondary border-light-subtle">
+			<h6><iconify-icon icon="lucide:key" class="text-primary me-2 align-middle"></iconify-icon>Credentials</h6>
+			<p class="text-secondary mb-0">An existing FTP account username and its corresponding password.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100 bg-body-secondary border-light-subtle">
+			<h6><iconify-icon icon="lucide:terminal" class="text-primary me-2 align-middle"></iconify-icon>FTP Client</h6>
+			<p class="text-secondary mb-0">An FTP client that supports explicit FTP over TLS (such as FileZilla, Cyberduck, or WinSCP).</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100 bg-body-secondary border-light-subtle">
+			<h6><iconify-icon icon="lucide:check-circle" class="text-primary me-2 align-middle"></iconify-icon>TLS Active</h6>
+			<p class="text-secondary mb-0">Confirm with your hosting administrator that TLS is active on your specific server.</p>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="step-by-step" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Step-by-Step Connection Guide</h4>
+<!-- Timeline Grid -->
+<div class="row g-4 ps-2">
+	<div class="col-md-6">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 1</span>
+				<h6 class="mb-0">Locate Connection Info</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Log in to the <strong>EuroHost Panel User Interface</strong> and open the <strong>FTP Accounts</strong> section. In your account's row, open the <strong>Actions</strong> menu and select <strong>Connect an FTP client</strong>.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 2</span>
+				<h6 class="mb-0">Retrieve Server Details</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Copy the <strong>FTP Server (host)</strong>, <strong>Port: 21</strong>, and <strong>Username</strong> from the dialog. Have your FTP account password ready.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 3</span>
+				<h6 class="mb-0">Configure Client Protocol</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Open your FTP client, create a new site profile, and paste the connection details. For encryption, select <strong>Require explicit FTP over TLS</strong> (do not choose plain FTP).</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 4</span>
+				<h6 class="mb-0">Accept Certificate</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Click Connect. On the first connection, the client will display a certificate-trust prompt. Accept the warning and choose to trust the certificate for future connections.</p>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="troubleshooting" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Troubleshooting & Limitations</h4>
+<!-- Table -->
+<div class="table-responsive my-4">
+	<table class="table table-bordered table-striped fs-14">
+		<thead class="table-dark text-light">
+			<tr>
+				<th>Symptom / Limitation</th>
+				<th>Likely Cause</th>
+				<th>Action Plan</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>Connection refused or times out on Port 21</strong></td>
+				<td>Client not configured for explicit TLS, or TLS is disabled on the server.</td>
+				<td>Verify client is configured for explicit TLS on port 21. Confirm server support with support team.</td>
+			</tr>
+			<tr>
+				<td><strong>Login validation fails</strong></td>
+				<td>Typo in the host, username namespace, or wrong account password.</td>
+				<td>Re-copy credentials from the Connect dialog. Double check local passwords.</td>
+			</tr>
+			<tr>
+				<td><strong>Certificate warnings on every connection</strong></td>
+				<td>Certificate not saved or accepted permanently in client settings.</td>
+				<td>Check "Always trust this certificate" option during the next login prompt.</td>
+			</tr>
+			<tr>
+				<td><strong>Client connects but traffic is not encrypted</strong></td>
+				<td>Encryption set to plain FTP or "Use explicit TLS if available".</td>
+				<td>Enforce connection safety by selecting "Require explicit FTP over TLS".</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+
+<div id="when-to-use" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">When to Use / When Not to Use</h4>
+<div class="table-responsive my-4">
+	<table class="table table-bordered fs-14">
+		<thead class="bg-body-secondary text-heading">
+			<tr>
+				<th>Use This Process When</th>
+				<th>Avoid/Skip This Process When</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>You want logins and transfers encrypted in transit.</td>
+				<td>You specifically require SFTP (SSH on port 22).</td>
+			</tr>
+			<tr>
+				<td>You have an active FTP account and a modern TLS client.</td>
+				<td>Your legacy client only supports unencrypted connections.</td>
+			</tr>
+			<tr>
+				<td>Connecting over public, shared, or untrusted network nodes.</td>
+				<td>TLS encryption is disabled on your destination server.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+
+<div id="faq" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Frequently Asked Questions (FAQ)</h4>
+<div class="accordion accordion-flush" id="ftpsFaqAccordion">
+	<div class="accordion-item bg-transparent">
+		<h2 class="accordion-header">
+			<button class="accordion-button collapsed bg-transparent text-heading fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+				Do I need a separate account for FTPS?
+			</button>
+		</h2>
+		<div id="faq1" class="accordion-collapse collapse" data-bs-parent="#ftpsFaqAccordion">
+			<div class="accordion-body text-secondary fs-14">
+				No. The same account handles plain connections and encrypted TLS connections. Encryption is an configuration setting in your client.
+			</div>
+		</div>
+	</div>
+	<div class="accordion-item bg-transparent">
+		<h2 class="accordion-header">
+			<button class="accordion-button collapsed bg-transparent text-heading fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+				Where do I turn on FTPS in EuroHost Panel?
+			</button>
+		</h2>
+		<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#ftpsFaqAccordion">
+			<div class="accordion-body text-secondary fs-14">
+				There is no toggle inside the panel. Encryption is enabled on your client by selecting "Require explicit FTP over TLS" when establishing connections to port 21.
+			</div>
+		</div>
+	</div>
+	<div class="accordion-item bg-transparent">
+		<h2 class="accordion-header">
+			<button class="accordion-button collapsed bg-transparent text-heading fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+				Is FTPS the same as SFTP?
+			</button>
+		</h2>
+		<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#ftpsFaqAccordion">
+			<div class="accordion-body text-secondary fs-14">
+				No. FTPS uses FTP-over-TLS protocol on port 21. SFTP uses SSH-based file transfers on port 22. They are entirely separate protocols.
+			</div>
+		</div>
+	</div>
+	<div class="accordion-item bg-transparent">
+		<h2 class="accordion-header">
+			<button class="accordion-button collapsed bg-transparent text-heading fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+				Why does my client show a certificate warning?
+			</button>
+		</h2>
+		<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#ftpsFaqAccordion">
+			<div class="accordion-body text-secondary fs-14">
+				This occurs on your first connection as the client verifies the server certificate. Accept and choose to trust the certificate permanently to prevent warnings in future sessions.
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="conclusion" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Conclusion</h4>
+<p class="text-body mb-0">
+	By applying the configurations outlined in this guide, you can ensure all of your FTP connections and file uploads are securely encrypted in transit. If you require further assistance configuring your FTP clients, please reach out to our CloudHoste support team for 24/7 help.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Categories End -->
+<!-- CTA  -->
+<div class="cta-7">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="section-space-y px-4 px-sm-6 px-md-12 bg-body rounded-4 text-center position-relative z-1">
+<div class="row justify-content-center">
+<div class="col-md-11">
+<h3>Get a free web host migration</h3>
+<p class="mb-8 max-text-15 mx-auto">
+								We'll take care of the process of moving your website from
+								your old web hosting company to our platform so you can
+								focus on what matters
+							</p>
+<div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="sign-in-2.html">
+									Get Started now
+								</a>
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="contact.html">
+									Contact Us
+								</a>
+</div>
+</div>
+</div>
+<img alt="Cta Img 16 - CloudHoste secure European hosting" class="img-fluid d-none d-xl-block position-absolute start-0 top-50 translate-middle-y z-n1 pointer-none" src="assets/img/cta-img-16.png"/>
+<img alt="Cta Img 17 - CloudHoste secure European hosting" class="img-fluid d-none d-xl-block position-absolute end-0 top-50 translate-middle-y z-n1 pointer-none" src="assets/img/cta-img-17.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA End -->
+<footer class="section-space-top section-space-sm-bottom bg-secondary-emphasis dark:bg-secondary-subtle">
+<div class="section-space-sm-bottom">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-6 col-xl-3 col-xxl-2">
+<div class="d-flex flex-column h-100">
+<a class="logo d-inline-block mb-4" href="index.html">
+<img alt="Eurohost official brand logo - light theme" class="logo__img" src="assets/img/logo-light.svg"/>
+</a>
+<p class="mb-8 text-light">
+							Access CloudHoste Kubernetes Engine through
+						</p>
+
+</div>
+</div>
+<div class="col-xl-9 col-xxl-10">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4">
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Hosting</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="wp-hosting.html">
+										WordPress hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="vps-hosting.html">
+										VPS hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="n8n-hosting.html">
+										n8n hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="web-hosting.html">
+										Web hosting
+									</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Features</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="data-center.html">
+										Data Center
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="server-location.html">
+										Server Location
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="uptime.html">
+										Server Uptime
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="operating-system.html">
+										Operating Systems
+									</a>
+</li>
+</ul>
+</div>
+
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Company</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="about.html">
+										About
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="blog-1.html">
+										Blog
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="career.html">
+										Career
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="case-study.html">
+										Case Studies
+									</a>
+</li>
+<li>
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="contact.html">
+										Contact Us
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="privacy-policy.html">
+										Privacy Policy
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="ddos-protection.html">
+										Security
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="domain.html">
+										Domain
+									</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Resources</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="faq.html">
+										FAQ
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="domain-transfer.html">
+										Domain Transfer
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="knowledge-base-category.html">
+										Knowledge Base
+									</a>
+</li>
+</ul>
+<h6 class="mb-6 text-light fs-18 mt-12">Why Choose Us</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="features.html">
+										Features
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="review.html">
+										Service Reviews
+									</a>
+</li>
+</ul>
+</div>
+				</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-space-sm-top border-top border-light border-opacity-10">
+<div class="container">
+<div class="row g-4 align-items-center justify-content-between">
+<div class="col-md-5 col-lg-6">
+<h6 class="text-light fs-18 fw-medium">Get Our Newsletter</h6>
+<div class="search-filter search-filter--light bg-light bg-opacity-20 rounded-1 max-text-10">
+<input class="form-control search-filter__input text-light placeholder::text-light placeholder::text-opacity-50" placeholder="Search Now..." type="text"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
+							Subscribe
+						</button>
+</div>
+</div>
+<div class="col-md-7 col-lg-5 col-xl-4">
+<h6 class="text-light fs-18 fw-medium">Payment Getaway</h6>
+<ul class="list list-row flex-wrap gap-4 align-items-center">
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 1 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-1.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 2 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-2.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 3 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-3.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 4 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-4.png"/>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/iconify.js"></script>
+<script src="assets/js/simplebar.js"></script>
+<script src="assets/js/swiper.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

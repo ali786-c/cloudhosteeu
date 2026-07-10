@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" data-theme="domain" lang="en">
+<head>
+<title>Connect Cloudflare to EuroHost Panel Website | CloudHoste</title>
+<meta content="Learn how to integrate and manage Cloudflare CDN on your EuroHost Panel website using our step-by-step API integration guide." name="description"/>
+<meta content="web hosting, cloud server, SSD VPS, dedicated hosting, n8n automation, EU hosting, secure cloud, GDPR hosting, Cloudflare, EuroHost Panel, DNS" name="keywords"/>
+<meta content="CloudHoste" name="author"/>
+<link href="https://cloudhoste.eu/connect-cloudflare-to-eurohost-panel.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="Connect Cloudflare to EuroHost Panel Website | CloudHoste" property="og:title"/>
+<meta content="Learn how to integrate and manage Cloudflare CDN on your EuroHost Panel website using our step-by-step API integration guide." property="og:description"/>
+<meta content="https://cloudhoste.eu/connect-cloudflare-to-eurohost-panel.html" property="og:url"/>
+<meta content="CloudHoste" property="og:site_name"/>
+<meta content="en_EU" property="og:locale"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Connect Cloudflare to EuroHost Panel Website | CloudHoste" name="twitter:title"/>
+<meta content="Learn how to integrate and manage Cloudflare CDN on your EuroHost Panel website using our step-by-step API integration guide." name="twitter:description"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" name="twitter:image"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="assets/css/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/css/simplebar.css" rel="stylesheet"/>
+<link href="assets/css/swiper-bundle.css" rel="stylesheet"/>
+<link href="assets/css/prism.css" rel="stylesheet"/>
+<link href="assets/css/ff-1.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-light dark:bg-dark-subtle">
+<div class="preloader">
+<div class="preloader__content">
+<img alt="Eurohost official brand logo - light theme" class="img-fluid preloader__img" src="assets/img/logo-light.svg"/>
+</div>
+</div>
+<style>
+    .mini-header {
+        font-size: 13px;
+        background-color: #0f172a; /* Sleek dark slate background */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mini-header a {
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+    .mini-header a:hover {
+        color: #fff !important;
+    }
+</style>
+<div class="header-wrapper fixed-top shadow-sm">
+<div class="mini-header py-2 text-white-50">
+<div class="container-fluid px-4 px-md-8 px-lg-12 d-flex justify-content-between align-items-center">
+<div class="d-flex align-items-center gap-3">
+<a class="d-flex align-items-center gap-1.5" href="mailto:support@cloudhoste.eu">
+<iconify-icon class="fs-16 align-middle" icon="solar:letter-broken"></iconify-icon>
+                    support@cloudhoste.eu
+                </a>
+
+</div>
+<div class="d-flex align-items-center gap-4">
+<a href="knowledge-base.html">Support</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+<div id="global-header"></div>
+<script src="assets/js/header.js"></script>
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        max-width: 380px;
+        background-color: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 20px;
+        z-index: 9999;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        transform: translateY(120%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: none;
+    }
+    .cookie-banner.show {
+        display: block;
+        transform: translateY(0);
+    }
+    .cookie-banner p {
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin-bottom: 16px;
+    }
+    .cookie-banner a {
+        color: #f67a3c !important;
+        text-decoration: underline !important;
+    }
+    .cookie-banner a:hover {
+        color: #ff8e54 !important;
+    }
+    .cookie-btn-accept {
+        background-color: #f67a3c;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    .cookie-btn-accept:hover {
+        background-color: #ff8e54;
+    }
+    .cookie-btn-decline {
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .cookie-btn-decline:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+    }
+</style>
+<div class="cookie-banner" id="cookieConsent">
+<p>
+        We use cookies to optimize your hosting experience and analyze traffic in compliance with EU regulations. 
+        Read our <a href="privacy-policy.html">Privacy Policy</a> for more details.
+    </p>
+<div class="d-flex justify-content-end gap-2">
+<button class="cookie-btn-decline" id="declineCookies">Decline</button>
+<button class="cookie-btn-accept text-white" id="acceptCookies">Accept All</button>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var banner = document.getElementById("cookieConsent");
+        var acceptBtn = document.getElementById("acceptCookies");
+        var declineBtn = document.getElementById("declineCookies");
+
+        if (!localStorage.getItem("cookieConsent")) {
+            setTimeout(function () {
+                banner.classList.add("show");
+            }, 1500);
+        }
+
+        acceptBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "accepted");
+            banner.classList.remove("show");
+            setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+
+        declineBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "declined");
+            banner.classList.remove("show");
+            setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+    });
+</script>
+</div>
+<!-- Banner -->
+<div class="banner-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10">
+<h1 class="mb-3 text-light text-center">Hosting Knowledge Base</h1>
+<p class="mb-8 text-light text-center max-text-12 mx-auto">
+					In depth walkthroughs to help you get the most out of your website and
+					hosting experience
+				</p>
+<div class="search-filter search-filter--light bg-white rounded-1 max-text-15 mx-auto">
+<input class="form-control search-filter__input placeholder::text-dark-subtle text-dark" placeholder="Search Now..." type="text"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
+<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
+						Search
+					</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner End -->
+<!-- Info Categories  -->
+<div class="section-space-bottom position-relative mt-n60">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="section-space-y bg-white dark:bg-dark rounded-4 px-4 px-md-12 px-lg-20 px-xxl-30">
+<div class="row justify-content-center">
+<div class="col-xl-10">
+<ol class="breadcrumb breadcrumb-modifier mb-4">
+<li class="breadcrumb-item">
+<a class="link fs-14 text-heading fw-medium" href="knowledge-base-details.html#">
+										Home
+									</a>
+</li>
+<li class="breadcrumb-item text-heading">
+<iconify-icon class="align-middle fs-14" icon="bi:chevron-right"></iconify-icon>
+</li>
+<li aria-current="page" class="breadcrumb-item fs-14 fw-medium active text-secondary">
+									EuroHost Panel
+								</li>
+</ol>
+<div class="section-space-sm-bottom">
+<h2 class="mb-4">Connect Cloudflare to EuroHost Panel Website</h2>
+<p class="fs-16 text-body">
+									Cloud computing has been taking online services by storm. Regardless of whether you have a small-to-medium business or manage an established enterprise with hundreds of servers – cloud solutions should already be a part of your strategy.
+								</p>
+<p class="fs-16 text-body">
+									As many as 98% of online organizations utilize the technology in some form, most even employing a multi-cloud environment in their everyday operations. Google, Facebook, Apple—there is no tech giant that doesn’t heavily rely on the cloud.
+								</p>
+<p class="fs-16 text-body">
+									This is far from surprising – the immense scalability, redundancy, and data security are unmatched by any other existing tech. When you take into account the associated cost and resource savings – the decision to adopt the cloud becomes a no-brainer.
+								</p>
+</div>
+
+<div class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">What is Cloudflare?</h4>
+<p class="text-body">
+									Cloudflare is the leading content delivery network (CDN) company in the world. The provider manages over 12,500 servers across six continents, connecting people worldwide with the cloud.
+								</p>
+<p class="text-body">
+									Cloudflare was founded in San Francisco in 2009 by three entrepreneurs – Lee Holloway, Matthew Prince, and Michelle Zatlyn. What followed were years of growth and acquisitions, including web and security companies like StopTheHacker, CryptoSeal, and Neumob.
+								</p>
+<p class="text-body">
+									Today, the CDN giant boasts over $1.2 billion in revenues and an operating income of around $185 million. Even though the company offers a free tier of services (used by millions), it still has over 210,000 paying customers, with a few thousand of the biggest online businesses trusting its cloud network. A little over 10% of Cloudflare’s customer base is from the United States, followed by the United Kingdom, Brazil, and Germany.
+								</p>
+<p class="text-body">
+									Currently, the company employs close to 4,000 people.
+								</p>
+</div>
+
+<div class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">How Can Cloudflare Help Your Website?</h4>
+<p class="text-body">
+									Every content delivery system aims to provide access to a global network of servers you can utilize for more flexibility and reach. Cloudflare is no different. Your website can benefit in numerous ways by employing its services:
+								</p>
+<div class="row g-4 mt-2">
+	<div class="col-md-6">
+		<div class="bg-body-secondary p-4 rounded-3 h-100 border border-light-subtle">
+			<div class="d-flex align-items-center gap-3 mb-2">
+				<iconify-icon icon="lucide:globe" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">Network Reach</h6>
+			</div>
+			<p class="fs-14 mb-0 text-secondary">Employing servers all over the world means visitors get the same high performance thanks to nearby servers, regardless of their location.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="bg-body-secondary p-4 rounded-3 h-100 border border-light-subtle">
+			<div class="d-flex align-items-center gap-3 mb-2">
+				<iconify-icon icon="lucide:dollar-sign" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">Budgeted Solution</h6>
+			</div>
+			<p class="fs-14 mb-0 text-secondary">Cloudflare offers a Free Tier plan packed with essentials to start with. You can easily upgrade as your business expands.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="bg-body-secondary p-4 rounded-3 h-100 border border-light-subtle">
+			<div class="d-flex align-items-center gap-3 mb-2">
+				<iconify-icon icon="lucide:shield" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">Next-level Security</h6>
+			</div>
+			<p class="fs-14 mb-0 text-secondary">Mitigate DDoS attacks easily with a Web Application Firewall (WAF) and connections secured via SSL/TLS encryption.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="bg-body-secondary p-4 rounded-3 h-100 border border-light-subtle">
+			<div class="d-flex align-items-center gap-3 mb-2">
+				<iconify-icon icon="lucide:zap" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">Better Performance</h6>
+			</div>
+			<p class="fs-14 mb-0 text-secondary">Cached copies of your content on global edge servers guarantee faster load times and happier customers.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="bg-body-secondary p-4 rounded-3 h-100 border border-light-subtle">
+			<div class="d-flex align-items-center gap-3 mb-2">
+				<iconify-icon icon="lucide:activity" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">Redundant Environment</h6>
+			</div>
+			<p class="fs-14 mb-0 text-secondary">No single point of failure. If one edge server goes down, another takes over instantly for uninterrupted uptime.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="bg-body-secondary p-4 rounded-3 h-100 border border-light-subtle">
+			<div class="d-flex align-items-center gap-3 mb-2">
+				<iconify-icon icon="lucide:image" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">Image Optimization</h6>
+			</div>
+			<p class="fs-14 mb-0 text-secondary">Automatically resizes images and presents them in optimal modern formats for faster load times.</p>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">How to Integrate Cloudflare in EuroHost Panel: Step-by-Step Guide</h4>
+<p class="text-body mb-4">
+									EuroHost Panel is the unique web hosting management system developed by our team at CloudHoste. It serves as a one-stop solution for customers to operate their websites, domains, emails, and all other aspects of their online hosting journey. 
+								</p>
+<p class="text-body mb-4">
+									Integrating and managing Cloudflare through EuroHost Panel is designed to be as simplified as possible. Follow this step-by-step guide to get it up and running:
+								</p>
+
+<!-- Step 1 -->
+<div class="card border border-light-subtle rounded-3 p-4 mb-4 shadow-sm hover:shadow transition">
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<span class="badge bg-primary text-light fs-14 py-2 px-3">Step 1</span>
+		<h5 class="mb-0">Access DNS Editor</h5>
+	</div>
+	<p class="mb-0 text-secondary">
+		Log into your <strong>EuroHost Panel</strong> dashboard. Under the <strong>Tools</strong> section, locate and select the <strong>DNS Editor</strong> option.
+	</p>
+</div>
+
+<!-- Step 2 -->
+<div class="card border border-light-subtle rounded-3 p-4 mb-4 shadow-sm hover:shadow transition">
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<span class="badge bg-primary text-light fs-14 py-2 px-3">Step 2</span>
+		<h5 class="mb-0">Select Domain</h5>
+	</div>
+	<p class="mb-0 text-secondary">
+		Once inside the DNS Editor, select the Domain you wish to connect to the CDN and click the blue <strong>Enable Cloudflare</strong> button at the top right of the page.
+	</p>
+</div>
+
+<!-- Step 3 -->
+<div class="card border border-light-subtle rounded-3 p-4 mb-4 shadow-sm hover:shadow transition">
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<span class="badge bg-primary text-light fs-14 py-2 px-3">Step 3</span>
+		<h5 class="mb-0">View Cloudflare API Guidelines</h5>
+	</div>
+	<p class="mb-0 text-secondary">
+		A popup modal will appear on your screen showing detailed instructions on the specific API Token permissions required from your Cloudflare account to run the integration.
+	</p>
+</div>
+
+<!-- Step 4 -->
+<div class="card border border-light-subtle rounded-3 p-4 mb-4 shadow-sm hover:shadow transition">
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<span class="badge bg-primary text-light fs-14 py-2 px-3">Step 4</span>
+		<h5 class="mb-0">Generate Token on Cloudflare</h5>
+	</div>
+	<p class="text-secondary mb-3">
+		Open a new browser tab and sign into your <strong>Cloudflare Dashboard</strong>. Then follow these instructions:
+	</p>
+	<ul class="list list-disc text-secondary gap-2 ps-3 mb-0">
+		<li>Click your <strong>User Icon</strong> on the top right corner and click <strong>My Profile</strong>.</li>
+		<li>On the left-hand sidebar, select <strong>API Tokens</strong>, then click <strong>Create Token</strong>.</li>
+		<li>Choose the <strong>Use Template</strong> option next to the <strong>Edit Zone DNS</strong> template.</li>
+	</ul>
+</div>
+
+<!-- Step 5 -->
+<div class="card border border-light-subtle rounded-3 p-4 mb-4 shadow-sm hover:shadow transition">
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<span class="badge bg-primary text-light fs-14 py-2 px-3">Step 5</span>
+		<h5 class="mb-0">Configure Token Permissions</h5>
+	</div>
+	<p class="text-secondary mb-3">
+		On the configuration page, you must define the following token settings for your DNS zone.
+	</p>
+	<div class="alert alert-warning border-warning-subtle text-warning-emphasis d-flex align-items-start gap-3 my-3">
+		<iconify-icon icon="lucide:alert-circle" class="fs-20 mt-1"></iconify-icon>
+		<div>
+			<strong>Important Note:</strong> By default, you will only see one permission line. Click on the <strong>+ Add More</strong> button to append the rest.
+		</div>
+	</div>
+	<div class="table-responsive my-3">
+		<table class="table table-bordered table-striped align-middle mb-0">
+			<thead>
+				<tr class="table-primary">
+					<th>Permission Path</th>
+					<th>Access Level</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>Zone / Zone</strong></td>
+					<td><span class="badge bg-success-subtle text-success">Edit</span></td>
+				</tr>
+				<tr>
+					<td><strong>Zone / DNS</strong></td>
+					<td><span class="badge bg-success-subtle text-success">Edit</span></td>
+				</tr>
+				<tr>
+					<td><strong>Zone / Zone Settings</strong></td>
+					<td><span class="badge bg-success-subtle text-success">Edit</span></td>
+				</tr>
+				<tr>
+					<td><strong>Zone / Cache Purge</strong></td>
+					<td><span class="badge bg-success-subtle text-success">Purge</span></td>
+				</tr>
+				<tr>
+					<td><strong>User / User Details</strong></td>
+					<td><span class="badge bg-primary-subtle text-primary">Read</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p class="mb-0 text-secondary">
+		Under the <strong>Zone Resources</strong> section, change the resource drop-down from <strong>Specific Zone</strong> to <strong>All Zones</strong>, then save and proceed to view the token summary.
+	</p>
+</div>
+
+<!-- Step 6 -->
+<div class="card border border-light-subtle rounded-3 p-4 mb-4 shadow-sm hover:shadow transition">
+	<div class="d-flex align-items-center gap-3 mb-3">
+		<span class="badge bg-primary text-light fs-14 py-2 px-3">Step 6</span>
+		<h5 class="mb-0">Paste API Token in EuroHost Panel</h5>
+	</div>
+	<p class="mb-0 text-secondary">
+		Once Cloudflare configures the token, copy the generated API Token. Switch back to your <strong>EuroHost Panel</strong> dashboard tab and paste the token code at the bottom of the popup form. Click verify to link the integrations together.
+	</p>
+</div>
+</div>
+
+<div class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Integrated Dashboard Options</h4>
+<p class="text-body mb-4">
+	Once activated, the API token reveals advanced DNS control panel features directly inside your EuroHost Panel:
+</p>
+<div class="row g-4">
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100">
+			<h6><iconify-icon icon="lucide:refresh-cw" class="text-primary align-middle me-2"></iconify-icon>Sync With Cloudflare</h6>
+			<p class="fs-14 text-secondary mb-0">Toggle Cloudflare CDN off or on for individual domains to easily fall back on standard server DNS records when required.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100">
+			<h6><iconify-icon icon="lucide:shield-alert" class="text-primary align-middle me-2"></iconify-icon>"I'm Under Attack" Mode</h6>
+			<p class="fs-14 text-secondary mb-0">Instantly activate aggressive security filtering to combat heavy DDoS attacks and protect your server resources from overload.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100">
+			<h6><iconify-icon icon="lucide:code" class="text-primary align-middle me-2"></iconify-icon>Development Mode</h6>
+			<p class="fs-14 text-secondary mb-0">Bypasses standard CDN caches immediately, enabling you to inspect file updates on your site in real-time.</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-3 border rounded h-100">
+			<h6><iconify-icon icon="lucide:trash-2" class="text-primary align-middle me-2"></iconify-icon>Purge CDN Cache</h6>
+			<p class="fs-14 text-secondary mb-0">Clears edge cache storage instantly. Ideal for forcing static resource updates to propagate globally.</p>
+		</div>
+	</div>
+</div>
+<p class="text-body mt-4">
+	Furthermore, you can toggle the <strong>Proxy Status</strong> button to mask the server IP address behind your domain, preventing direct-to-IP targeted attacks. You can also click <strong>Edit</strong> to modify server records (A, AAAA, CNAME, etc.) instantly, synchronizing changes in real-time.
+</p>
+<p class="text-body mb-0">
+	As you can see, EuroHost Panel makes Cloudflare management quick and easy without any previous technical experience. If you need any additional assistance – do not hesitate to contact our Support Team 24/7 through live chat, email, or ticketing.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Categories End -->
+<!-- CTA  -->
+<div class="cta-7">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="section-space-y px-4 px-sm-6 px-md-12 bg-body rounded-4 text-center position-relative z-1">
+<div class="row justify-content-center">
+<div class="col-md-11">
+<h3>Get a free web host migration</h3>
+<p class="mb-8 max-text-15 mx-auto">
+								We'll take care of the process of moving your website from
+								your old web hosting company to our platform so you can
+								focus on what matters
+							</p>
+<div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="sign-in-2.html">
+									Get Started now
+								</a>
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="contact.html">
+									Contact Us
+								</a>
+</div>
+</div>
+</div>
+<img alt="Cta Img 16 - CloudHoste secure European hosting" class="img-fluid d-none d-xl-block position-absolute start-0 top-50 translate-middle-y z-n1 pointer-none" src="assets/img/cta-img-16.png"/>
+<img alt="Cta Img 17 - CloudHoste secure European hosting" class="img-fluid d-none d-xl-block position-absolute end-0 top-50 translate-middle-y z-n1 pointer-none" src="assets/img/cta-img-17.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA End -->
+<footer class="section-space-top section-space-sm-bottom bg-secondary-emphasis dark:bg-secondary-subtle">
+<div class="section-space-sm-bottom">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-6 col-xl-3 col-xxl-2">
+<div class="d-flex flex-column h-100">
+<a class="logo d-inline-block mb-4" href="index.html">
+<img alt="Eurohost official brand logo - light theme" class="logo__img" src="assets/img/logo-light.svg"/>
+</a>
+<p class="mb-8 text-light">
+							Access CloudHoste Kubernetes Engine through
+						</p>
+
+</div>
+</div>
+<div class="col-xl-9 col-xxl-10">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4">
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Hosting</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="wp-hosting.html">
+										WordPress hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="vps-hosting.html">
+										VPS hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="n8n-hosting.html">
+										n8n hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="web-hosting.html">
+										Web hosting
+									</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Features</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="data-center.html">
+										Data Center
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="server-location.html">
+										Server Location
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="uptime.html">
+										Server Uptime
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="operating-system.html">
+										Operating Systems
+									</a>
+</li>
+</ul>
+</div>
+
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Company</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="about.html">
+										About
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="blog-1.html">
+										Blog
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="career.html">
+										Career
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="case-study.html">
+										Case Studies
+									</a>
+</li>
+<li>
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="contact.html">
+										Contact Us
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="privacy-policy.html">
+										Privacy Policy
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="ddos-protection.html">
+										Security
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="domain.html">
+										Domain
+									</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Resources</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="faq.html">
+										FAQ
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="domain-transfer.html">
+										Domain Transfer
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="knowledge-base-category.html">
+										Knowledge Base
+									</a>
+</li>
+</ul>
+<h6 class="mb-6 text-light fs-18 mt-12">Why Choose Us</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="features.html">
+										Features
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="review.html">
+										Service Reviews
+									</a>
+</li>
+</ul>
+</div>
+				</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-space-sm-top border-top border-light border-opacity-10">
+<div class="container">
+<div class="row g-4 align-items-center justify-content-between">
+<div class="col-md-5 col-lg-6">
+<h6 class="text-light fs-18 fw-medium">Get Our Newsletter</h6>
+<div class="search-filter search-filter--light bg-light bg-opacity-20 rounded-1 max-text-10">
+<input class="form-control search-filter__input text-light placeholder::text-light placeholder::text-opacity-50" placeholder="Search Now..." type="text"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
+							Subscribe
+						</button>
+</div>
+</div>
+<div class="col-md-7 col-lg-5 col-xl-4">
+<h6 class="text-light fs-18 fw-medium">Payment Getaway</h6>
+<ul class="list list-row flex-wrap gap-4 align-items-center">
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 1 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-1.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 2 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-2.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 3 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-3.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 4 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-4.png"/>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/iconify.js"></script>
+<script src="assets/js/simplebar.js"></script>
+<script src="assets/js/swiper.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

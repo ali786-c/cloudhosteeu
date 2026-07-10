@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" data-theme="domain" lang="en">
+<head>
+<title>How to Add an Addon Domain in EuroHost Panel | CloudHoste</title>
+<meta content="Learn how to configure and add addon domains inside EuroHost Panel control panel to host multiple separate websites under one account." name="description"/>
+<meta content="web hosting, cloud server, SSD VPS, dedicated hosting, n8n automation, EU hosting, secure cloud, GDPR hosting, addon domain, document root, EuroHost Panel, domain setup" name="keywords"/>
+<meta content="CloudHoste" name="author"/>
+<link href="https://cloudhoste.eu/how-to-add-addon-domain.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="How to Add an Addon Domain in EuroHost Panel | CloudHoste" property="og:title"/>
+<meta content="Learn how to configure and add addon domains inside EuroHost Panel control panel to host multiple separate websites under one account." property="og:description"/>
+<meta content="https://cloudhoste.eu/how-to-add-addon-domain.html" property="og:url"/>
+<meta content="CloudHoste" property="og:site_name"/>
+<meta content="en_EU" property="og:locale"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How to Add an Addon Domain in EuroHost Panel | CloudHoste" name="twitter:title"/>
+<meta content="Learn how to configure and add addon domains inside EuroHost Panel control panel to host multiple separate websites under one account." name="twitter:description"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" name="twitter:image"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="assets/css/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/css/simplebar.css" rel="stylesheet"/>
+<link href="assets/css/swiper-bundle.css" rel="stylesheet"/>
+<link href="assets/css/prism.css" rel="stylesheet"/>
+<link href="assets/css/ff-1.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-light dark:bg-dark-subtle">
+<div class="preloader">
+<div class="preloader__content">
+<img alt="Eurohost official brand logo - light theme" class="img-fluid preloader__img" src="assets/img/logo-light.svg"/>
+</div>
+</div>
+<style>
+    .mini-header {
+        font-size: 13px;
+        background-color: #0f172a; /* Sleek dark slate background */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mini-header a {
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+    .mini-header a:hover {
+        color: #fff !important;
+    }
+</style>
+<div class="header-wrapper fixed-top shadow-sm">
+<div class="mini-header py-2 text-white-50">
+<div class="container-fluid px-4 px-md-8 px-lg-12 d-flex justify-content-between align-items-center">
+<div class="d-flex align-items-center gap-3">
+<a class="d-flex align-items-center gap-1.5" href="mailto:support@cloudhoste.eu">
+<iconify-icon class="fs-16 align-middle" icon="solar:letter-broken"></iconify-icon>
+                    support@cloudhoste.eu
+                </a>
+
+</div>
+<div class="d-flex align-items-center gap-4">
+<a href="knowledge-base.html">Support</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+<div id="global-header"></div>
+<script src="assets/js/header.js"></script>
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        max-width: 380px;
+        background-color: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 20px;
+        z-index: 9999;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        transform: translateY(120%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: none;
+    }
+    .cookie-banner.show {
+        display: block;
+        transform: translateY(0);
+    }
+    .cookie-banner p {
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin-bottom: 16px;
+    }
+    .cookie-banner a {
+        color: #f67a3c !important;
+        text-decoration: underline !important;
+    }
+    .cookie-banner a:hover {
+        color: #ff8e54 !important;
+    }
+    .cookie-btn-accept {
+        background-color: #f67a3c;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    .cookie-btn-accept:hover {
+        background-color: #ff8e54;
+    }
+    .cookie-btn-decline {
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .cookie-btn-decline:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+    }
+</style>
+<div class="cookie-banner" id="cookieConsent">
+<p>
+        We use cookies to optimize your hosting experience and analyze traffic in compliance with EU regulations. 
+        Read our <a href="privacy-policy.html">Privacy Policy</a> for more details.
+    </p>
+<div class="d-flex justify-content-end gap-2">
+<button class="cookie-btn-decline" id="declineCookies">Decline</button>
+<button class="cookie-btn-accept text-white" id="acceptCookies">Accept All</button>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var banner = document.getElementById("cookieConsent");
+        var acceptBtn = document.getElementById("acceptCookies");
+        var declineBtn = document.getElementById("declineCookies");
+
+        if (!localStorage.getItem("cookieConsent")) {
+            setTimeout(function () {
+                banner.classList.add("show");
+            }, 1500);
+        }
+
+        acceptBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "accepted");
+            banner.classList.remove("show");
+            setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+
+        declineBtn.addEventListener("click", function () {
+            localStorage.setItem("cookieConsent", "declined");
+            banner.classList.remove("show");
+            setTimeout(function() { banner.style.display = 'none'; }, 400);
+        });
+    });
+</script>
+</div>
+<!-- Banner -->
+<div class="banner-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10">
+<h1 class="mb-3 text-light text-center">Hosting Knowledge Base</h1>
+<p class="mb-8 text-light text-center max-text-12 mx-auto">
+					In depth walkthroughs to help you get the most out of your website and
+					hosting experience
+				</p>
+<div class="search-filter search-filter--light bg-white rounded-1 max-text-15 mx-auto">
+<input class="form-control search-filter__input placeholder::text-dark-subtle text-dark" placeholder="Search Now..." type="text"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
+<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
+						Search
+					</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner End -->
+<!-- Info Categories  -->
+<div class="section-space-bottom position-relative mt-n60">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="section-space-y bg-white dark:bg-dark rounded-4 px-4 px-md-12 px-lg-20 px-xxl-30">
+<div class="row justify-content-center">
+<div class="col-xl-10">
+<ol class="breadcrumb breadcrumb-modifier mb-4">
+<li class="breadcrumb-item">
+<a class="link fs-14 text-heading fw-medium" href="index.html">
+										Home
+									</a>
+</li>
+<li class="breadcrumb-item text-heading">
+<iconify-icon class="align-middle fs-14" icon="bi:chevron-right"></iconify-icon>
+</li>
+<li aria-current="page" class="breadcrumb-item fs-14 fw-medium active text-secondary">
+									EuroHost Panel
+								</li>
+</ol>
+<div class="section-space-sm-bottom">
+<h2 class="mb-4">How to Add an Addon Domain</h2>
+<p class="fs-16 text-body">
+									One of the main advantages of EuroHost’s managed VPS solutions is that all your (or your clients’) online projects can run on individual accounts created through EuroHost Panel, our all-in-one management platform. A single user account is not limited to a single website, though. Using the Addon Domain feature, you can host multiple completely separate websites under a single account.
+								</p>
+
+<!-- Visual Table of Contents Card -->
+<div class="card border border-light-subtle rounded-3 p-4 bg-light bg-opacity-50 my-5 shadow-sm">
+	<h6 class="mb-3 text-heading"><iconify-icon icon="lucide:list" class="me-2 align-middle"></iconify-icon>Table of Contents</h6>
+	<ul class="list gap-2 mb-0 fs-14">
+		<li><a href="#how-it-works" class="text-secondary hover:text-primary">1. How Does an Addon Domain Work? (Addon vs Subdomain)</a></li>
+		<li><a href="#panel-setup" class="text-secondary hover:text-primary">2. Adding an Addon Domain Through EuroHost Panel</a></li>
+		<li><a href="#important-dns-check" class="text-secondary hover:text-primary">3. Critical Next Steps: Registration & DNS Configuration</a></li>
+		<li><a href="#conclusion" class="text-secondary hover:text-primary">4. Conclusion</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="how-it-works" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">How Does an Addon Domain Work?</h4>
+<p class="text-body mb-4">
+	Many people might confuse an addon domain with a subdomain, and it must be said that this is understandable to a certain extent. 
+</p>
+<div class="row g-4 mb-4">
+	<div class="col-md-6">
+		<div class="p-4 border rounded-3 bg-body-secondary border-light-subtle h-100">
+			<div class="d-flex align-items-center gap-2 mb-3">
+				<iconify-icon icon="lucide:git-branch" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">What is a Subdomain?</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">
+				A subdomain has a document root (a folder where its files are stored) located inside the home directory of your account. Inside it, you can install a CMS and manage it separately, but its URL structure is always dependent on the parent domain (e.g. <em>blog.yourdomain.com</em>).
+			</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="p-4 border rounded-3 bg-body-secondary border-light-subtle h-100">
+			<div class="d-flex align-items-center gap-2 mb-3">
+				<iconify-icon icon="lucide:globe" class="text-primary fs-24"></iconify-icon>
+				<h6 class="mb-0">What is an Addon Domain?</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">
+				An addon domain is an entirely separate domain (e.g. <em>otherproject.com</em>) pointing to its own custom directory in your home folder. It functions as a standalone website, completely independent from your main domain in the eyes of visitors.
+			</p>
+		</div>
+	</div>
+</div>
+<p class="text-body mb-0">
+	As a result, you can run multiple completely separate websites on the same hosting account, and it will be impossible for regular users to find out that there’s anything connecting them. This makes the addon domain feature perfect if you have small projects that can co-exist on the same EuroHost Panel user account.
+</p>
+</div>
+
+<div id="panel-setup" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Adding an Addon Domain Through EuroHost Panel</h4>
+<p class="text-body mb-4">
+	The ability to start new projects in a couple of clicks is at the heart of our philosophy, which is why setting up an addon domain is quick and easy. Follow these steps:
+</p>
+
+<!-- Steps Grid -->
+<div class="row g-4 ps-2 mb-4">
+	<div class="col-md-4">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 1</span>
+				<h6 class="mb-0">Open Domains Tool</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Log into the <strong>EuroHost Panel User Interface</strong> and locate the <strong>Domains</strong> tool widget on the homepage.</p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 2</span>
+				<h6 class="mb-0">Enter Domain & Path</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Enter your new domain name in the input field. Pick the target directory for your document root (EuroHost Panel will auto-propose a path in your home folder).</p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card border border-light-subtle rounded-3 p-4 h-100 shadow-sm">
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<span class="badge bg-primary text-light fs-14">Step 3</span>
+				<h6 class="mb-0">Add Domain</h6>
+			</div>
+			<p class="fs-14 text-secondary mb-0">Click the <strong>Add Domain</strong> button to save changes. Your domain is now linked to its document root folder.</p>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="important-dns-check" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Critical Next Steps: Registration & DNS Configuration</h4>
+<div class="alert alert-warning border-warning-subtle text-warning-emphasis d-flex align-items-start gap-3 my-4">
+	<iconify-icon icon="lucide:alert-circle" class="fs-24 mt-1"></iconify-icon>
+	<div>
+		<strong>IMPORTANT NOTE:</strong> Simply adding the domain to the EuroHost Panel User Interface does not automatically register the domain or point it to your VPS. 
+	</div>
+</div>
+<p class="text-body mb-4">
+	To ensure your new website resolves correctly:
+</p>
+<ul class="list gap-2 text-secondary fs-15 mb-0 ps-4">
+	<li><iconify-icon icon="lucide:check" class="text-success me-2"></iconify-icon><strong>Registration:</strong> Confirm that the domain has been purchased and registered with a valid registrar.</li>
+	<li><iconify-icon icon="lucide:check" class="text-success me-2"></iconify-icon><strong>Nameservers & A Records:</strong> Ensure your domain's nameservers are pointed to your VPS nameservers, or that its primary DNS A Record points to your server's public IP address.</li>
+</ul>
+</div>
+
+<div id="conclusion" class="section-space-sm-bottom border-top pt-5">
+<h4 class="mb-3">Conclusion</h4>
+<p class="text-body mb-0">
+	Addon domains make hosting multiple projects highly cost-effective and easy to manage under a single console. If you experience domain resolution issues or require help setting up your nameservers, please contact the CloudHoste support team for 24/7 technical assistance.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Categories End -->
+<!-- CTA  -->
+<div class="cta-7">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="section-space-y px-4 px-sm-6 px-md-12 bg-body rounded-4 text-center position-relative z-1">
+<div class="row justify-content-center">
+<div class="col-md-11">
+<h3>Get a free web host migration</h3>
+<p class="mb-8 max-text-15 mx-auto">
+								We'll take care of the process of moving your website from
+								your old web hosting company to our platform so you can
+								focus on what matters
+							</p>
+<div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="sign-in-2.html">
+									Get Started now
+								</a>
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="contact.html">
+									Contact Us
+								</a>
+</div>
+</div>
+</div>
+<img alt="Cta Img 16 - CloudHoste secure European hosting" class="img-fluid d-none d-xl-block position-absolute start-0 top-50 translate-middle-y z-n1 pointer-none" src="assets/img/cta-img-16.png"/>
+<img alt="Cta Img 17 - CloudHoste secure European hosting" class="img-fluid d-none d-xl-block position-absolute end-0 top-50 translate-middle-y z-n1 pointer-none" src="assets/img/cta-img-17.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA End -->
+<footer class="section-space-top section-space-sm-bottom bg-secondary-emphasis dark:bg-secondary-subtle">
+<div class="section-space-sm-bottom">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-6 col-xl-3 col-xxl-2">
+<div class="d-flex flex-column h-100">
+<a class="logo d-inline-block mb-4" href="index.html">
+<img alt="Eurohost official brand logo - light theme" class="logo__img" src="assets/img/logo-light.svg"/>
+</a>
+<p class="mb-8 text-light">
+							Access CloudHoste Kubernetes Engine through
+						</p>
+
+</div>
+</div>
+<div class="col-xl-9 col-xxl-10">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-4">
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Hosting</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="wp-hosting.html">
+										WordPress hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="vps-hosting.html">
+										VPS hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="n8n-hosting.html">
+										n8n hosting
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="web-hosting.html">
+										Web hosting
+									</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Features</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="data-center.html">
+										Data Center
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="server-location.html">
+										Server Location
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="uptime.html">
+										Server Uptime
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="operating-system.html">
+										Operating Systems
+									</a>
+</li>
+</ul>
+</div>
+
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Company</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="about.html">
+										About
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="blog-1.html">
+										Blog
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="career.html">
+										Career
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="case-study.html">
+										Case Studies
+									</a>
+</li>
+<li>
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="contact.html">
+										Contact Us
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="privacy-policy.html">
+										Privacy Policy
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="ddos-protection.html">
+										Security
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="domain.html">
+										Domain
+									</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Resources</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="faq.html">
+										FAQ
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="domain-transfer.html">
+										Domain Transfer
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="knowledge-base-category.html">
+										Knowledge Base
+									</a>
+</li>
+</ul>
+<h6 class="mb-6 text-light fs-18 mt-12">Why Choose Us</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="features.html">
+										Features
+									</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="review.html">
+										Service Reviews
+									</a>
+</li>
+</ul>
+</div>
+				</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-space-sm-top border-top border-light border-opacity-10">
+<div class="container">
+<div class="row g-4 align-items-center justify-content-between">
+<div class="col-md-5 col-lg-6">
+<h6 class="text-light fs-18 fw-medium">Get Our Newsletter</h6>
+<div class="search-filter search-filter--light bg-light bg-opacity-20 rounded-1 max-text-10">
+<input class="form-control search-filter__input text-light placeholder::text-light placeholder::text-opacity-50" placeholder="Search Now..." type="text"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
+							Subscribe
+						</button>
+</div>
+</div>
+<div class="col-md-7 col-lg-5 col-xl-4">
+<h6 class="text-light fs-18 fw-medium">Payment Getaway</h6>
+<ul class="list list-row flex-wrap gap-4 align-items-center">
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 1 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-1.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 2 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-2.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 3 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-3.png"/>
+</a>
+</li>
+<li>
+<a class="d-inline-block" href="#">
+<img alt="Pm Img 4 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/pm-img-4.png"/>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/iconify.js"></script>
+<script src="assets/js/simplebar.js"></script>
+<script src="assets/js/swiper.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

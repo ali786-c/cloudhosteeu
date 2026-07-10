@@ -234,6 +234,21 @@
 </span>
 </a>
 </li>
+<li>
+<a class="navigation-2__menu-link link d-flex align-items-start gap-3" href="http://my.cloudhoste.eu/cart.php?a=add&domain=transfer">
+<span class="d-grid place-content-center w-10 h-10 bg-warning rounded-circle flex-shrink-0">
+<iconify-icon class="fs-20 text-white" icon="solar:refresh-broken"></iconify-icon>
+</span>
+<span class="d-block flex-grow-1">
+<span class="navigation-2__menu-title d-block fw-bold">
+										Domain Transfer
+									</span>
+<span class="navigation-2__menu-text line-clamp line-clamp--2 fs-14">
+										Transfer your domain to CloudHoste
+									</span>
+</span>
+</a>
+</li>
 </ul>
 </li>
 <li class="nav-item">

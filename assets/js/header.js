@@ -205,7 +205,7 @@
 <a class="nav-link" href="domain.html">Domain</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="contact.html">Contact Us</a>
+<a class="nav-link" href="http://my.cloudhoste.eu/contact.php">Contact Us</a>
 </li>
 <!--
 <li class="nav-item has-sub-level-1 navigation-3">
@@ -278,7 +278,7 @@
 <!-- <li class="nav-item"><a class="nav-link" href="blog-2.html">Blog</a></li> -->
 </ul>
 <div class="d-flex align-items-center gap-3 ms-lg-auto">
-<a aria-label="Log in to your secure client billing dashboard" class="btn btn-sm btn-primary order-lg-2 fw-semibold" href="sign-in-2.html">
+<a aria-label="Log in to your secure client billing dashboard" class="btn btn-sm btn-primary order-lg-2 fw-semibold" href="http://my.cloudhoste.eu/clientarea.php">
 					Sign In
 				</a>
 <div class="dropdown dropdown-modifier dropdown-xsm order-lg-1">

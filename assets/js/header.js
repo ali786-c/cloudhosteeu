@@ -3,8 +3,8 @@
     const headerHTML = `<header class="navbar navbar-expand-lg primary-header primary-header--light m-0 border-0">
 <div class="container-fluid px-4 px-md-8 px-lg-12 align-items-lg-center">
 <a class="logo" href="index.html">
-<img alt="Eurohost official brand logo - dark theme" class="logo__img logo__img--light" src="assets/img/logo-dark.svg"/>
-<img alt="Eurohost official brand logo - light theme" class="logo__img logo__img--dark" src="assets/img/logo-light.svg"/>
+<img alt="CloudHoste official brand logo - dark theme" class="logo__img logo__img--light" src="assets/img/logo-dark.svg"/>
+<img alt="CloudHoste official brand logo - light theme" class="logo__img logo__img--dark" src="assets/img/logo-light.svg"/>
 </a>
 <button aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0" data-bs-target="#navbar0" data-bs-toggle="collapse" type="button">
 <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>

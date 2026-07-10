@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html data-bs-theme="light" data-theme="home-2" lang="en">
 <head>
@@ -371,23 +371,15 @@
 <div class="col-lg-10 col-xl-8">
 <div class="section-space-md-y px-4 px-md-6 px-lg-12 bg-body rounded-3 text-center">
 <h6>Search for a domain or transfer your own</h6>
-<div class="search-filter search-filter--light border border-secondary border-opacity-60 rounded-1">
-<input class="form-control search-filter__input placeholder::text-light-emphasis" placeholder="Search Now..." type="text"/>
-<select aria-label="Default select example" class="form-select search-filter__select text-heading">
-<option selected="" value="1">.com</option>
-<option value="2">.net</option>
-<option value="3">.org</option>
-<option value="4">.ai</option>
-<option value="5">.info</option>
-<option value="6">.shop</option>
-<option value="7">.xyz</option>
-<option value="8">.blog</option>
-</select>
-<button class="btn btn-primary align-items-center flex-shrink-0" type="button">
-<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
-								Search
-							</button>
-</div>
+<form action="http://my.cloudhoste.eu/cart.php" method="get" class="search-filter search-filter--light border border-secondary border-opacity-60 rounded-1">
+	<input type="hidden" name="a" value="add"/>
+	<input type="hidden" name="domain" value="register"/>
+	<input name="query" class="form-control search-filter__input placeholder::text-light-emphasis" placeholder="Search Now..." type="text" required/>
+	<button class="btn btn-primary align-items-center flex-shrink-0" type="submit">
+		<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
+		Search
+	</button>
+</form>
 <ul class="list list-row justify-content-center flex-wrap gap-3 align-items-center mt-6">
 <li>
 <button class="btn btn-sm btn-light" type="button">

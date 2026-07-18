@@ -558,3 +558,36 @@ section,
     color: #8b5cf6 !important;
     border: 1px solid rgba(139, 92, 246, 0.3) !important;
 }
+
+/* ==========================================================================
+   10. Fluid Typography & Mobile Overflows Fixes
+   ========================================================================== */
+
+/* Dynamic fluid typography for hero titles to prevent hardcoded wraps and overflow */
+.font-title-large,
+h1.font-title-large,
+.hero-section h1,
+.banner-section h1,
+.hero-3 h1,
+.hero-content h1,
+h2.banner-title {
+    font-size: clamp(2rem, 5.5vw + 0.5rem, 4.25rem) !important;
+    line-height: 1.15 !important;
+}
+
+/* Ensure letters and words wrap nicely and don't overflow on any viewports */
+.hero-word {
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+/* Fail-safe break wrapping on extra small viewports to prevent overflow */
+@media (max-width: 576px) {
+    .hero-word {
+        white-space: normal !important;
+    }
+    
+    .timeline-card {
+        padding: 16px !important;
+    }
+}

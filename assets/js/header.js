@@ -1,10 +1,40 @@
 // Global Header Component
 (function() {
+    // Check folder locale depth
+    const currentPath = window.location.pathname;
+    const isIt = currentPath.includes('/it/');
+    const isDe = currentPath.includes('/de/');
+    const pathPrefix = (isIt || isDe) ? '../' : '';
+
+    // Dynamically load AOS and Animations assets
+    const aosLink = document.createElement("link");
+    aosLink.rel = "stylesheet";
+    aosLink.href = pathPrefix + "assets/css/aos.css";
+    document.head.appendChild(aosLink);
+
+    const animLink = document.createElement("link");
+    animLink.rel = "stylesheet";
+    animLink.href = pathPrefix + "assets/css/animations.css";
+    document.head.appendChild(animLink);
+
+    const aosScript = document.createElement("script");
+    aosScript.src = pathPrefix + "assets/js/aos.js";
+    document.head.appendChild(aosScript);
+
+    const animeScript = document.createElement("script");
+    animeScript.src = pathPrefix + "assets/js/anime.min.js";
+    document.head.appendChild(animeScript);
+
+    const animScript = document.createElement("script");
+    animScript.src = pathPrefix + "assets/js/animations.js";
+    animScript.defer = true;
+    document.head.appendChild(animScript);
+
     const headerHTML = `<header class="navbar navbar-expand-lg primary-header primary-header--light m-0 border-0">
 <div class="container-fluid px-4 px-md-8 px-lg-12 align-items-lg-center">
-<a class="logo" href="index.html">
-<img alt="CloudHoste official brand logo - dark theme" class="logo__img logo__img--light" src="assets/img/logo-dark.svg"/>
-<img alt="CloudHoste official brand logo - light theme" class="logo__img logo__img--dark" src="assets/img/logo-light.svg"/>
+<a class="logo" href="${pathPrefix}index.html">
+<img alt="CloudHoste official brand logo - dark theme" class="logo__img logo__img--light" src="${pathPrefix}assets/img/logo-dark.svg"/>
+<img alt="CloudHoste official brand logo - light theme" class="logo__img logo__img--dark" src="${pathPrefix}assets/img/logo-light.svg"/>
 </a>
 <button aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0" data-bs-target="#navbar0" data-bs-toggle="collapse" type="button">
 <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
@@ -334,7 +364,6 @@
 <span class="d-block flex-grow-1"> Dark </span>
 </button>
 </li>
-</ul>
 </div>
 </div>
 </nav>
@@ -347,16 +376,128 @@
         headerEl.outerHTML = headerHTML;
         
         // Highlight active link based on current path
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const activeLink = document.querySelector(`.navbar-nav a[href="${currentPath}"]`);
+        const filename = currentPath.split('/').pop() || 'index.html';
+        const activeLink = document.querySelector(`.navbar-nav a[href="${filename}"]`);
         if (activeLink) {
             activeLink.classList.add('active');
-            // If it's inside a dropdown, we can optionally highlight the dropdown trigger
             const parentDropdown = activeLink.closest('.has-sub-level-1');
             if (parentDropdown) {
                 const trigger = parentDropdown.querySelector('.nav-link');
                 if (trigger) trigger.classList.add('active');
             }
         }
+
+        // Set current language dropdown label UI
+        const langLabel = document.getElementById("currentLangLabel");
+        if (langLabel) {
+            langLabel.textContent = isIt ? "IT" : (isDe ? "DE" : "EN");
+        }
+
+        // Bind dropdown clicks
+        const langButtons = document.querySelectorAll("#languageSelectorMenu button");
+        langButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const selectedLang = btn.getAttribute("data-lang");
+                switchLocale(selectedLang);
+            });
+        });
+
+        // Initialize translation auto-detection rules (Disabled for now)
+        // initI18nRouting();
+    }
+
+    // Helper functions for i18n routing
+    function switchLocale(targetLang) {
+        localStorage.setItem("locale_pref", targetLang);
+        const filename = window.location.pathname.split('/').pop() || 'index.html';
+        let targetUrl = '';
+
+        if (targetLang === 'en') {
+            targetUrl = (isIt || isDe) ? '../' + filename : filename;
+        } else if (targetLang === 'it') {
+            if (isIt) targetUrl = filename;
+            else if (isDe) targetUrl = '../it/' + filename;
+            else targetUrl = 'it/' + filename;
+        } else if (targetLang === 'de') {
+            if (isDe) targetUrl = filename;
+            else if (isIt) targetUrl = '../de/' + filename;
+            else targetUrl = 'de/' + filename;
+        }
+
+        if (targetUrl) {
+            window.location.href = targetUrl;
+        }
+    }
+
+    function initI18nRouting() {
+        const storedPref = localStorage.getItem("locale_pref");
+        
+        // Auto-redirect if preference is explicitly saved and user is in the wrong locale folder
+        if (storedPref && storedPref !== 'en') {
+            if (storedPref === 'de' && !isDe) {
+                switchLocale('de');
+                return;
+            } else if (storedPref === 'it' && !isIt) {
+                switchLocale('it');
+                return;
+            }
+        }
+
+        // Auto-detect and show Soft Selection Banner prompt if no pref is saved
+        if (!storedPref && !isIt && !isDe) {
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (browserLang.startsWith('de')) {
+                showI18nBanner('de');
+            } else if (browserLang.startsWith('it')) {
+                showI18nBanner('it');
+            }
+        }
+    }
+
+    function showI18nBanner(lang) {
+        const banner = document.createElement("div");
+        banner.className = "i18n-banner";
+        banner.id = "i18nSelectorBanner";
+        
+        let promptText = "";
+        let acceptText = "";
+        let declineText = "";
+        
+        if (lang === "de") {
+            promptText = "Wir haben festgestellt, dass Sie aus Deutschland kommen. Möchten Sie zu unserer deutschen Website wechseln?";
+            acceptText = "Auf Deutsch wechseln";
+            declineText = "Englisch bleiben";
+        } else if (lang === "it") {
+            promptText = "Abbiamo rilevato che visiti dall'Italia. Vuoi passare al nostro sito in italiano?";
+            acceptText = "Passa all'italiano";
+            declineText = "Resta in inglese";
+        }
+        
+        banner.innerHTML = `
+            <div class="i18n-banner__content">
+                <p class="m-0 text-white">${promptText}</p>
+                <div class="d-flex gap-2 mt-3">
+                    <button class="i18n-btn-accept" id="i18nAcceptBtn">${acceptText}</button>
+                    <button class="i18n-btn-decline" id="i18nDeclineBtn">${declineText}</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(banner);
+        
+        // Animate slider display
+        setTimeout(() => {
+            banner.classList.add("show");
+        }, 1200);
+        
+        document.getElementById("i18nAcceptBtn").addEventListener("click", () => {
+            switchLocale(lang);
+        });
+        
+        document.getElementById("i18nDeclineBtn").addEventListener("click", () => {
+            localStorage.setItem("locale_pref", "en"); // mark preference as English to prevent future prompts
+            banner.classList.remove("show");
+            setTimeout(() => banner.remove(), 500);
+        });
     }
 })();

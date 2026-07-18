@@ -171,13 +171,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	const theme = localStorage.getItem("theme");
 
 	// Set initial theme
-	if (theme === "dark") {
-		document.documentElement.setAttribute("data-bs-theme", "dark");
-		updateThemeIcon("dark");
-	} else {
-		// Default to light theme if not set
+	if (theme === "light") {
 		document.documentElement.setAttribute("data-bs-theme", "light");
 		updateThemeIcon("light");
+	} else {
+		// Default to dark theme if not set or set to dark
+		document.documentElement.setAttribute("data-bs-theme", "dark");
+		updateThemeIcon("dark");
 	}
 
 	// Theme change handlers

@@ -1,0 +1,349 @@
+/**
+ * CloudHoste Premium Hover Interactions, Animations, and Scaleway-Style Visuals
+ * Combines AOS animations with glassmorphic cards, ambient glow orbs, and dark slate styling.
+ */
+
+:root {
+    --hover-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom easing extensions for AOS */
+body[data-aos-easing="ease-out-back"] [data-aos] {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================================================
+   1. Premium Deep Slate Theme Overrides
+   ========================================================================== */
+
+[data-bs-theme="dark"] body,
+[data-bs-theme="dark"] .bg-light,
+[data-bs-theme="dark"] .bg-body,
+[data-bs-theme="dark"] .bg-dark-subtle {
+    background-color: #0b0e1a !important; /* Premium deep midnight navy-slate background */
+}
+
+/* Make header wrapper translucent on scroll */
+body.primary-header-crossed .header-wrapper {
+    background-color: rgba(11, 14, 26, 0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   2. Glassmorphism for Cards (Sleek translucent outlines & backdrops)
+   ========================================================================== */
+
+[data-bs-theme="dark"] .card, 
+[data-bs-theme="dark"] .pricing-section-2 .card, 
+[data-bs-theme="dark"] .pricing-section-2 .bg-body,
+[data-bs-theme="dark"] .container .p-6.bg-body.rounded-3,
+[data-bs-theme="dark"] .case-study-slider .bg-body,
+[data-bs-theme="dark"] .accordion-item,
+[data-bs-theme="dark"] .faq-item,
+[data-bs-theme="dark"] .card-hover-premium {
+    background: rgba(22, 28, 48, 0.45) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2) !important;
+    transition: var(--hover-transition) !important;
+}
+
+/* Hover effects for glassmorphic elements */
+[data-bs-theme="dark"] .card:hover, 
+[data-bs-theme="dark"] .pricing-section-2 .card:hover, 
+[data-bs-theme="dark"] .pricing-section-2 .bg-body:hover,
+[data-bs-theme="dark"] .container .p-6.bg-body.rounded-3:hover,
+[data-bs-theme="dark"] .case-study-slider .bg-body:hover,
+[data-bs-theme="dark"] .accordion-item:hover,
+[data-bs-theme="dark"] .faq-item:hover,
+[data-bs-theme="dark"] .card-hover-premium:hover {
+    transform: translateY(-8px) !important;
+    background: rgba(30, 38, 64, 0.58) !important;
+    border-color: rgba(73, 66, 228, 0.45) !important;
+    box-shadow: 0 20px 40px -15px rgba(73, 66, 228, 0.28), 
+                0 15px 30px -10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Light mode card hovers */
+[data-bs-theme="light"] .card, 
+[data-bs-theme="light"] .pricing-section-2 .card, 
+[data-bs-theme="light"] .pricing-section-2 .bg-body,
+[data-bs-theme="light"] .container .p-6.bg-body.rounded-3,
+[data-bs-theme="light"] .case-study-slider .bg-body,
+[data-bs-theme="light"] .accordion-item,
+[data-bs-theme="light"] .faq-item,
+[data-bs-theme="light"] .card-hover-premium {
+    transition: var(--hover-transition) !important;
+}
+
+[data-bs-theme="light"] .card:hover, 
+[data-bs-theme="light"] .pricing-section-2 .card:hover, 
+[data-bs-theme="light"] .pricing-section-2 .bg-body:hover,
+[data-bs-theme="light"] .container .p-6.bg-body.rounded-3:hover,
+[data-bs-theme="light"] .case-study-slider .bg-body:hover,
+[data-bs-theme="light"] .accordion-item:hover,
+[data-bs-theme="light"] .faq-item:hover,
+[data-bs-theme="light"] .card-hover-premium:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 22px 40px -15px rgba(73, 66, 228, 0.14), 
+                0 15px 30px -10px rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(73, 66, 228, 0.3) !important;
+}
+
+/* ==========================================================================
+   3. Ambient Glow Orbs (Soft glowing background spheres)
+   ========================================================================== */
+
+.bg-glow-orb {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(73, 66, 228, 0.18) 0%, rgba(112, 0, 255, 0.06) 50%, rgba(73, 66, 228, 0) 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bg-glow-orb.loaded {
+    opacity: 1;
+}
+
+/* Container safety logic to prevent horizontal document scrolling */
+section, 
+.section-space-y, 
+.banner-section, 
+.hero-section, 
+.pricing-section-2 {
+    position: relative !important;
+    overflow: hidden !important; /* Traps glow orbs inside the section borders */
+}
+
+/* ==========================================================================
+   4. Form Input & Button Glow Refinements
+   ========================================================================== */
+
+[data-bs-theme="dark"] .form-control {
+    background-color: rgba(20, 24, 33, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    transition: var(--hover-transition) !important;
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: rgba(20, 24, 33, 0.6) !important;
+    border-color: rgba(73, 66, 228, 0.5) !important;
+    box-shadow: 0 0 0 0.25rem rgba(73, 66, 228, 0.2) !important;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+    background-color: #4942e4 !important;
+    border-color: #4942e4 !important;
+    box-shadow: 0 4px 15px rgba(73, 66, 228, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .btn-primary:hover {
+    background-color: #5c55ff !important;
+    border-color: #5c55ff !important;
+    box-shadow: 0 6px 20px rgba(73, 66, 228, 0.55) !important;
+}
+
+/* Custom visual lift on scroller brand images */
+.scroller-x img, 
+.brand-img-premium {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.scroller-x img:hover,
+.brand-img-premium:hover {
+    transform: scale(1.08);
+    filter: brightness(1.15) contrast(1.05);
+}
+
+/* Buttons micro-arrow transitions */
+.btn {
+    transition: var(--hover-transition) !important;
+}
+.btn:hover iconify-icon {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+.btn iconify-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Preloader custom easing for dark mode */
+.preloader {
+    background-color: #0b0e1a !important;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+}
+
+/* ==========================================================================
+   5. Anime.js Layout Morph Toggle & List View
+   ========================================================================== */
+
+.btn-toggle-layout {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--hover-transition);
+    padding: 0;
+}
+[data-bs-theme="light"] .btn-toggle-layout {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+.btn-toggle-layout__slider {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #4942e4;
+    box-shadow: 0 2px 6px rgba(73, 66, 228, 0.4);
+    transition: var(--hover-transition);
+}
+.btn-toggle-layout.is-active .btn-toggle-layout__slider {
+    left: 26px;
+    background-color: #5c55ff;
+    box-shadow: 0 2px 8px rgba(92, 85, 255, 0.6);
+}
+
+/* Pricing grid list overrides */
+.pricing-grid-container.is-list > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+.pricing-grid-container.is-list .p-4.p-sm-8.p-md-6 {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    padding: 20px 32px !important;
+    text-align: left !important;
+    gap: 16px !important;
+}
+
+.pricing-grid-container.is-list .p-4.p-sm-8.p-md-6 > div {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+.pricing-grid-container.is-list .p-4.p-sm-8.p-md-6 .btn-outline-primary {
+    margin-top: 0 !important;
+    align-self: center !important;
+}
+
+/* Large screen table-like structure for morph */
+@media (min-width: 992px) {
+    .pricing-grid-container.is-list .p-4.p-sm-8.p-md-6 {
+        display: grid !important;
+        grid-template-columns: 80px 220px 180px 180px 180px !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+}
+
+/* ==========================================================================
+   6. Typography Mask Reveals & Navbar Entrances
+   ========================================================================== */
+
+.reveal-word-wrapper {
+    display: inline-block !important;
+    overflow: hidden !important;
+    vertical-align: top !important;
+    margin-right: 0.28em !important; /* Space between split words */
+}
+
+.reveal-word-inner {
+    display: inline-block !important;
+    transform: translateY(105%);
+    opacity: 0;
+    transition: transform 0s, opacity 0s;
+}
+
+/* Header transitions to prevent flashing on page start */
+.header-wrapper {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.header-wrapper.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   7. i18n Translation Switcher Banner
+   ========================================================================== */
+
+.i18n-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    max-width: 400px;
+    background: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    z-index: 99999 !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.i18n-banner.show {
+    transform: translateY(0) !important;
+}
+
+.i18n-banner p {
+    font-size: 13.5px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.5 !important;
+}
+
+.i18n-btn-accept {
+    background-color: #4942e4 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: var(--hover-transition) !important;
+}
+
+.i18n-btn-accept:hover {
+    background-color: #5c55ff !important;
+}
+
+.i18n-btn-decline {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: var(--hover-transition) !important;
+}
+
+.i18n-btn-decline:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+}

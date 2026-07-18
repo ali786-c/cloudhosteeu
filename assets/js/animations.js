@@ -212,20 +212,38 @@ function initHeroTypographyReveal() {
     heading.classList.remove("animate-on-scroll", "fade-up");
     heading.removeAttribute("data-aos");
 
-    // Split text into wrapped characters
-    const originalText = heading.textContent.trim();
+    // Split text into words to prevent breaking mid-word layout wrapping
+    const originalText = heading.textContent.trim().replace(/\s+/g, " ");
     heading.textContent = "";
     
-    // Create fragment for high rendering performance
+    const words = originalText.split(" ");
     const fragment = document.createDocumentFragment();
-    for (let char of originalText) {
-        const span = document.createElement("span");
-        span.className = "hero-letter";
-        span.style.display = "inline-block";
-        span.style.opacity = "0";
-        span.textContent = char === " " ? "\u00A0" : char;
-        fragment.appendChild(span);
-    }
+
+    words.forEach((word, wordIdx) => {
+        // Create an inline-block word wrapper that keeps its characters together on wrap
+        const wordSpan = document.createElement("span");
+        wordSpan.className = "hero-word";
+        wordSpan.style.display = "inline-block";
+        wordSpan.style.whiteSpace = "nowrap";
+
+        for (let char of word) {
+            const charSpan = document.createElement("span");
+            charSpan.className = "hero-letter";
+            charSpan.style.display = "inline-block";
+            charSpan.style.opacity = "0";
+            charSpan.textContent = char;
+            wordSpan.appendChild(charSpan);
+        }
+
+        fragment.appendChild(wordSpan);
+
+        // Add standard spacing node between words
+        if (wordIdx < words.length - 1) {
+            const space = document.createTextNode(" ");
+            fragment.appendChild(space);
+        }
+    });
+
     heading.appendChild(fragment);
 
     // Animate the letters using Anime.js spring physics

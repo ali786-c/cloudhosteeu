@@ -344,12 +344,12 @@
 					Sign In
 				</a>
 <div class="dropdown dropdown-modifier dropdown-xsm order-lg-1">
-<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle px-4 px-lg-0 fs-14 border-0 align-items-center gap-1" data-bs-toggle="dropdown" type="button">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Toggle theme selection menu" class="btn dropdown-toggle px-4 px-lg-0 fs-14 border-0 align-items-center gap-1" data-bs-toggle="dropdown" type="button">
 <iconify-icon icon="bi:sun" id="themeDropdownIcon"></iconify-icon>
 </button>
 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-light mw-unset">
 <li>
-<button class="dropdown-item d-flex align-items-center gap-2 fs-14" id="lightTheme" type="button">
+<button aria-label="Switch to light theme" class="dropdown-item d-flex align-items-center gap-2 fs-14" id="lightTheme" type="button">
 <span class="d-block flex-shrink-0">
 <iconify-icon icon="bi:sun"></iconify-icon>
 </span>
@@ -357,7 +357,7 @@
 </button>
 </li>
 <li>
-<button class="dropdown-item d-flex align-items-center gap-2 fs-14" id="darkTheme" type="button">
+<button aria-label="Switch to dark theme" class="dropdown-item d-flex align-items-center gap-2 fs-14" id="darkTheme" type="button">
 <span class="d-block flex-shrink-0">
 <iconify-icon icon="bi:moon-stars"></iconify-icon>
 </span>

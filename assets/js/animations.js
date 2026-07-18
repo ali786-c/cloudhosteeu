@@ -4,7 +4,13 @@
  * performs character splitting for hero reveals, and maps AOS attributes at runtime.
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initAllAnimations() {
+    // If anime.js is not loaded yet, wait and retry to prevent script conflicts
+    if (typeof anime === "undefined") {
+        setTimeout(initAllAnimations, 30);
+        return;
+    }
+
     // 1. Inject ambient glow orbs for visual depth (similar to Scaleway's UI system)
     injectGlowOrbs();
 
@@ -18,16 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mapAosAttributes();
 
     // 5. Initialize the AOS engine with premium configuration
-    if (typeof AOS !== "undefined") {
-        AOS.init({
-            duration: 1000,           // 1s animation duration for smooth flows
-            easing: "ease-out-back",  // Premium bouncy exit timing curve
-            once: true,               // Only run animations once when scrolling down
-            offset: 80,               // Trigger animations 80px before entering viewport
-            delay: 0,                 // Default delay
-            disableMutationObserver: false
-        });
-    }
+    initAosEngine();
 
     // 6. Init SVG Outline Drawing animations on viewport entry
     initSvgDrawing();
@@ -40,7 +37,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 9. Init dynamic navbar slide-in entrance
     setTimeout(initHeaderEntrance, 120);
-});
+}
+
+function initAosEngine() {
+    if (typeof AOS !== "undefined") {
+        AOS.init({
+            duration: 1000,           // 1s animation duration for smooth flows
+            easing: "ease-out-back",  // Premium bouncy exit timing curve
+            once: true,               // Only run animations once when scrolling down
+            offset: 80,               // Trigger animations 80px before entering viewport
+            delay: 0,                 // Default delay
+            disableMutationObserver: false
+        });
+    } else {
+        // Retry in 30ms if AOS script is still loading
+        setTimeout(initAosEngine, 30);
+    }
+}
+
+// Handle dynamic script injection safely by checking document.readyState
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAllAnimations);
+} else {
+    // DOM is already parsed, run immediately
+    initAllAnimations();
+}
 
 /**
  * Dynamically injects large, soft radial glow spheres behind primary page sections

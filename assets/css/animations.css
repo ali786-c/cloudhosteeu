@@ -591,3 +591,15 @@ h2.banner-title {
         padding: 16px !important;
     }
 }
+
+/* Prevent CLS (Cumulative Layout Shift) by reserving space for the dynamic header */
+.header-wrapper {
+    min-height: 110px !important;
+    background-color: #0b0e1a !important; /* Premium matching base background to prevent flashing */
+}
+
+@media (max-width: 991px) {
+    .header-wrapper {
+        min-height: 104px !important;
+    }
+}

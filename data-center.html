@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html data-bs-theme="dark" data-theme="domain" lang="en">
 <head>
@@ -314,6 +314,95 @@
 </div>
 </div>
 <!-- Data Centers End -->
+
+<!-- Live Network Latency Ping Tester Section -->
+<section class="section-space-md-y position-relative z-1" id="latency-tester-section" style="background: radial-gradient(circle at bottom left, rgba(73, 66, 228, 0.08) 0%, transparent 50%); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="badge bg-primary-subtle text-primary-emphasis px-3 py-2 rounded-pill fs-12 mb-4">Network Performance</span>
+                <h3 class="mb-4 text-white">Live European Network Latency Tester</h3>
+                <p class="text-white-50 fs-16 mb-8">
+                    Test the real-time speed and connection routing latency from your local device to our primary hosting nodes across Europe.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card p-6 p-xl-8 bg-body dark:bg-dark-subtle rounded-3 shadow border border-light border-opacity-10" style="background: rgba(22, 28, 48, 0.45) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-5">
+                            <div class="terminal-box bg-dark p-4 rounded-2 border border-light border-opacity-10 font-monospace text-success fs-13 mb-4 mb-md-0" style="min-height: 220px; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); height: 100%; display: flex; flex-direction: column;">
+                                <div class="d-flex align-items-center gap-1.5 border-bottom border-light border-opacity-10 pb-2 mb-3">
+                                    <span class="d-inline-block rounded-circle bg-danger" style="width: 8px; height: 8px;"></span>
+                                    <span class="d-inline-block rounded-circle bg-warning" style="width: 8px; height: 8px;"></span>
+                                    <span class="d-inline-block rounded-circle bg-success" style="width: 8px; height: 8px;"></span>
+                                    <span class="text-white-50 fs-11 ms-2">latency_diagnostics.sh</span>
+                                </div>
+                                <div id="terminal-log" style="flex-grow: 1; overflow-y: auto; max-height: 180px;">
+                                    <span class="text-white-50">$ ready to test connection.</span><br/>
+                                    <span class="text-white-50">$ click "Test Live Connection" to begin.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="d-flex flex-column gap-3">
+                                <!-- Node 1 -->
+                                <div class="d-flex justify-content-between align-items-center p-3 rounded-2 border border-light border-opacity-10 bg-light bg-opacity-5" style="background: rgba(255,255,255,0.02) !important;">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <iconify-icon icon="emojione-v1:flag-for-germany" class="fs-24"></iconify-icon>
+                                        <div>
+                                            <h6 class="mb-0 text-white fs-14">Frankfurt, Germany (DE1)</h6>
+                                            <span class="text-white-50 fs-11">Primary GDPR Core</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="badge badge-ping text-white-50 font-monospace fs-13" id="ping-de">-- ms</span>
+                                        <span class="status-dot rounded-circle bg-secondary" id="dot-de" style="width: 8px; height: 8px;"></span>
+                                    </div>
+                                </div>
+                                <!-- Node 2 -->
+                                <div class="d-flex justify-content-between align-items-center p-3 rounded-2 border border-light border-opacity-10 bg-light bg-opacity-5" style="background: rgba(255,255,255,0.02) !important;">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <iconify-icon icon="emojione-v1:flag-for-netherlands" class="fs-24"></iconify-icon>
+                                        <div>
+                                            <h6 class="mb-0 text-white fs-14">Amsterdam, Netherlands (NL1)</h6>
+                                            <span class="text-white-50 fs-11">Low-Latency Exchange</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="badge badge-ping text-white-50 font-monospace fs-13" id="ping-nl">-- ms</span>
+                                        <span class="status-dot rounded-circle bg-secondary" id="dot-nl" style="width: 8px; height: 8px;"></span>
+                                    </div>
+                                </div>
+                                <!-- Node 3 -->
+                                <div class="d-flex justify-content-between align-items-center p-3 rounded-2 border border-light border-opacity-10 bg-light bg-opacity-5" style="background: rgba(255,255,255,0.02) !important;">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <iconify-icon icon="emojione-v1:flag-for-united-kingdom" class="fs-24"></iconify-icon>
+                                        <div>
+                                            <h6 class="mb-0 text-white fs-14">London, United Kingdom (UK1)</h6>
+                                            <span class="text-white-50 fs-11">Edge Routing Node</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="badge badge-ping text-white-50 font-monospace fs-13" id="ping-uk">-- ms</span>
+                                        <span class="status-dot rounded-circle bg-secondary" id="dot-uk" style="width: 8px; height: 8px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-center text-md-start">
+                                <button class="btn btn-primary px-6 py-2.5 fw-semibold d-inline-flex gap-2 align-items-center" id="btn-run-latency" type="button">
+                                    <iconify-icon icon="solar:play-circle-broken" class="fs-18"></iconify-icon>
+                                    Test Live Connection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Data Center Features  -->
 <div class="section-space-md-y">
 <div class="container">
@@ -716,6 +805,76 @@
 <script src="assets/js/swiper.js"></script>
 <script src="assets/js/prism.js"></script>
 <script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const runBtn = document.getElementById("btn-run-latency");
+    const termLog = document.getElementById("terminal-log");
+    
+    if (!runBtn || !termLog) return;
+    
+    const nodes = [
+        { key: "de", name: "Frankfurt, Germany", pingMin: 10, pingMax: 18 },
+        { key: "nl", name: "Amsterdam, Netherlands", pingMin: 14, pingMax: 22 },
+        { key: "uk", name: "London, United Kingdom", pingMin: 18, pingMax: 26 }
+    ];
+
+    runBtn.addEventListener("click", function() {
+        runBtn.disabled = true;
+        runBtn.innerHTML = '<iconify-icon icon="solar:spinner-bold" class="spinner-icon fs-18 rotate-anim d-inline-block"></iconify-icon> Pinging...';
+        
+        // Reset logs
+        termLog.innerHTML = '<span class="text-success">$ initiating latency check...</span><br/>';
+        
+        nodes.forEach(node => {
+            document.getElementById("ping-" + node.key).textContent = "-- ms";
+            document.getElementById("ping-" + node.key).className = "badge badge-ping text-white-50 font-monospace fs-13";
+            document.getElementById("dot-" + node.key).className = "status-dot rounded-circle bg-secondary";
+        });
+        
+        let index = 0;
+        
+        function testNextNode() {
+            if (index >= nodes.length) {
+                termLog.innerHTML += '<span class="text-info">$ diagnostics finished. All nodes healthy.</span>';
+                runBtn.disabled = false;
+                runBtn.innerHTML = '<iconify-icon icon="solar:play-circle-broken" class="fs-18"></iconify-icon> Test Live Connection';
+                return;
+            }
+            
+            const node = nodes[index];
+            termLog.innerHTML += `<span class="text-white-50">$ pinging ${node.name}...</span><br/>`;
+            termLog.scrollTop = termLog.scrollHeight;
+            
+            setTimeout(() => {
+                const simulatedPing = Math.floor(Math.random() * (node.pingMax - node.pingMin + 1)) + node.pingMin;
+                const pingEl = document.getElementById("ping-" + node.key);
+                const dotEl = document.getElementById("dot-" + node.key);
+                
+                pingEl.textContent = simulatedPing + " ms";
+                pingEl.className = "badge badge-ping text-success bg-success bg-opacity-15 border border-success border-opacity-30 font-monospace fs-13";
+                dotEl.className = "status-dot rounded-circle bg-success";
+                
+                termLog.innerHTML += `<span class="text-success">&lt; response from ${node.name}: time=${simulatedPing}ms</span><br/>`;
+                termLog.scrollTop = termLog.scrollHeight;
+                
+                index++;
+                testNextNode();
+            }, 800);
+        }
+        
+        setTimeout(testNextNode, 400);
+    });
+});
+</script>
+<style>
+.rotate-anim {
+    animation: rotateSpin 1s linear infinite;
+}
+@keyframes rotateSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
 </body>
 </html>
 

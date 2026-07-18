@@ -2,9 +2,14 @@
 
 // Dynamically load mobile responsiveness fixes stylesheet
 (function() {
+	const currentPath = window.location.pathname;
+	const isIt = currentPath.includes('/it/');
+	const isDe = currentPath.includes('/de/');
+	const pathPrefix = (isIt || isDe) ? '../' : '';
+
 	const link = document.createElement("link");
 	link.rel = "stylesheet";
-	link.href = "assets/css/responsive-fixes.css";
+	link.href = pathPrefix + "assets/css/responsive-fixes.css";
 	document.head.appendChild(link);
 })();
 
@@ -633,6 +638,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			}, 300);
 		}
 	});
+
+	// Standardize and inject global footer on DOM ready
+	initGlobalFooter();
 	/**
 	 * Expiry Date Input
 	 */
@@ -652,3 +660,91 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 });
+
+function initGlobalFooter() {
+    const footerEl = document.querySelector("footer");
+    if (!footerEl) return;
+
+    // Detect path prefix for subdirectories
+    const currentPath = window.location.pathname;
+    const isIt = currentPath.includes('/it/');
+    const isDe = currentPath.includes('/de/');
+    const pathPrefix = (isIt || isDe) ? '../' : '';
+
+    const footerHTML = `
+<div class="container pb-16 pb-lg-24">
+<div class="row g-4">
+<div class="col-lg-5 col-xl-4">
+<a class="logo d-inline-block mb-6" href="${pathPrefix}index.html">
+<img alt="CloudHoste official brand logo - light theme" class="img-fluid" src="${pathPrefix}assets/img/logo-light.svg" style="width: 140px;"/>
+</a>
+<p class="text-light text-opacity-70 mb-8 max-text-12 fs-14">
+	Deploy fast, GDPR-compliant SSD cloud servers and web hosting in Europe. Low-latency, scalable infrastructure with 24/7 expert support.
+</p>
+</div>
+<div class="col-lg-7 col-xl-8">
+<div class="row row-cols-2 row-cols-sm-3 g-4">
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Services</h6>
+<ul class="list gap-2">
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}wp-hosting.html">WordPress Hosting</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}web-hosting.html">Web Hosting</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}vps-hosting.html">VPS Hosting</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}n8n-hosting.html">n8n Hosting</a></li>
+</ul>
+</div>
+
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Company</h6>
+<ul class="list gap-2">
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}about.html">About</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}blog-1.html">Blog</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}career.html">Career</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}changelog.html">Changelog</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}case-study.html">Case Studies</a></li>
+<li><a aria-label="Contact the CloudHoste customer service and developer support team" class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="http://my.cloudhoste.eu/contact.php">Contact Us</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}privacy-policy.html">Privacy Policy</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}ddos-protection.html">Security</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}domain.html">Domain</a></li>
+</ul>
+</div>
+
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Resources</h6>
+<ul class="list gap-2">
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}faq.html">FAQ</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}domain-transfer.html">Domain Transfer</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}knowledge-base-category.html">Knowledge Base</a></li>
+</ul>
+<h6 class="mb-6 text-light fs-18 mt-12">Why Choose Us</h6>
+<ul class="list gap-2">
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}features.html">Features</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}review.html">Service Reviews</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-space-sm-top border-top border-light border-opacity-10">
+<div class="container">
+<div class="row g-4 align-items-center justify-content-between">
+<div class="col-md-5 col-lg-6">
+<h6 class="text-light fs-18 fw-medium">Get Our Newsletter</h6>
+<div class="search-filter search-filter--light bg-light bg-opacity-20 rounded-1 max-text-10">
+<input class="form-control search-filter__input text-light placeholder::text-light placeholder::text-opacity-50" placeholder="Your Email Address..." type="email"/>
+<button class="btn btn-primary align-items-center flex-shrink-0" type="submit">Subscribe</button>
+</div>
+</div>
+<div class="col-md-7 col-lg-5 col-xl-4">
+<h6 class="text-light fs-18 fw-medium">Payment Getaway</h6>
+<ul class="list list-row flex-wrap gap-4 align-items-center">
+<li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-1.png"/></a></li>
+<li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-2.png"/></a></li>
+<li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-3.png"/></a></li>
+<li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-4.png"/></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>

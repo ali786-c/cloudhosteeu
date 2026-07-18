@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" data-theme="home-2" lang="en">
+<head>
+<title>Product Changelog &amp; Roadmap - CloudHoste</title>
+<meta content="Keep track of the latest updates, features, bug fixes, and upcoming plans for CloudHoste server infrastructure and hosting platform." name="description"/>
+<meta content="web hosting, cloud server, SSD VPS, dedicated hosting, n8n automation, EU hosting, secure cloud, GDPR hosting" name="keywords"/>
+<meta content="CloudHoste" name="author"/>
+<link href="https://cloudhoste.eu/changelog.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="Product Changelog &amp; Roadmap - CloudHoste" property="og:title"/>
+<meta content="Keep track of the latest updates, features, bug fixes, and upcoming plans for CloudHoste server infrastructure and hosting platform." property="og:description"/>
+<meta content="https://cloudhoste.eu/changelog.html" property="og:url"/>
+<meta content="CloudHoste" property="og:site_name"/>
+<meta content="en_EU" property="og:locale"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Product Changelog &amp; Roadmap - CloudHoste" name="twitter:title"/>
+<meta content="Keep track of the latest updates, features, bug fixes, and upcoming plans for CloudHoste server infrastructure and hosting platform." name="twitter:description"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" name="twitter:image"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="assets/css/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/css/simplebar.css" rel="stylesheet"/>
+<link href="assets/css/swiper-bundle.css" rel="stylesheet"/>
+<link href="assets/css/prism.css" rel="stylesheet"/>
+<link href="assets/css/ff-1.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-light dark:bg-dark-subtle">
+<div class="preloader">
+<div class="preloader__content">
+<img alt="CloudHoste official brand logo - light theme" class="img-fluid preloader__img" src="assets/img/logo-light.svg"/>
+</div>
+</div>
+<style>
+    .mini-header {
+        font-size: 13px;
+        background-color: #0f172a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mini-header a {
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+    .mini-header a:hover {
+        color: #fff !important;
+    }
+</style>
+<div class="header-wrapper fixed-top shadow-sm">
+<div class="mini-header py-2 text-white-50">
+<div class="container-fluid px-4 px-md-8 px-lg-12 d-flex justify-content-between align-items-center">
+<div class="d-flex align-items-center gap-3">
+<a class="d-flex align-items-center gap-1.5" href="mailto:support@cloudhoste.eu">
+<iconify-icon class="fs-16 align-middle" icon="solar:letter-broken"></iconify-icon>
+                    support@cloudhoste.eu
+                </a>
+</div>
+<div class="d-flex align-items-center gap-4">
+<a href="knowledge-base.html">Support</a>
+<a href="faq.html">FAQ</a>
+<a href="http://my.cloudhoste.eu/contact.php">Contact</a>
+</div>
+</div>
+</div>
+<div id="global-header"></div>
+<script src="assets/js/header.js"></script>
+</div>
+
+<!-- Hero Banner -->
+<section class="hero-section section-space-lg-y position-relative z-1 overflow-hidden" style="background: radial-gradient(circle at top right, rgba(73, 66, 228, 0.12) 0%, transparent 60%); padding-top: 160px; padding-bottom: 80px;">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary-subtle text-primary-emphasis px-3 py-2 rounded-pill fs-12 mb-4" data-aos="fade-up">CloudHoste Releases</span>
+                <h1 class="font-title-large text-white mb-6" data-aos="fade-up" data-aos-delay="100">Product Changelog</h1>
+                <p class="max-text-13 mx-auto fs-16 text-white-50 mb-0" data-aos="fade-up" data-aos-delay="200">
+                    Follow the latest updates, features, improvements, and roadmap timelines on our secure cloud platform.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="section-space-sm-bottom position-relative z-1">
+    <div class="container">
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <!-- --- JULY 2026 --- -->
+            <div class="timeline-month-title" data-aos="fade-up">
+                <span class="timeline-month-text">July 2026</span>
+            </div>
+
+            <!-- Item 1: File Storage GA -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">File Storage</span>
+                        </div>
+                        <h5 class="text-white mb-3">File Storage is now in General Availability</h5>
+                        <p class="fs-14 text-white-50 mb-3">
+                            File Storage is now fully available across our secure PAR region nodes.
+                        </p>
+                        <ul class="list list-bullet fs-14 text-white-50 ps-4">
+                            <li class="mb-2"><strong>Kubernetes users:</strong> Dynamically provision Persistent Volumes with ReadWriteMany access using standard drivers.</li>
+                            <li><strong>Non-Kubernetes users:</strong> Attach multiple CPU or GPU cloud instances to shared managed systems via Console, CLI, or Terraform.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: IAM Secrets -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">IAM Security</span>
+                        </div>
+                        <h5 class="text-white mb-3">Resource-level IAM policies for Secret &amp; Key Managers</h5>
+                        <p class="fs-14 text-white-50 mb-3">
+                            Fine-grained security conditions have been implemented at the individual resource level:
+                        </p>
+                        <ul class="list list-bullet fs-14 text-white-50 ps-4">
+                            <li class="mb-2">Restricted access control rules for Secret Manager folders.</li>
+                            <li class="mb-2">Asymmetric keys level permissions mapping inside Key Manager.</li>
+                            <li>Specific policies for groups, applications, and custom SSH keys in IAM.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: IAM Interface -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-changed">Changed</span>
+                            <span class="fs-13 fw-semibold text-primary">IAM Console</span>
+                        </div>
+                        <h5 class="text-white mb-3">IAM Policy Creation Interface Redesign</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Our console interface for generating custom IAM rules has been modernized. Users can select scopes, permission categories, and groups in an intuitive workspace layout, reducing configuration steps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Instance Templates -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">CPU Instances</span>
+                        </div>
+                        <h5 class="text-white mb-3">Server Instance Templates GA</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Create predefined, immutable templates detailing server types, boot images, volume configs, cloud-init scripts, and network maps to deploy identical clusters repeatedly in seconds.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: Serverless Containers v1beta1 -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-deprecated">Deprecated</span>
+                            <span class="fs-13 fw-semibold text-primary">Containers</span>
+                        </div>
+                        <h5 class="text-white mb-3">Serverless Containers v1beta1 Deprecation</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            API v1beta1 is marked as deprecated, replaced fully by production v1. Transition timelines and API endpoints support guides are available in our official developer portal docs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Audit Trail -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Audit Trail</span>
+                        </div>
+                        <h5 class="text-white mb-3">Generative APIs Tracking in Audit Trail</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Log activities, prompt metrics, model triggers, and general access parameters for our Generative AI models, tracking security changes inside our centralized compliance logging dashboard.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 7: Proxmox -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Elastic Metal</span>
+                        </div>
+                        <h5 class="text-white mb-3">Proxmox Backup Server 4 Integration</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            We have integrated Proxmox Backup Server version 4, built on Debian 13 (Trixie), globally across our Beryllium, Iridium, and Lithium metal node configurations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 8: Kubernetes 1.36 -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Kubernetes</span>
+                        </div>
+                        <h5 class="text-white mb-3">Kubernetes Engine v1.36 Released</h5>
+                        <p class="fs-14 text-white-50 mb-3">
+                            Control plane and node images have been updated to v1.36. Core components upgrades include:
+                        </p>
+                        <ul class="list list-bullet fs-14 text-white-50 ps-4">
+                            <li class="mb-2">Calico network plugin upgraded to v3.32.0; Cilium to v1.19.5.</li>
+                            <li class="mb-2">Scaleway Block Storage CSI driver updated to v0.3.5.</li>
+                            <li>Feature gates enabled: HPAScaleToZero, CPUManagerPolicyAlphaOptions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- --- JUNE 2026 --- -->
+            <div class="timeline-month-title mt-12" data-aos="fade-up">
+                <span class="timeline-month-text">June 2026</span>
+            </div>
+
+            <!-- Item 9: Proxmox VE 9 -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Elastic Metal</span>
+                        </div>
+                        <h5 class="text-white mb-3">Proxmox VE 9.0 Availability</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Deploy Proxmox VE 9.0 (Debian 13 Trixie based) on bare-metal server packages with advanced virtualization controls and integrated hypervisor backups.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 10: GLM 5.2 -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Generative APIs</span>
+                        </div>
+                        <h5 class="text-white mb-3">GLM 5.2 Large Language Model Available</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Access GLM 5.2 on our AI APIs, ranking as the leading open-weight model for agentic execution, structured reasoning, and coding assistance inside development environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 11: VPC Peering GA -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">VPC Network</span>
+                        </div>
+                        <h5 class="text-white mb-3">VPC Peering in General Availability</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Scaleway VPC Peering is now in General Availability, supporting fine-grained VPC ingress routing configurations to link isolated secure subnets seamlessly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 12: Serverless Jobs Retries -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Serverless Jobs</span>
+                        </div>
+                        <h5 class="text-white mb-3">Automatic Retries for Serverless Jobs</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Configure automatic retry policies for serverless execution tasks. If a routine fails due to intermittent crashes or network timeouts, it will automatically rerun according to user thresholds.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 13: Serverless Jobs CRON -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Serverless Jobs</span>
+                        </div>
+                        <h5 class="text-white mb-3">Multiple Cron Triggers Support</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Attach multiple CRON triggers to a single serverless job. Supports dynamic command and argument overrides for executing different parameters from the same code container.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 14: Kafka AZs -->
+            <div class="timeline-item timeline-item--right" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">Apache Kafka</span>
+                        </div>
+                        <h5 class="text-white mb-3">Multi-AZ clusters for Apache Kafka®</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Deploy brokers across 2 separate Availability Zones (AZ) with automatic failover, data replication, and zero event loss guarantees during localized infrastructure outages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 15: FinOps API Beta -->
+            <div class="timeline-item timeline-item--left" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-card card bg-body dark:bg-dark-subtle p-6 rounded-3 shadow border border-light border-opacity-10">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+                            <span class="badge badge-added">Added</span>
+                            <span class="fs-13 fw-semibold text-primary">FinOps Control</span>
+                        </div>
+                        <h5 class="text-white mb-3">FinOps Cost Management API Beta</h5>
+                        <p class="fs-14 text-white-50 mb-0">
+                            Query, filter, and track granular cloud spending per-resource with custom time resolution using our new FinOps API. Built to support enterprise cloud budgeting optimization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-dark pt-16 pt-lg-24 border-top border-light border-opacity-10">
+<div class="container pb-16 pb-lg-24">
+<div class="row g-4">
+<div class="col-lg-5 col-xl-4">
+<a class="logo d-inline-block mb-6" href="index.html">
+<img alt="CloudHoste official brand logo - light theme" class="img-fluid" src="assets/img/logo-light.svg" style="width: 140px;"/>
+</a>
+<p class="text-light text-opacity-70 mb-8 max-text-12 fs-14">
+	Deploy fast, GDPR-compliant SSD cloud servers and web hosting in Europe. Low-latency, scalable infrastructure with 24/7 expert support.
+</p>
+</div>
+<div class="col-lg-7 col-xl-8">
+<div class="row row-cols-2 row-cols-sm-3 g-4">
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Services</h6>
+<ul class="list gap-2">
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="wp-hosting.html">
+	WordPress Hosting
+</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="web-hosting.html">
+	Web Hosting
+</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="vps-hosting.html">
+	VPS Hosting
+</a>
+</li>
+<li>
+<a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="n8n-hosting.html">
+	n8n Hosting
+</a>
+</li>
+</ul>
+</div>
+
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Company</h6>
+<ul class="list gap-2">
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="about.html">About</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="blog-1.html">Blog</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="career.html">Career</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="changelog.html">Changelog</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="privacy-policy.html">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="col">
+<h6 class="mb-6 text-light fs-18">Resources</h6>
+<ul class="list gap-2">
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="faq.html">FAQ</a></li>
+<li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="knowledge-base-category.html">Knowledge Base</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/iconify.js"></script>
+<script src="assets/js/simplebar.js"></script>
+<script src="assets/js/swiper.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

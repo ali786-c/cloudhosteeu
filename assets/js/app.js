@@ -630,14 +630,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	 */
 	const preloader = document.querySelector(".preloader");
 
-	// Sync with the page loading process
-	window.addEventListener("load", function () {
+	function hidePreloader() {
 		if (preloader) {
 			setTimeout(() => {
 				preloader.style.display = "none";
 			}, 300);
 		}
-	});
+	}
+
+	// Sync with the page loading process safely (handles cached/instant loads)
+	if (document.readyState === "complete") {
+		hidePreloader();
+	} else {
+		window.addEventListener("load", hidePreloader);
+	}
 
 	// Standardize and inject global footer on DOM ready
 	initGlobalFooter();
@@ -742,7 +748,6 @@ function initGlobalFooter() {
 <li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-1.png"/></a></li>
 <li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-2.png"/></a></li>
 <li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-3.png"/></a></li>
-<li><a class="d-inline-block" href="#"><img alt="Payment gateway icon - CloudHoste secure European hosting" class="img-fluid" src="${pathPrefix}assets/img/pm-img-4.png"/></a></li>
 </ul>
 </div>
 </div>

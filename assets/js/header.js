@@ -364,6 +364,7 @@
 <span class="d-block flex-grow-1"> Dark </span>
 </button>
 </li>
+</ul>
 </div>
 </div>
 </nav>

@@ -753,3 +753,6 @@ function initGlobalFooter() {
 </div>
 </div>
 </div>
+`;
+    footerEl.innerHTML = footerHTML;
+}

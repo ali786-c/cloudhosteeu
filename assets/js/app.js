@@ -678,6 +678,33 @@ function initGlobalFooter() {
     const pathPrefix = (isIt || isDe) ? '../' : '';
 
     const footerHTML = `
+<style>
+@keyframes status-pulse {
+  0% { transform: scale(1); opacity: 0.75; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.status-dot-blink {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.status-dot-blink::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #22c55e;
+  border-radius: 50%;
+  animation: status-pulse 1.8s infinite ease-in-out;
+  opacity: 0;
+}
+</style>
 <div class="container pb-16 pb-lg-24">
 <div class="row g-4">
 <div class="col-lg-5 col-xl-4">
@@ -721,6 +748,7 @@ function initGlobalFooter() {
 <li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}faq.html">FAQ</a></li>
 <li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}domain-transfer.html">Domain Transfer</a></li>
 <li><a class="link d-inline-block text-light text-opacity-80 hover:text-opacity-100 fs-14" href="${pathPrefix}knowledge-base-category.html">Knowledge Base</a></li>
+<li><a class="link d-inline-flex align-items-center gap-2 text-light text-opacity-80 hover:text-opacity-100 fs-14" href="https://stats.uptimerobot.com/giVW8ZwKhY" target="_blank" rel="noopener noreferrer"><span class="status-dot-blink"></span> System Status</a></li>
 </ul>
 <h6 class="mb-6 text-light fs-18 mt-12">Why Choose Us</h6>
 <ul class="list gap-2">

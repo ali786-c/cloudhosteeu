@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* ==========================================================================
+   CloudHoste Skill-Driven Design System Tokens
+   ========================================================================== */
+
+:root {
+  /* Fonts */
+  --ch-font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --ch-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Core Brand Colors */
+  --ch-primary: #4942e4;
+  --ch-primary-hover: #5c55ff;
+  --ch-secondary: #7000ff;
+  --ch-accent-cyan: #06b6d4;
+  --ch-accent-emerald: #10b981;
+  --ch-warning: #f59e0b;
+  --ch-danger: #ef4444;
+  
+  /* Dark Theme Canvas (Default) */
+  --ch-bg-canvas: #060812;
+  --ch-bg-surface: #0b0e1a;
+  --ch-bg-card: rgba(15, 23, 42, 0.65);
+  --ch-border-subtle: rgba(255, 255, 255, 0.08);
+  --ch-border-glow: rgba(73, 66, 228, 0.35);
+  --ch-text-heading: #ffffff;
+  --ch-text-body: #94a3b8;
+  --ch-text-muted: #64748b;
+  --ch-shadow-glow: 0 20px 50px -12px rgba(73, 66, 228, 0.25);
+}
+
+/* Light Theme Overrides */
+[data-bs-theme="light"] {
+  --ch-bg-canvas: #ffffff;
+  --ch-bg-surface: #f8fafc;
+  --ch-bg-card: rgba(255, 255, 255, 0.85);
+  --ch-border-subtle: rgba(73, 66, 228, 0.12);
+  --ch-border-glow: rgba(73, 66, 228, 0.25);
+  --ch-text-heading: #0f172a;
+  --ch-text-body: #334155;
+  --ch-text-muted: #64748b;
+  --ch-shadow-glow: 0 20px 40px -12px rgba(73, 66, 228, 0.12);
+}
+
+/* Base Reset & Smoothness */
+html {
+  font-family: var(--ch-font-body);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .hero-title, .banner-title {
+  font-family: var(--ch-font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ch-bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ch-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ch-secondary);
+}
+
+/* Glassmorphism Cards */
+.ch-glass-card {
+  background: var(--ch-bg-card) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--ch-border-subtle) !important;
+  border-radius: 20px;
+  box-shadow: var(--ch-shadow-glow);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ch-glass-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--ch-border-glow) !important;
+  box-shadow: 0 25px 60px -15px rgba(73, 66, 228, 0.35);
+}
+
+/* Gradient Typography */
+.ch-gradient-text {
+  background: linear-gradient(135deg, #4942e4 0%, #7000ff 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ch-gradient-text-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #4942e4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow Badges */
+.ch-glow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(73, 66, 228, 0.15), rgba(112, 0, 255, 0.15));
+  border: 1px solid rgba(73, 66, 228, 0.35);
+  color: #6366f1;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-bs-theme="light"] .ch-glow-badge {
+  color: var(--ch-primary);
+  background: rgba(73, 66, 228, 0.08);
+}
+
+/* Primary Magnetic Button */
+.ch-btn-primary {
+  background: linear-gradient(135deg, var(--ch-primary) 0%, var(--ch-secondary) 100%);
+  color: #ffffff !important;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 24px rgba(73, 66, 228, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.ch-btn-primary:hover {
+  box-shadow: 0 14px 32px rgba(73, 66, 228, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Accessibility Focus Ring (WCAG AA) */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--ch-accent-cyan) !important;
+  outline-offset: 3px !important;
+}

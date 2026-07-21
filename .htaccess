@@ -59,3 +59,10 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 # Upgrade Insecure Requests CSP
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+# Referrer Policy
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Permissions Policy
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+

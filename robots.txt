@@ -1,5 +1,23 @@
+# Default Web Crawlers
 User-agent: *
 Allow: /
 
-# Sitemap Link for Crawlers
+# Generative AI Search Crawlers (Explicit Allow)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemaps & AI Reference Standards
 Sitemap: https://cloudhoste.eu/sitemap.xml
+# llms.txt: https://cloudhoste.eu/llms.txt

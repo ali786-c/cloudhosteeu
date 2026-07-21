@@ -1,0 +1,26 @@
+# CloudHoste
+
+> Secure, GDPR-compliant SSD Cloud Hosting & High-Performance European Servers.
+
+CloudHoste provides fast, reliable, and scalable web hosting, SSD VPS servers, WordPress managed hosting, and self-hosted n8n automation infrastructure hosted in low-latency European data centers with 24/7 expert support and 99.9% uptime.
+
+## Core Products & Services
+
+- [Managed WordPress Hosting](https://cloudhoste.eu/wp-hosting.html): High-speed WordPress hosting with automated updates, staging environments, free SSL, and LiteSpeed caching.
+- [Web Hosting](https://cloudhoste.eu/web-hosting.html): Affordable shared web hosting starting from €2.95/mo with cPanel control panel, unmetered bandwidth, and daily backups.
+- [SSD VPS Hosting](https://cloudhoste.eu/vps-hosting.html): High-performance KVM SSD virtual private servers with full root access, low latency, and instant provisioning starting from €5.00/mo.
+- [n8n Workflow Hosting](https://cloudhoste.eu/n8n-hosting.html): Pre-configured, self-hosted n8n workflow automation servers with dedicated resources and infinite execution capabilities.
+- [Domain Registration & Transfer](https://cloudhoste.eu/domain.html): Register and transfer domain names with competitive pricing and DNS management.
+
+## Technical Specifications & Infrastructure
+
+- **Locations**: Tier-3 European Data Centers (Germany, Italy, Netherlands).
+- **Compliance**: 100% GDPR-compliant data storage and privacy controls.
+- **Hardware**: High-frequency CPUs, enterprise NVMe SSD storage arrays, and redundant 10Gbps uplinks.
+- **Security**: DDoS protection up to 3.2 Tbps included free on all server plans.
+
+## Customer Support & Resources
+
+- [Knowledge Base & Guides](https://cloudhoste.eu/knowledge-base-category.html): Comprehensive technical guides, cPanel tutorials, and DNS configuration documentation.
+- [Service Reviews](https://cloudhoste.eu/review.html): Customer feedback and ratings.
+- [Contact Support](https://my.cloudhoste.eu/contact.php): 24/7 technical help desk and live chat.

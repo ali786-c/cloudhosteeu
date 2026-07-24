@@ -271,8 +271,24 @@ html{scroll-behavior:smooth;}
 
   /* Remove ugly full-width underlines & background blocks */
   .primary-header .nav-link::after,
-  .primary-header .nav-link.active::after {
+  .primary-header .nav-link::before,
+  .primary-header .navbar-nav .nav-link::after,
+  .primary-header .navbar-nav .nav-link::before,
+  .primary-header .nav-link.active::after,
+  .primary-header .nav-link.active::before {
     display: none !important;
+    content: none !important;
+    border: none !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .primary-header .nav-link,
+  .primary-header .nav-link.active {
+    border-bottom: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
   }
 
   .primary-header .nav-link.active {
@@ -283,13 +299,7 @@ html{scroll-behavior:smooth;}
     color: #4942e4 !important;
   }
 
-  /* Dropdown Chevron Adjustments */
-  .primary-header .has-sub-level-1 > a::after {
-    font-size: 14px !important;
-    margin-left: 8px !important;
-  }
-
-  /* Submenus in Mobile Collapse */
+  /* Submenus in Mobile Collapse - HIDDEN BY DEFAULT */
   .navigation-3__menu {
     position: relative !important;
     top: 0 !important;
@@ -299,7 +309,21 @@ html{scroll-behavior:smooth;}
     background: transparent !important;
     padding: 0.25rem 0 0.75rem 1rem !important;
     width: 100% !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Show submenu ONLY when parent has .is-open class (clicked) */
+  .has-sub-level-1.is-open > .navigation-3__menu {
     display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
   .navigation-3__menu-list {

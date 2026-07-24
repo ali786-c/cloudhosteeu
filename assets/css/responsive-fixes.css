@@ -12,3 +12,204 @@ html{scroll-behavior:smooth;}
 .gradient-text{background:linear-gradient(135deg,#4942e4 0%,#7000ff 50%,#06b6d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .glow-badge{background:linear-gradient(135deg,rgba(73,66,228,0.15),rgba(112,0,255,0.15));border:1px solid rgba(73,66,228,0.35);color:#6366f1;font-weight:700;letter-spacing:0.5px;}
 [data-bs-theme="light"] .glow-badge{color:#4942e4;background:rgba(73,66,228,0.1);}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  outline: none;
+}
+[data-bs-theme="light"] .theme-toggle-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+.theme-toggle-btn:hover {
+  background: rgba(73, 66, 228, 0.2);
+  border-color: rgba(73, 66, 228, 0.4);
+  color: #6366f1;
+  transform: translateY(-1px);
+}
+[data-bs-theme="light"] .theme-toggle-btn:hover {
+  background: rgba(73, 66, 228, 0.12);
+  color: #4942e4;
+}
+.theme-toggle-btn iconify-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+.theme-toggle-btn:active iconify-icon {
+  transform: scale(0.85) rotate(30deg);
+}
+
+/* ==========================================================================
+   Light Mode Comprehensive Visibility & Contrast Overrides (WCAG AAA Compliance)
+   ========================================================================== */
+
+[data-bs-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #334155 !important;
+}
+
+/* Headings in Light Mode */
+[data-bs-theme="light"] h1,
+[data-bs-theme="light"] h2,
+[data-bs-theme="light"] h3,
+[data-bs-theme="light"] h4,
+[data-bs-theme="light"] h5,
+[data-bs-theme="light"] h6,
+[data-bs-theme="light"] .text-heading,
+[data-bs-theme="light"] .font-title-large {
+  color: #0f172a !important;
+}
+
+/* Paragraphs & Text Utilities in Light Mode */
+[data-bs-theme="light"] p,
+[data-bs-theme="light"] span:not(.badge):not(.btn *):not(.ch-badge-lime):not(.status-dot-blink),
+[data-bs-theme="light"] .text-light,
+[data-bs-theme="light"] .text-secondary {
+  color: #334155;
+}
+
+[data-bs-theme="light"] .text-white:not(footer *):not(.btn *):not(.badge *):not(.cookie-banner *):not(.promo-modal-card *):not(.i18n-banner *) {
+  color: #0f172a !important;
+}
+
+[data-bs-theme="light"] .text-opacity-80,
+[data-bs-theme="light"] .text-opacity-70,
+[data-bs-theme="light"] .text-opacity-60 {
+  opacity: 1 !important;
+  color: #475569 !important;
+}
+
+/* Cards & Surfaces in Light Mode */
+[data-bs-theme="light"] .bg-body,
+[data-bs-theme="light"] .bg-dark-subtle,
+[data-bs-theme="light"] .circular-card-list__item,
+[data-bs-theme="light"] .ch-service-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(73, 66, 228, 0.06), 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-bs-theme="light"] .circular-card-list__item:hover,
+[data-bs-theme="light"] .ch-service-card:hover {
+  border-color: rgba(73, 66, 228, 0.35) !important;
+  box-shadow: 0 20px 40px -15px rgba(73, 66, 228, 0.15) !important;
+}
+
+/* Section Backgrounds in Light Mode */
+[data-bs-theme="light"] .bg-dark:not(footer):not(.circular-card__icon) {
+  background-color: #f1f5f9 !important;
+}
+
+[data-bs-theme="light"] .bg-dark:not(footer) h1,
+[data-bs-theme="light"] .bg-dark:not(footer) h2,
+[data-bs-theme="light"] .bg-dark:not(footer) h3,
+[data-bs-theme="light"] .bg-dark:not(footer) h4,
+[data-bs-theme="light"] .bg-dark:not(footer) h5,
+[data-bs-theme="light"] .bg-dark:not(footer) h6,
+[data-bs-theme="light"] .bg-dark:not(footer) a:not(.btn) {
+  color: #0f172a !important;
+}
+
+[data-bs-theme="light"] .bg-dark:not(footer) p,
+[data-bs-theme="light"] .bg-dark:not(footer) .text-light {
+  color: #475569 !important;
+}
+
+[data-bs-theme="light"] .bg-light.bg-opacity-5 {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Buttons & Interactive Elements in Light Mode */
+[data-bs-theme="light"] .btn-outline-primary {
+  color: #4942e4 !important;
+  border-color: #4942e4 !important;
+}
+[data-bs-theme="light"] .btn-outline-primary:hover {
+  background-color: #4942e4 !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="light"] .btn-dark {
+  background-color: #0f172a !important;
+  border-color: #0f172a !important;
+  color: #ffffff !important;
+}
+[data-bs-theme="light"] .btn-dark:hover {
+  background-color: #1e293b !important;
+}
+
+/* Dark Footer Lock (Footer always remains dark navy with high legibility) */
+[data-bs-theme="light"] footer {
+  background-color: #0b0e1a !important;
+  color: #f8fafc !important;
+}
+[data-bs-theme="light"] footer h1,
+[data-bs-theme="light"] footer h2,
+[data-bs-theme="light"] footer h3,
+[data-bs-theme="light"] footer h4,
+[data-bs-theme="light"] footer h5,
+[data-bs-theme="light"] footer h6,
+[data-bs-theme="light"] footer .text-light {
+  color: #ffffff !important;
+}
+[data-bs-theme="light"] footer p,
+[data-bs-theme="light"] footer .text-light.text-opacity-70,
+[data-bs-theme="light"] footer a.text-light {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ==========================================================================
+   Data Center Globe Map Centering & Pin Positioning Fix
+   ========================================================================== */
+.data-center-map-wrapper {
+  position: relative !important;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto !important;
+  display: inline-block;
+  text-align: center;
+}
+
+.data-center-map-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.data-center-location {
+  position: absolute !important;
+  z-index: 5;
+  transform: translate(-50%, -100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.data-center-location:hover {
+  transform: translate(-50%, -108%) scale(1.05);
+}
+
+.data-center-location--1 {
+  top: 26% !important;
+  left: 44% !important;
+}
+
+.data-center-location--2 {
+  top: 36% !important;
+  left: 54% !important;
+}

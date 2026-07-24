@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "hosting": "Hosting",
+    "vps": "VPS-Hosting",
+    "n8n": "n8n-Hosting",
+    "domain": "Domain",
+    "contact": "Kontakt",
+    "signIn": "Anmelden"
+  },
+  "hero": {
+    "title": "Leistungsstarkes europäisches NVMe KVM VPS Hosting",
+    "subtitle": "Stellen Sie schnelle, DSGVO-konforme SSD-Cloud-Server und Webhosting in Europa bereit. Latenzarme, skalierbare Infrastruktur mit 24/7 Experten-Support."
+  },
+  "trust": {
+    "guarantee": "30-Tage-Geld-zurück-Garantie",
+    "setup": "30-Sek-Sofort-Setup",
+    "migration": "Kostenlose Premium-Migration"
+  },
+  "services": {
+    "wpTitle": "Wordpress Hosting",
+    "wpDesc": "LiteSpeed Cache • 1-Klick-Staging • Tägliche Backups",
+    "wpPrice": "Ab €2.49/Monat",
+    "vpsTitle": "VPS Web Hosting",
+    "vpsDesc": "Root-Zugriff • Dediziertes NVMe • KVM-Virtualisierung",
+    "vpsPrice": "Ab €5.00/Monat",
+    "n8nTitle": "n8n Hosting",
+    "n8nDesc": "Unbegrenzte Ausführungen • Vorinstallierter Node • Dedizierte CPU",
+    "n8nPrice": "Ab €5.99/Monat",
+    "webTitle": "Web Hosting",
+    "webDesc": "Kostenloses SSL • cPanel Inklusive • 99,9% Uptime",
+    "webPrice": "Ab €2.95/Monat"
+  },
+  "promo": {
+    "title": "20% Rabatt auf jährliches Hosting!",
+    "desc": "Erhalten Sie <strong>20% Rabatt</strong> beim Kauf eines Webhosting-Plans für ein Jahr. Verwenden Sie den Promo-Code <strong>CLOUDHOSTE</strong>.",
+    "claim": "20% Rabatt sichern",
+    "skip": "Nein danke",
+    "copied": "Kopiert! ✓",
+    "copyCode": "Code kopieren"
+  }
+}

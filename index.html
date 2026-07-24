@@ -86,7 +86,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light dark:bg-dark-subtle">
+<body class="bg-light dark:bg-dark-subtle d-flex flex-column min-vh-100">
 <div class="preloader">
 <div class="preloader__content">
 <img width="160" height="35" alt="CloudHoste official brand logo - light theme" class="img-fluid preloader__img" src="assets/img/logo-light.svg"/>
@@ -118,9 +118,9 @@
 
 </div>
 <div class="d-flex align-items-center gap-4">
-<a href="knowledge-base.html">Support</a>
-<a href="faq.html">FAQ</a>
-<a href="https://my.cloudhoste.eu/contact.php">Contact</a>
+<a href="knowledge-base.html" data-i18n="miniHeader.support">Support</a>
+<a href="faq.html" data-i18n="miniHeader.faq">FAQ</a>
+<a href="https://my.cloudhoste.eu/contact.php" data-i18n="miniHeader.contact">Contact</a>
 </div>
 </div>
 </div>
@@ -191,13 +191,13 @@
     }
 </style>
 <div class="cookie-banner" id="cookieConsent">
-<p>
+<p data-i18n="cookieBanner.text">
         We use cookies to optimize your hosting experience and analyze traffic in compliance with EU regulations. 
         Read our <a href="privacy-policy.html">Privacy Policy</a> for more details.
     </p>
 <div class="d-flex justify-content-end gap-2">
-<button class="cookie-btn-decline" id="declineCookies">Decline</button>
-<button class="cookie-btn-accept text-white" id="acceptCookies">Accept All</button>
+<button class="cookie-btn-decline" id="declineCookies" data-i18n="cookieBanner.decline">Decline</button>
+<button class="cookie-btn-accept text-white" id="acceptCookies" data-i18n="cookieBanner.accept">Accept All</button>
 </div>
 </div>
 <script>
@@ -232,17 +232,17 @@
 <div class="row justify-content-center g-4">
 <div class="col-md-10 col-lg-9 text-center">
 <div class="mb-5"><span class="ch-badge-lime">⚡ FAST EUROPEAN NVME VPS &amp; CLOUD HOSTING</span></div>
-<h1 class="mb-5 text-center text-white fw-bold">High-Performance European <span class="ch-lime-text">NVMe KVM VPS Hosting</span></h1>
-<p class="fs-18 text-light text-opacity-80 max-text-12 mx-auto mb-8">Deploy scalable, 100% GDPR-compliant cloud servers in Frankfurt &amp; Amsterdam. Dedicated CPU cores, ultra-low latency, 30-second instant provisioning, and 24/7 expert developer support.</p>
+<h1 class="mb-5 text-center text-white fw-bold" data-i18n="hero.title">High-Performance European <span class="ch-lime-text">NVMe KVM VPS Hosting</span></h1>
+<p class="fs-18 text-light text-opacity-80 max-text-12 mx-auto mb-8" data-i18n="hero.subtitle">Deploy scalable, 100% GDPR-compliant cloud servers in Frankfurt &amp; Amsterdam. Dedicated CPU cores, ultra-low latency, 30-second instant provisioning, and 24/7 expert developer support.</p>
 <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap mb-8">
 <a href="vps-hosting.html" class="ch-btn-lime">Deploy KVM VPS Now <iconify-icon icon="solar:arrow-right-broken" class="fs-20"></iconify-icon></a>
 <a href="wp-hosting.html" class="ch-btn-outline">Explore WordPress Hosting</a>
 </div>
 <!-- High-Converting Trust & Guarantee Bar -->
 <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap text-light fs-14 fw-medium opacity-90 py-3 px-4 rounded-3 bg-dark bg-opacity-40 border border-white border-opacity-10 max-text-14 mx-auto">
-<span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="solar:shield-check-bold" class="ch-lime-text fs-18"></iconify-icon> 30-Day Money-Back Guarantee</span>
-<span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="solar:bolt-bold" class="ch-lime-text fs-18"></iconify-icon> 30-Sec Instant Setup</span>
-<span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="solar:refresh-bold" class="ch-lime-text fs-18"></iconify-icon> Free White-Glove Migration</span>
+<span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="solar:shield-check-bold" class="ch-lime-text fs-18"></iconify-icon> <span data-i18n="trust.guarantee">30-Day Money-Back Guarantee</span></span>
+<span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="solar:bolt-bold" class="ch-lime-text fs-18"></iconify-icon> <span data-i18n="trust.setup">30-Sec Instant Setup</span></span>
+<span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="solar:refresh-bold" class="ch-lime-text fs-18"></iconify-icon> <span data-i18n="trust.migration">Free White-Glove Migration</span></span>
 <span class="d-inline-flex align-items-center gap-1.5"><iconify-icon icon="circle-flags:eu" class="fs-16"></iconify-icon> 100% GDPR Compliant</span>
 </div>
 </div>
@@ -256,14 +256,17 @@
 <ul class="list list-row justify-content-center circular-card-list mx-auto">
 <li class="circular-card-list__item ch-service-card p-0">
 <a class="link circular-card d-flex flex-column justify-content-between p-6 h-100 position-relative" href="wp-hosting.html">
-<span class="circular-card__icon w-12 h-12 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
+<span class="circular-card__icon w-12 h-12 flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
 <iconify-icon class="fs-24 ch-lime-text" icon="bi:wordpress"></iconify-icon>
 </span>
-<div class="mt-4">
-<span class="d-block text-white fw-bold fs-18">
+<div class="mt-auto pt-3">
+<span class="d-block text-white fw-bold fs-18" data-i18n="services.wpTitle">
 									Wordpress Hosting
 								</span>
-<span class="d-block ch-lime-text fs-13 mt-1 fw-bold">
+<span class="d-block text-light text-opacity-70 fs-12 mt-1 fw-medium" data-i18n="services.wpDesc">
+									LiteSpeed Cache • 1-Click Staging • Daily Backups
+								</span>
+<span class="d-block ch-lime-text fs-13 mt-2 fw-bold" data-i18n="services.wpPrice">
 									Starting at €2.49/mo
 								</span>
 </div>
@@ -271,14 +274,17 @@
 </li>
 <li class="circular-card-list__item ch-service-card p-0">
 <a class="link circular-card d-flex flex-column justify-content-between p-6 h-100 position-relative" href="vps-hosting.html">
-<span class="circular-card__icon w-12 h-12 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
+<span class="circular-card__icon w-12 h-12 flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
 <iconify-icon class="fs-24 ch-lime-text" icon="solar:server-square-cloud-linear"></iconify-icon>
 </span>
-<div class="mt-4">
-<span class="d-block text-white fw-bold fs-18">
+<div class="mt-auto pt-3">
+<span class="d-block text-white fw-bold fs-18" data-i18n="services.vpsTitle">
 									VPS Web Hosting
 								</span>
-<span class="d-block ch-lime-text fs-13 mt-1 fw-bold">
+<span class="d-block text-light text-opacity-70 fs-12 mt-1 fw-medium" data-i18n="services.vpsDesc">
+									Root Access • Dedicated NVMe • KVM Virtualization
+								</span>
+<span class="d-block ch-lime-text fs-13 mt-2 fw-bold" data-i18n="services.vpsPrice">
 									Starting at €5.00/mo
 								</span>
 </div>
@@ -286,14 +292,17 @@
 </li>
 <li class="circular-card-list__item ch-service-card p-0">
 <a class="link circular-card d-flex flex-column justify-content-between p-6 h-100 position-relative" href="n8n-hosting.html">
-<span class="circular-card__icon w-12 h-12 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
+<span class="circular-card__icon w-12 h-12 flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
 <iconify-icon class="fs-24 ch-lime-text" icon="simple-icons:n8n"></iconify-icon>
 </span>
-<div class="mt-4">
-<span class="d-block text-white fw-bold fs-18">
+<div class="mt-auto pt-3">
+<span class="d-block text-white fw-bold fs-18" data-i18n="services.n8nTitle">
 									n8n Hosting
 								</span>
-<span class="d-block ch-lime-text fs-13 mt-1 fw-bold">
+<span class="d-block text-light text-opacity-70 fs-12 mt-1 fw-medium" data-i18n="services.n8nDesc">
+									Unlimited Executions • Pre-Installed Node • Dedicated CPU
+								</span>
+<span class="d-block ch-lime-text fs-13 mt-2 fw-bold" data-i18n="services.n8nPrice">
 									Starting at €5.99/mo
 								</span>
 </div>
@@ -331,16 +340,19 @@
 </a>
 </li>
 -->
-<li class="circular-card-list__item transition border border-secondary border-opacity-30 rounded-4 shadow bg-body">
+<li class="circular-card-list__item ch-service-card p-0">
 <a class="link circular-card d-flex flex-column justify-content-between p-6 h-100 position-relative" href="web-hosting.html">
-<span class="circular-card__icon w-12 h-12 rounded-circle d-flex align-items-center justify-content-center">
-<iconify-icon class="fs-24 text-heading" icon="heroicons:server-stack"></iconify-icon>
+<span class="circular-card__icon w-12 h-12 flex-shrink-0 rounded-circle d-flex align-items-center justify-content-center bg-dark border border-secondary border-opacity-25">
+<iconify-icon class="fs-24 ch-lime-text" icon="heroicons:server-stack"></iconify-icon>
 </span>
-<div class="mt-4">
-<span class="d-block text-heading fw-bold fs-18">
+<div class="mt-auto pt-3">
+<span class="d-block text-white fw-bold fs-18" data-i18n="services.webTitle">
 									Web Hosting
 								</span>
-<span class="d-block text-secondary fs-13 mt-1 fw-medium">
+<span class="d-block text-light text-opacity-70 fs-12 mt-1 fw-medium" data-i18n="services.webDesc">
+									Free SSL • cPanel Included • 99.9% Uptime
+								</span>
+<span class="d-block ch-lime-text fs-13 mt-2 fw-bold" data-i18n="services.webPrice">
 									Starting at €2.95/mo
 								</span>
 </div>
@@ -367,8 +379,8 @@
 <div class="row">
 <div class="col-12">
 <div class="d-block text-center">
-						Our Customer Say
-						<span class="d-inline fs-20 fw-bold text-heading">
+						<span data-i18n="reviews.say">Our Customer Say</span>
+						<span class="d-inline fs-20 fw-bold text-heading" data-i18n="reviews.excellent">
 							Excellent
 						</span>
 <ul class="list list-row gap-1 d-inline-flex mx-3">
@@ -398,7 +410,7 @@
 </div>
 </li>
 </ul>
-						4.4 out of 5 based on 9,840 reviews
+						<span data-i18n="reviews.basedOn">4.4 out of 5 based on 9,840 reviews</span>
 						<img width="99" height="24" alt="CloudHoste trusted technology and hosting partner logo - brand logo 1" class="img-fluid" src="assets/img/brand-logo-1.webp"/>
 </div>
 </div>
@@ -410,14 +422,14 @@
 <div class="row justify-content-center">
 <div class="col-lg-10 col-xl-8">
 <div class="section-space-md-y px-4 px-md-6 px-lg-12 bg-body rounded-3 text-center">
-<h6>Search for a domain or transfer your own</h6>
+<h6 data-i18n="domainSearch.title">Search for a domain or transfer your own</h6>
 <form action="https://my.cloudhoste.eu/cart.php" method="get" class="search-filter search-filter--light border border-secondary border-opacity-60 rounded-1">
 	<input type="hidden" name="a" value="add"/>
 	<input type="hidden" name="domain" value="register"/>
-	<input name="query" class="form-control search-filter__input placeholder::text-light-emphasis" placeholder="Search Now..." type="text" required/>
+	<input name="query" class="form-control search-filter__input placeholder::text-light-emphasis" placeholder="Search Now..." type="text" required data-i18n="domainSearch.placeholder" />
 	<button class="btn btn-primary align-items-center flex-shrink-0" type="submit">
 		<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
-		Search
+		<span data-i18n="domainSearch.btn">Search</span>
 	</button>
 </form>
 <ul class="list list-row justify-content-center flex-wrap gap-3 align-items-center mt-6">
@@ -543,22 +555,22 @@
 </div>
 </div>
 <div class="col-lg-6">
-<span class="d-block mb-2 fs-14 fw-medium text-primary">
+<span class="d-block mb-2 fs-14 fw-medium text-primary" data-i18n="aboutService.tag">
 						Available Hosting Services
 					</span>
-<h3 class="mb-6">All the resources and tools you need!</h3>
-<p>
+<h3 class="mb-6" data-i18n="aboutService.title">All the resources and tools you need!</h3>
+<p data-i18n="aboutService.desc1">
 						With a Windows VPS (Virtual Private Server), you get your own
 						operating system and server environment dedicated to you,
 						complete.
 					</p>
-<p class="mb-8">
+<p class="mb-8" data-i18n="aboutService.desc2">
 						With unrestricted access this makes VPS a great choice for when
 						you require more control and more resources or for when you no
 						longer want to be limited by the restrictions of a shared hosting
 						account.
 					</p>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark fs-14" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark fs-14" href="https://my.cloudhoste.eu/contact.php" data-i18n="aboutService.btn">
 						Talk to Specialist
 					</a>
 </div>
@@ -570,8 +582,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="p-6 p-sm-8 p-xxl-10 bg-body rounded-3 position-relative z-1 h-100">
 <img width="48" height="48" alt="Icon Money Back 48 - CloudHoste secure European hosting" class="img-fluid mb-6" src="assets/img/icon-money-back-48.webp"/>
-<h6>30-Day Money-Back Guarantee</h6>
-<p class="mb-0">
+<h6 data-i18n="highlight.moneyback.title">30-Day Money-Back Guarantee</h6>
+<p class="mb-0" data-i18n="highlight.moneyback.desc">
 						Not ready to take a decision? Don't worry, if you change your mind
 						you can cancel in the first 30 days without paying a penny.
 					</p>
@@ -580,8 +592,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="p-6 p-sm-8 p-xxl-10 bg-body rounded-3 position-relative z-1 h-100">
 <img width="48" height="48" alt="Icon Server Performance 48 - CloudHoste secure European hosting" class="img-fluid mb-6" src="assets/img/icon-server-performance-48.webp"/>
-<h6>High Server Performance</h6>
-<p class="mb-0">
+<h6 data-i18n="highlight.performance.title">High Server Performance</h6>
+<p class="mb-0" data-i18n="highlight.performance.desc">
 						The latest in speed tech: LiteSpeed, LSCache, MariaDB, HTTP/2,
 						PHP8 and free CDN to improve website speed.
 					</p>
@@ -590,8 +602,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="p-6 p-sm-8 p-xxl-10 bg-body rounded-3 position-relative z-1 h-100">
 <img width="48" height="48" alt="Icon Uptime 48 - CloudHoste secure European hosting" class="img-fluid mb-6" src="assets/img/icon-uptime-48.webp"/>
-<h6>99.9% Uptime Guarantee</h6>
-<p class="mb-0">
+<h6 data-i18n="highlight.uptime.title">99.9% Uptime Guarantee</h6>
+<p class="mb-0" data-i18n="highlight.uptime.desc">
 						Not ready to take a decision? Don't worry, if you change your mind
 						you can cancel in the first 30 days without paying a penny.
 					</p>
@@ -607,20 +619,20 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-<span class="d-block mb-2 fs-14 fw-medium text-primary">
+<span class="d-block mb-2 fs-14 fw-medium text-primary" data-i18n="pricing.tag">
 						Pricing List
 					</span>
-<h3>Our most popular hosting</h3>
-<p class="mb-0 max-text-12 mx-auto">
+<h3 data-i18n="pricing.title">Our most popular hosting</h3>
+<p class="mb-0 max-text-12 mx-auto" data-i18n="pricing.desc">
 						SSL is industry-standard encryption! Protect important data, win
 						visitors Pick a plan from the SSL certificates below.
 					</p>
 					<div class="mt-6 d-flex justify-content-center align-items-center gap-3">
-						<span class="fs-14 fw-semibold text-heading">Grid View</span>
+						<span class="fs-14 fw-semibold text-heading" data-i18n="pricing.gridView">Grid View</span>
 						<button class="btn-toggle-layout" id="pricing-layout-toggle" aria-label="Toggle pricing grid and list layouts">
 							<span class="btn-toggle-layout__slider"></span>
 						</button>
-						<span class="fs-14 fw-semibold text-heading">List View</span>
+						<span class="fs-14 fw-semibold text-heading" data-i18n="pricing.listView">List View</span>
 					</div>
 </div>
 </div>
@@ -634,29 +646,29 @@
 <div class="d-grid place-content-center w-12 h-12">
 <img alt="Icon Wp Hosting 72 - CloudHoste secure European hosting" class="w-100 h-100 object-fit-contain" src="assets/img/icon-wp-hosting-72.webp"/>
 </div>
-<span class="badge bg-primary-subtle text-primary-emphasis">
+<span class="badge bg-primary-subtle text-primary-emphasis" data-i18n="pricing.wp.badge">
 							One click install
 						</span>
 </div>
-<h6 class="mb-1 fs-20">WordPress Hosting</h6>
-<p class="mb-8 fs-14">Everything you need to create</p>
+<h6 class="mb-1 fs-20" data-i18n="pricing.wp.title">WordPress Hosting</h6>
+<p class="mb-8 fs-14" data-i18n="pricing.wp.desc">Everything you need to create</p>
 <div class="d-flex align-items-end gap-6">
 <span class="d-block fs-12">
-							Starting at
+<span data-i18n="pricing.startingAt">Starting at</span>
 							<span class="d-inline-block fw-bold text-decoration-line-through">
 								€ 14.99
 							</span>
 </span>
-<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1">
+<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1" data-i18n="pricing.wp.discount">
 							73% OFF
 						</div>
 </div>
 <div class="d-flex align-items-center gap-2 mt-8 mb-6">
 <span class="d-block fs-14 text-heading fw-medium"> EUR </span>
 <h3 class="mb-0">3.95</h3>
-<span class="d-block fs-14 text-heading fw-medium"> /mo </span>
+<span class="d-block fs-14 text-heading fw-medium" data-i18n="pricing.mo"> /mo </span>
 </div>
-<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="wp-hosting.html">
+<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="wp-hosting.html" data-i18n="pricing.wp.btn">
 						Explore WordPress
 					</a>
 </div>
@@ -667,29 +679,29 @@
 <div class="d-grid place-content-center w-12 h-12">
 <img alt="Icon Web Hosting 72 - CloudHoste secure European hosting" class="w-100 h-100 object-fit-contain" src="assets/img/icon-cloud-hosting-72.webp"/>
 </div>
-<span class="badge bg-primary-subtle text-primary-emphasis">
+<span class="badge bg-primary-subtle text-primary-emphasis" data-i18n="pricing.web.badge">
 							instant scaling
 						</span>
 </div>
-<h6 class="mb-1 fs-20">Web Hosting</h6>
-<p class="mb-8 fs-14">Everything you need to create</p>
+<h6 class="mb-1 fs-20" data-i18n="pricing.web.title">Web Hosting</h6>
+<p class="mb-8 fs-14" data-i18n="pricing.web.desc">Everything you need to create</p>
 <div class="d-flex align-items-end gap-6">
 <span class="d-block fs-12">
-							Starting at
+<span data-i18n="pricing.startingAt">Starting at</span>
 							<span class="d-inline-block fw-bold text-decoration-line-through">
 								€ 11.99
 							</span>
 </span>
-<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1">
+<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1" data-i18n="pricing.web.discount">
 							75% OFF
 						</div>
 </div>
 <div class="d-flex align-items-center gap-2 mt-8 mb-6">
 <span class="d-block fs-14 text-heading fw-medium"> EUR </span>
 <h3 class="mb-0">2.95</h3>
-<span class="d-block fs-14 text-heading fw-medium"> /mo </span>
+<span class="d-block fs-14 text-heading fw-medium" data-i18n="pricing.mo"> /mo </span>
 </div>
-<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="web-hosting.html">
+<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="web-hosting.html" data-i18n="pricing.web.btn">
 						Explore Web Hosting
 					</a>
 </div>
@@ -700,29 +712,29 @@
 <div class="d-grid place-content-center w-12 h-12">
 <img alt="Icon n8n Hosting 72 - CloudHoste secure European hosting" class="w-100 h-100 object-fit-contain" src="assets/img/icon-feature-72.webp"/>
 </div>
-<span class="badge bg-primary-subtle text-primary-emphasis">
+<span class="badge bg-primary-subtle text-primary-emphasis" data-i18n="pricing.n8n.badge">
 							instant scaling
 						</span>
 </div>
-<h6 class="mb-1 fs-20">n8n Hosting</h6>
-<p class="mb-8 fs-14">Everything you need to create</p>
+<h6 class="mb-1 fs-20" data-i18n="pricing.n8n.title">n8n Hosting</h6>
+<p class="mb-8 fs-14" data-i18n="pricing.n8n.desc">Everything you need to create</p>
 <div class="d-flex align-items-end gap-6">
 <span class="d-block fs-12">
-							Starting at
+<span data-i18n="pricing.startingAt">Starting at</span>
 							<span class="d-inline-block fw-bold text-decoration-line-through">
 								€ 11.99
 							</span>
 </span>
-<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1">
+<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1" data-i18n="pricing.n8n.discount">
 							50% OFF
 						</div>
 </div>
 <div class="d-flex align-items-center gap-2 mt-8 mb-6">
 <span class="d-block fs-14 text-heading fw-medium"> EUR </span>
 <h3 class="mb-0">5.99</h3>
-<span class="d-block fs-14 text-heading fw-medium"> /mo </span>
+<span class="d-block fs-14 text-heading fw-medium" data-i18n="pricing.mo"> /mo </span>
 </div>
-<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="n8n-hosting.html">
+<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="n8n-hosting.html" data-i18n="pricing.n8n.btn">
 						Explore n8n Hosting
 					</a>
 </div>
@@ -733,29 +745,29 @@
 <div class="d-grid place-content-center w-12 h-12">
 <img alt="Icon Vps Hosting 72 - CloudHoste secure European hosting" class="w-100 h-100 object-fit-contain" src="assets/img/icon-vps-hosting-72.webp"/>
 </div>
-<span class="badge bg-primary-subtle text-primary-emphasis">
+<span class="badge bg-primary-subtle text-primary-emphasis" data-i18n="pricing.vps.badge">
 							Lowest price
 						</span>
 </div>
-<h6 class="mb-1 fs-20">VPS Hosting</h6>
-<p class="mb-8 fs-14">Everything you need to create</p>
+<h6 class="mb-1 fs-20" data-i18n="pricing.vps.title">VPS Hosting</h6>
+<p class="mb-8 fs-14" data-i18n="pricing.vps.desc">Everything you need to create</p>
 <div class="d-flex align-items-end gap-6">
 <span class="d-block fs-12">
-							Starting at
+<span data-i18n="pricing.startingAt">Starting at</span>
 							<span class="d-inline-block fw-bold text-decoration-line-through">
 								€ 14.99
 							</span>
 </span>
-<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1">
+<div class="price-tag price-tag--danger fs-12 fw-semibold p-1 rounded-end-1" data-i18n="pricing.vps.discount">
 							76% OFF
 						</div>
 </div>
 <div class="d-flex align-items-center gap-2 mt-8 mb-6">
 <span class="d-block fs-14 text-heading fw-medium"> EUR </span>
 <h3 class="mb-0">3.54</h3>
-<span class="d-block fs-14 text-heading fw-medium"> /mo </span>
+<span class="d-block fs-14 text-heading fw-medium" data-i18n="pricing.mo"> /mo </span>
 </div>
-<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="vps-hosting.html">
+<a class="btn btn-outline-primary fs-14 fw-semibold mt-auto" href="vps-hosting.html" data-i18n="pricing.vps.btn">
 						Explore VPS Hosting
 					</a>
 </div>
@@ -773,11 +785,11 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
-<span class="d-block mb-2 fs-14 fw-medium text-primary">
+<span class="d-block mb-2 fs-14 fw-medium text-primary" data-i18n="features.tag">
 						Hosting Featured
 					</span>
-<h3 class="text-light">CloudHoste Features</h3>
-<p class="mb-0 max-text-15 mx-auto text-light">
+<h3 class="text-light" data-i18n="features.title">CloudHoste Features</h3>
+<p class="mb-0 max-text-15 mx-auto text-light" data-i18n="features.desc">
 						Superior performance and great features! Our OpenStack public
 						cloud is perfect for a wide range of applications. Let us meet
 						your project needs!
@@ -794,11 +806,11 @@
 <img width="70" height="70" alt="CloudHoste professional hosting features and utilities icon - icon feature 1" class="img-fluid" src="assets/img/icon-feature-1.webp"/>
 </div>
 <h6>
-<a class="link d-inline-block text-light hover:text-primary" href="features.html">
+<a class="link d-inline-block text-light hover:text-primary" href="features.html" data-i18n="features.f1">
 							Instant Delivery
 						</a>
 </h6>
-<p class="mb-0 text-light">
+<p class="mb-0 text-light" data-i18n="features.fdesc">
 						Web hosting made easy with our feature-rich control panel.
 						Startup scripts, snapshots, custom firewalls, and more!
 					</p>
@@ -810,11 +822,11 @@
 <img width="70" height="70" alt="CloudHoste professional hosting features and utilities icon - icon feature 2" class="img-fluid" src="assets/img/icon-feature-2.webp"/>
 </div>
 <h6>
-<a class="link d-inline-block text-light hover:text-primary" href="features.html">
+<a class="link d-inline-block text-light hover:text-primary" href="features.html" data-i18n="features.f2">
 							DDOS Protection
 						</a>
 </h6>
-<p class="mb-0 text-light">
+<p class="mb-0 text-light" data-i18n="features.fdesc">
 						Web hosting made easy with our feature-rich control panel.
 						Startup scripts, snapshots, custom firewalls, and more!
 					</p>
@@ -826,11 +838,11 @@
 <img width="70" height="70" alt="CloudHoste professional hosting features and utilities icon - icon feature 3" class="img-fluid" src="assets/img/icon-feature-3.webp"/>
 </div>
 <h6>
-<a class="link d-inline-block text-light hover:text-primary" href="features.html">
+<a class="link d-inline-block text-light hover:text-primary" href="features.html" data-i18n="features.f3">
 							High Performance
 						</a>
 </h6>
-<p class="mb-0 text-light">
+<p class="mb-0 text-light" data-i18n="features.fdesc">
 						Web hosting made easy with our feature-rich control panel.
 						Startup scripts, snapshots, custom firewalls, and more!
 					</p>
@@ -842,11 +854,11 @@
 <img width="70" height="70" alt="CloudHoste professional hosting features and utilities icon - icon feature 4" class="img-fluid" src="assets/img/icon-feature-4.webp"/>
 </div>
 <h6>
-<a class="link d-inline-block text-light hover:text-primary" href="features.html">
+<a class="link d-inline-block text-light hover:text-primary" href="features.html" data-i18n="features.f4">
 							Reliable Networks
 						</a>
 </h6>
-<p class="mb-0 text-light">
+<p class="mb-0 text-light" data-i18n="features.fdesc">
 						Web hosting made easy with our feature-rich control panel.
 						Startup scripts, snapshots, custom firewalls, and more!
 					</p>
@@ -858,11 +870,11 @@
 <img width="70" height="70" alt="CloudHoste professional hosting features and utilities icon - icon feature 5" class="img-fluid" src="assets/img/icon-feature-5.webp"/>
 </div>
 <h6>
-<a class="link d-inline-block text-light hover:text-primary" href="features.html">
+<a class="link d-inline-block text-light hover:text-primary" href="features.html" data-i18n="features.f5">
 							Quick Support
 						</a>
 </h6>
-<p class="mb-0 text-light">
+<p class="mb-0 text-light" data-i18n="features.fdesc">
 						Web hosting made easy with our feature-rich control panel.
 						Startup scripts, snapshots, custom firewalls, and more!
 					</p>
@@ -874,11 +886,11 @@
 <img width="70" height="70" alt="CloudHoste professional hosting features and utilities icon - icon feature 6" class="img-fluid" src="assets/img/icon-feature-6.webp"/>
 </div>
 <h6>
-<a class="link d-inline-block text-light hover:text-primary" href="features.html">
+<a class="link d-inline-block text-light hover:text-primary" href="features.html" data-i18n="features.f6">
 							99.90% SLA
 						</a>
 </h6>
-<p class="mb-0 text-light">
+<p class="mb-0 text-light" data-i18n="features.fdesc">
 						Web hosting made easy with our feature-rich control panel.
 						Startup scripts, snapshots, custom firewalls, and more!
 					</p>
@@ -894,11 +906,11 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
-<span class="d-block mb-2 fs-14 fw-medium text-primary">
+<span class="d-block mb-2 fs-14 fw-medium text-primary" data-i18n="datacenter.tag">
 						Data Center
 					</span>
-<h3>Our Data Centers Location</h3>
-<p class="mb-0 max-text-15 mx-auto">
+<h3 data-i18n="datacenter.title">Our Data Centers Location</h3>
+<p class="mb-0 max-text-15 mx-auto" data-i18n="datacenter.desc">
 						Our European data centers mean you can host precisely where you
 						need. Choose an eco-friendly web hosting provider and positively
 						impact your site performance.
@@ -921,7 +933,7 @@
 <div class="d-grid place-content-center w-6 h-6 rounded-circle">
 <iconify-icon class="fs-16" icon="circle-flags:gb"></iconify-icon>
 </div>
-<span class="d-block flex-shrink-0 fs-14 text-dark fw-semibold">
+<span class="d-block flex-shrink-0 fs-14 text-dark fw-semibold" data-i18n="datacenter.uk">
 												United Kingdom
 											</span>
 </div>
@@ -932,7 +944,7 @@
 <div class="d-grid place-content-center w-6 h-6 rounded-circle">
 <iconify-icon class="fs-16" icon="circle-flags:de"></iconify-icon>
 </div>
-<span class="d-block flex-shrink-0 fs-14 text-dark fw-semibold">
+<span class="d-block flex-shrink-0 fs-14 text-dark fw-semibold" data-i18n="datacenter.de">
 												Germany
 											</span>
 </div>
@@ -956,10 +968,10 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-6 col-xxl-5">
-<span class="d-block mb-2 fs-14 fw-medium text-primary">
+<span class="d-block mb-2 fs-14 fw-medium text-primary" data-i18n="testimonial.tag">
 						Testimonial
 					</span>
-<h3 class="mb-0">Why customers loves our services</h3>
+<h3 class="mb-0" data-i18n="testimonial.title">Why customers loves our services</h3>
 </div>
 </div>
 </div>
@@ -975,7 +987,7 @@
 <div class="swiper-wrapper">
 													<div class="swiper-slide">
 														<div class="px-4 px-md-6 px-xl-12 pt-10 pb-6">
-															<h6 class="mb-0 text-light fw-normal">
+															<h6 class="mb-0 text-light fw-normal" data-i18n="testimonial.t1.desc">
 																Migrated all my client sites to CloudHoste. The speed improvement was instant, and the custom panel makes setup incredibly simple. Highly recommended!
 															</h6>
 														</div>
@@ -986,10 +998,10 @@
 																	<img alt="Verified customer testimonial review profile - user 60 1" class="avatar__img" src="assets/img/user-60-1.webp"/>
 																</div>
 																<a class="link d-block group" href="#">
-																	<span class="d-block fs-14 fw-medium text-light group-hover:text-primary-subtle transition">
+																	<span class="d-block fs-14 fw-medium text-light group-hover:text-primary-subtle transition" data-i18n="testimonial.t1.name">
 																		Sarah Jenkins
 																	</span>
-																	<span class="d-block fs-12 text-light">
+																	<span class="d-block fs-12 text-light" data-i18n="testimonial.t1.role">
 																		Freelance Web Developer
 																	</span>
 																</a>
@@ -998,7 +1010,7 @@
 													</div>
 													<div class="swiper-slide">
 														<div class="px-4 px-md-6 px-xl-12 pt-10 pb-6">
-															<h6 class="mb-0 text-light fw-normal">
+															<h6 class="mb-0 text-light fw-normal" data-i18n="testimonial.t2.desc">
 																Awesome uptime and super fast NVMe SSD storage. My online store loads in under a second now, which has significantly improved my conversion rate!
 															</h6>
 														</div>
@@ -1009,10 +1021,10 @@
 																	<img alt="Verified customer testimonial review profile - user 60 2" class="avatar__img" src="assets/img/user-60-2.webp"/>
 																</div>
 																<a class="link d-block group" href="#">
-																	<span class="d-block fs-14 fw-medium text-light group-hover:text-primary-subtle transition">
+																	<span class="d-block fs-14 fw-medium text-light group-hover:text-primary-subtle transition" data-i18n="testimonial.t2.name">
 																		Marco Rossi
 																	</span>
-																	<span class="d-block fs-12 text-light">
+																	<span class="d-block fs-12 text-light" data-i18n="testimonial.t2.role">
 																		E-commerce Store Owner
 																	</span>
 																</a>
@@ -1021,7 +1033,7 @@
 													</div>
 													<div class="swiper-slide">
 														<div class="px-4 px-md-6 px-xl-12 pt-10 pb-6">
-															<h6 class="mb-0 text-light fw-normal">
+															<h6 class="mb-0 text-light fw-normal" data-i18n="testimonial.t3.desc">
 																Their support is outstanding. Every time I had a technical question, they answered within minutes with concrete solutions. Absolutely top-tier hosting.
 															</h6>
 														</div>
@@ -1032,11 +1044,11 @@
 																	<img alt="Verified customer testimonial review profile - user 60 3" class="avatar__img" src="assets/img/user-60-3.webp"/>
 																</div>
 																<a class="link d-block group" href="#">
-																	<span class="d-block fs-14 fw-medium text-light group-hover:text-primary-subtle transition">
+																	<span class="d-block fs-14 fw-medium text-light group-hover:text-primary-subtle transition" data-i18n="testimonial.t3.name">
 																		Lukas Weber
 																	</span>
-																	<span class="d-block fs-12 text-light">
-																		Founder, Tech Agency
+																	<span class="d-block fs-12 text-light" data-i18n="testimonial.t3.role">
+																		Agency Director
 																	</span>
 																</a>
 															</div>
@@ -1391,7 +1403,7 @@
 </div>
 <!-- CTA End -->
 <!-- Footer  -->
-<footer class="section-space-top section-space-sm-bottom bg-secondary-emphasis dark:bg-secondary-subtle">
+<footer class="section-space-top section-space-sm-bottom bg-secondary-emphasis dark:bg-secondary-subtle mt-auto">
 <div class="section-space-sm-bottom">
 <div class="container">
 <div class="row g-4">
@@ -1601,6 +1613,7 @@
 <script src="assets/js/swiper.js"></script>
 <script src="assets/js/prism.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>
 

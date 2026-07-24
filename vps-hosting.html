@@ -117,9 +117,9 @@
 
 </div>
 <div class="d-flex align-items-center gap-4">
-<a href="knowledge-base.html">Support</a>
-<a href="faq.html">FAQ</a>
-<a href="https://my.cloudhoste.eu/contact.php">Contact</a>
+<a href="knowledge-base.html" data-i18n="miniHeader.support">Support</a>
+<a href="faq.html" data-i18n="miniHeader.faq">FAQ</a>
+<a href="https://my.cloudhoste.eu/contact.php" data-i18n="miniHeader.contact">Contact</a>
 </div>
 </div>
 </div>
@@ -190,13 +190,13 @@
     }
 </style>
 <div class="cookie-banner" id="cookieConsent">
-<p>
+<p data-i18n="cookieBanner.text">
         We use cookies to optimize your hosting experience and analyze traffic in compliance with EU regulations. 
         Read our <a href="privacy-policy.html">Privacy Policy</a> for more details.
     </p>
 <div class="d-flex justify-content-end gap-2">
-<button class="cookie-btn-decline" id="declineCookies">Decline</button>
-<button class="cookie-btn-accept text-white" id="acceptCookies">Accept All</button>
+<button class="cookie-btn-decline" id="declineCookies" data-i18n="cookieBanner.decline">Decline</button>
+<button class="cookie-btn-accept text-white" id="acceptCookies" data-i18n="cookieBanner.accept">Accept All</button>
 </div>
 </div>
 <script>
@@ -229,27 +229,27 @@
 <div class="container">
 <div class="row g-4 align-items-center">
 <div class="col-md-7 col-xl-6 col-xxl-5">
-<div class="mb-4"><span class="ch-glow-badge">🚀 High-Performance KVM SSD VPS</span></div>
-<h1 class="mb-6 ch-gradient-text">
+<div class="mb-4"><span class="ch-glow-badge" data-i18n="vpsPage.hero.badge">🚀 High-Performance KVM SSD VPS</span></div>
+<h1 class="mb-6 ch-gradient-text" data-i18n="vpsPage.hero.title">
 					Powerful KVM SSD VPS Hosting in Europe
 				</h1>
 <ul class="list gap-3">
 <li class="d-flex gap-2">
 <iconify-icon class="fs-24 flex-shrink-0 text-primary" icon="tdesign:lighting-circle"></iconify-icon>
-<span class="d-block"> High-frequency CPUs &amp; NVMe SSD storage </span>
+<span class="d-block" data-i18n="vpsPage.hero.f1"> High-frequency CPUs &amp; NVMe SSD storage </span>
 </li>
 <li class="d-flex gap-2">
 <iconify-icon class="fs-24 flex-shrink-0 text-primary" icon="mingcute:user-4-line"></iconify-icon>
-<span class="d-block"> Full root access &amp; instant OS provisioning </span>
+<span class="d-block" data-i18n="vpsPage.hero.f2"> Full root access &amp; instant OS provisioning </span>
 </li>
 <li class="d-flex gap-2">
 <iconify-icon class="fs-24 flex-shrink-0 text-primary" icon="streamline-plump:customer-support-3"></iconify-icon>
-<span class="d-block"> 24/7 expert support &amp; free anti-DDoS </span>
+<span class="d-block" data-i18n="vpsPage.hero.f3"> 24/7 expert support &amp; free anti-DDoS </span>
 </li>
 </ul>
-<h4 class="mt-6 mb-10 text-primary fw-bold">Starting at €5.00/mo</h4>
-<a class="ch-btn-primary" href="#pricing">
-					Explore Cloud VPS Plans
+<h4 class="mt-6 mb-10 text-primary fw-bold" data-i18n="vpsPage.hero.price">Starting at €5.00/mo</h4>
+<a class="ch-btn-primary" href="#pricing" data-i18n="vpsPage.hero.btn">
+					Explore VPS Hosting Packages
 				</a>
 </div>
 <div class="col-md-5 col-xl-6 col-xxl-7 d-none d-md-block">
@@ -385,10 +385,10 @@
 <div class="container">
 <div class="row g-4 align-items-center">
 <div class="col-12 text-center">
-<h2 class="mb-2 h3 fw-bold text-center">
+<h2 class="mb-2 h3 fw-bold text-center" data-i18n="vpsPage.pricing.title">
 						Buy a KVM VPS hosting plan
 					</h2>
-<p class="mb-0 text-muted max-text-14 mx-auto">
+<p class="mb-0 text-muted max-text-14 mx-auto" data-i18n="vpsPage.pricing.subtitle">
 						High-performance KVM VPS nodes with dedicated cores, robust NVMe storage, and guaranteed 99% uptime.
 					</p>
 </div>
@@ -400,8 +400,8 @@
 <!-- VPS Piko G11s -->
 <div class="col-md-6 col-lg-4">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-8 text-center h-100 d-flex flex-column shadow-sm">
-<h6 class="mb-1 fs-20">VPS Piko G11s</h6>
-<p class="mb-6 fs-14">Ideal starter node for small applications and script deployments.</p>
+<h6 class="mb-1 fs-20" data-i18n="vpsPage.pricing.plan1Title">VPS Piko G11s</h6>
+<p class="mb-6 fs-14" data-i18n="vpsPage.pricing.plan1Desc">Ideal starter node for small applications and script deployments.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -410,7 +410,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/vps-hosting/vps-piko-g11s">
-    Buy Now
+    <span data-i18n="vpsPage.pricing.btn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -446,8 +446,8 @@
 <!-- VPS Nano G11s -->
 <div class="col-md-6 col-lg-4">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-8 text-center h-100 d-flex flex-column shadow-sm">
-<h6 class="mb-1 fs-20">VPS Nano G11s</h6>
-<p class="mb-6 fs-14">Enhanced RAM and CPU cores for basic hosting and web servers.</p>
+<h6 class="mb-1 fs-20" data-i18n="vpsPage.pricing.plan2Title">VPS Nano G11s</h6>
+<p class="mb-6 fs-14" data-i18n="vpsPage.pricing.plan2Desc">Enhanced RAM and CPU cores for basic hosting and web servers.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -456,7 +456,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/vps-hosting/vps-nano-g11s">
-    Buy Now
+    <span data-i18n="vpsPage.pricing.btn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -492,8 +492,8 @@
 <!-- VPS Lite G12-S1 -->
 <div class="col-md-6 col-lg-4">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-8 text-center h-100 d-flex flex-column shadow-sm">
-<h6 class="mb-1 fs-20">VPS Lite G12-S1</h6>
-<p class="mb-6 fs-14">Perfect KVM node featuring local block storage capabilities.</p>
+<h6 class="mb-1 fs-20" data-i18n="vpsPage.pricing.plan3Title">VPS Lite G12-S1</h6>
+<p class="mb-6 fs-14" data-i18n="vpsPage.pricing.plan3Desc">Perfect KVM node featuring local block storage capabilities.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -502,7 +502,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/vps-hosting/vps-lite-g12-s1">
-    Buy Now
+    <span data-i18n="vpsPage.pricing.btn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -539,8 +539,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="bg-body border border-primary border-2 rounded px-4 px-xxl-8 py-6 py-xl-8 text-center position-relative shadow-lg h-100 d-flex flex-column">
 <span class="badge bg-primary text-light px-3 py-1 position-absolute top-0 end-0 m-3 fs-12">Popular</span>
-<h6 class="mb-1 fs-20 text-primary">VPS Lite G12-S2</h6>
-<p class="mb-6 fs-14">Double the storage and RAM. Our most popular VPS plan.</p>
+<h6 class="mb-1 fs-20 text-primary" data-i18n="vpsPage.pricing.plan4Title">VPS Lite G12-S2</h6>
+<p class="mb-6 fs-14" data-i18n="vpsPage.pricing.plan4Desc">Double the storage and RAM. Our most popular VPS plan.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -549,7 +549,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-primary text-light border-0 align-items-center w-100 mb-6 py-2.5 fw-semibold" href="https://my.cloudhoste.eu/index.php?rp=/store/vps-hosting/vps-lite-g12-s2">
-    Buy Now
+    <span data-i18n="vpsPage.pricing.btn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -585,8 +585,8 @@
 <!-- VPS Lite G12-S3 -->
 <div class="col-md-6 col-lg-4">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-8 text-center h-100 d-flex flex-column shadow-sm">
-<h6 class="mb-1 fs-20">VPS Lite G12-S3</h6>
-<p class="mb-6 fs-14">High-performance virtual machine with 8 full vCPU cores.</p>
+<h6 class="mb-1 fs-20" data-i18n="vpsPage.pricing.plan5Title">VPS Lite G12-S3</h6>
+<p class="mb-6 fs-14" data-i18n="vpsPage.pricing.plan5Desc">High-performance virtual machine with 8 full vCPU cores.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -595,7 +595,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/vps-hosting/vps-lite-g12-s3">
-    Buy Now
+    <span data-i18n="vpsPage.pricing.btn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -631,8 +631,8 @@
 <!-- VPS Lite G12-S4 -->
 <div class="col-md-6 col-lg-4">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-8 text-center h-100 d-flex flex-column shadow-sm">
-<h6 class="mb-1 fs-20">VPS Lite G12-S4</h6>
-<p class="mb-6 fs-14">Enterprise VPS solution with massive storage and RAM limits.</p>
+<h6 class="mb-1 fs-20" data-i18n="vpsPage.pricing.plan6Title">VPS Lite G12-S4</h6>
+<p class="mb-6 fs-14" data-i18n="vpsPage.pricing.plan6Desc">Enterprise VPS solution with massive storage and RAM limits.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -641,7 +641,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/vps-hosting/vps-lite-g12-s4">
-    Buy Now
+    <span data-i18n="vpsPage.pricing.btn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -683,16 +683,16 @@
 <div class="container">
 <div class="row g-4 align-items-center">
 <div class="col-md-6">
-<h2 class="mb-6 h3 fw-bold">
+<h2 class="mb-6 h3 fw-bold" data-i18n="vpsPage.features.title">
 						Fancy VPS features you get for totally free.
 					</h2>
-<p class="mb-12">
+<p class="mb-12" data-i18n="vpsPage.features.desc">
 						With a Windows VPS (Virtual Private Server), you get your own
 						operating system and server environment dedicated to you, complete
 						With unrestricted access this makes VPS a great choice for when
 						you require more control and more resources.
 					</p>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="https://my.cloudhoste.eu/contact.php" data-i18n="vpsPage.features.btn">
 						Talk to Specialist
 					</a>
 </div>
@@ -708,8 +708,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 41" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-41.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Complete customization</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="vpsPage.features.f1Title">Complete customization</h6>
+<p class="mb-0" data-i18n="vpsPage.features.f1Desc">
 							Blazing fast premium cloud web hosting that's easily scalable
 							and affordable feature
 						</p>
@@ -720,8 +720,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 42" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-42.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Complete Control</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="vpsPage.features.f2Title">Complete Control</h6>
+<p class="mb-0" data-i18n="vpsPage.features.f2Desc">
 							Ensures high reliability and robust infrastructure for your
 							web hosting
 						</p>
@@ -732,8 +732,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 43" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-43.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Unmatched Security</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="vpsPage.features.f3Title">Unmatched Security</h6>
+<p class="mb-0" data-i18n="vpsPage.features.f3Desc">
 							Easily install popular applications with just one click,
 							simplifying setup
 						</p>
@@ -744,8 +744,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 44" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-44.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Optional Managed Backups</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="vpsPage.features.f4Title">Optional Managed Backups</h6>
+<p class="mb-0" data-i18n="vpsPage.features.f4Desc">
 							Take full control of your data protection with our managed
 							backup solution
 						</p>
@@ -756,8 +756,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 45" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-45.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Money Back Guarantee</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="vpsPage.features.f5Title">Money Back Guarantee</h6>
+<p class="mb-0" data-i18n="vpsPage.features.f5Desc">
 							Blazing fast premium cloud web hosting that's easily scalable
 							and affordable
 						</p>
@@ -768,8 +768,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 46" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-46.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Affordable Power</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="vpsPage.features.f6Title">Affordable Power</h6>
+<p class="mb-0" data-i18n="vpsPage.features.f6Desc">
 							Blazing fast premium cloud web hosting that's easily scalable
 							and affordable
 						</p>
@@ -1601,8 +1601,8 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10">
-<h3>Frequently asked questions</h3>
-<p class="mb-0 max-text-14 mx-auto">
+<h3 data-i18n="vpsPage.faq.title">Frequently asked questions</h3>
+<p class="mb-0 max-text-14 mx-auto" data-i18n="vpsPage.faq.desc">
 						Our VPS hosting has transformed the way our customers manage their
 						websites. Many have praised the impressive speed and reliability
 					</p>
@@ -1616,12 +1616,12 @@
 <div class="accordion accordion--primary accordion-separate-body" id="accordion-separate-rounded">
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="true" class="accordion-button fw-medium shadow" data-bs-target="#accordion-s1" data-bs-toggle="collapse" type="button">
+<button aria-expanded="true" class="accordion-button fw-medium shadow" data-bs-target="#accordion-s1" data-bs-toggle="collapse" type="button" data-i18n="vpsPage.faq.q1">
 								Do you charge for stopped instances?
 							</button>
 </h2>
 <div class="accordion-collapse shadow collapse show" data-bs-parent="#accordion-separate-rounded" id="accordion-s1">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="vpsPage.faq.a1">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1631,12 +1631,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s2" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s2" data-bs-toggle="collapse" type="button" data-i18n="vpsPage.faq.q2">
 								What is Vultr's role with respect to GDPR?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s2">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="vpsPage.faq.a2">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1646,12 +1646,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s3" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s3" data-bs-toggle="collapse" type="button" data-i18n="vpsPage.faq.q3">
 								How will I know if I was admitted into the program?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s3">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="vpsPage.faq.a3">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1661,12 +1661,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s4" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s4" data-bs-toggle="collapse" type="button" data-i18n="vpsPage.faq.q4">
 								What operating system templates do you offer?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s4">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="vpsPage.faq.a4">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1676,12 +1676,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s5" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s5" data-bs-toggle="collapse" type="button" data-i18n="vpsPage.faq.q5">
 								Is pricing the same in all data center locations?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s5">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="vpsPage.faq.a5">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1691,12 +1691,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s6" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s6" data-bs-toggle="collapse" type="button" data-i18n="vpsPage.faq.q6">
 								What payment methods do you accept?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s6">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="vpsPage.faq.a6">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1718,17 +1718,17 @@
 <div class="section-space-y px-4 px-sm-6 px-md-12 bg-body rounded-4 text-center position-relative z-1">
 <div class="row justify-content-center">
 <div class="col-md-11">
-<h3>Get a free web host migration</h3>
-<p class="mb-8 max-text-15 mx-auto">
+<h3 data-i18n="vpsPage.cta.title">Get a free web host migration</h3>
+<p class="mb-8 max-text-15 mx-auto" data-i18n="vpsPage.cta.desc">
 								We'll take care of the process of moving your website from
 								your old web hosting company to our platform so you can
 								focus on what matters
 							</p>
 <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
-<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="https://my.cloudhoste.eu/clientarea.php">
+<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="https://my.cloudhoste.eu/clientarea.php" data-i18n="vpsPage.cta.btn1">
 									Get Started now
 								</a>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark-emphasis" href="https://my.cloudhoste.eu/contact.php" data-i18n="vpsPage.cta.btn2">
 									Contact Us
 								</a>
 </div>
@@ -1950,6 +1950,7 @@
 <script src="assets/js/simplebar.js"></script>
 <script src="assets/js/swiper.js"></script>
 <script src="assets/js/prism.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

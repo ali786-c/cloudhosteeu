@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Home",
+    "hosting": "Hosting",
+    "vps": "VPS Hosting",
+    "n8n": "n8n Hosting",
+    "domain": "Domain",
+    "contact": "Contact Us",
+    "signIn": "Sign In"
+  },
+  "hero": {
+    "title": "High-Performance European NVMe KVM VPS Hosting",
+    "subtitle": "Deploy fast, GDPR-compliant SSD cloud servers and web hosting in Europe. Low-latency, scalable infrastructure with 24/7 expert support."
+  },
+  "trust": {
+    "guarantee": "30-Day Money-Back Guarantee",
+    "setup": "30-Sec Instant Setup",
+    "migration": "Free White-Glove Migration"
+  },
+  "services": {
+    "wpTitle": "Wordpress Hosting",
+    "wpDesc": "LiteSpeed Cache • 1-Click Staging • Daily Backups",
+    "wpPrice": "Starting at €2.49/mo",
+    "vpsTitle": "VPS Web Hosting",
+    "vpsDesc": "Root Access • Dedicated NVMe • KVM Virtualization",
+    "vpsPrice": "Starting at €5.00/mo",
+    "n8nTitle": "n8n Hosting",
+    "n8nDesc": "Unlimited Executions • Pre-Installed Node • Dedicated CPU",
+    "n8nPrice": "Starting at €5.99/mo",
+    "webTitle": "Web Hosting",
+    "webDesc": "Free SSL • cPanel Included • 99.9% Uptime",
+    "webPrice": "Starting at €2.95/mo"
+  },
+  "promo": {
+    "title": "Get 20% OFF Annual Hosting!",
+    "desc": "Get <strong>20% OFF</strong> when you buy any web hosting plan for one year. Use promo code <strong>CLOUDHOSTE</strong> at checkout.",
+    "claim": "Claim 20% Discount",
+    "skip": "No thanks, skip offer",
+    "copied": "Copied! ✓",
+    "copyCode": "Copy Code"
+  }
+}

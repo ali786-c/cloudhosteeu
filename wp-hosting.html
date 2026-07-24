@@ -139,9 +139,9 @@
 
 </div>
 <div class="d-flex align-items-center gap-4">
-<a href="knowledge-base.html">Support</a>
-<a href="faq.html">FAQ</a>
-<a href="https://my.cloudhoste.eu/contact.php">Contact</a>
+<a href="knowledge-base.html" data-i18n="miniHeader.support">Support</a>
+<a href="faq.html" data-i18n="miniHeader.faq">FAQ</a>
+<a href="https://my.cloudhoste.eu/contact.php" data-i18n="miniHeader.contact">Contact</a>
 </div>
 </div>
 </div>
@@ -212,13 +212,13 @@
     }
 </style>
 <div class="cookie-banner" id="cookieConsent">
-<p>
+<p data-i18n="cookieBanner.text">
         We use cookies to optimize your hosting experience and analyze traffic in compliance with EU regulations. 
         Read our <a href="privacy-policy.html">Privacy Policy</a> for more details.
     </p>
 <div class="d-flex justify-content-end gap-2">
-<button class="cookie-btn-decline" id="declineCookies">Decline</button>
-<button class="cookie-btn-accept text-white" id="acceptCookies">Accept All</button>
+<button class="cookie-btn-decline" id="declineCookies" data-i18n="cookieBanner.decline">Decline</button>
+<button class="cookie-btn-accept text-white" id="acceptCookies" data-i18n="cookieBanner.accept">Accept All</button>
 </div>
 </div>
 <script>
@@ -253,30 +253,30 @@
 <div class="container">
 <div class="row g-4 align-items-center">
 <div class="col-lg-6 col-xxl-5">
-<div class="mb-4"><span class="ch-glow-badge">⚡ Managed WordPress Hosting</span></div>
-<h1 class="h2 mb-6 fw-bold ch-gradient-text">
+<div class="mb-4"><span class="ch-glow-badge" data-i18n="wpPage.hero.badge">⚡ Managed WordPress Hosting</span></div>
+<h1 class="h2 mb-6 fw-bold ch-gradient-text" data-i18n="wpPage.hero.title">
 						Managed High-Speed WordPress Hosting
 					</h1>
 <ul class="list gap-4">
 <li class="d-flex gap-3">
 <iconify-icon class="fs-24 text-primary flex-shrink-0" icon="bitcoin-icons:lightning-circle-outline"></iconify-icon>
-<span class="d-block text-light">
+<span class="d-block text-light" data-i18n="wpPage.hero.f1">
 								LiteSpeed caching &amp; 1-click staging environments
 							</span>
 </li>
 <li class="d-flex gap-3">
 <iconify-icon class="fs-24 text-primary flex-shrink-0" icon="gridicons:user-circle"></iconify-icon>
-<span class="d-block text-light">
+<span class="d-block text-light" data-i18n="wpPage.hero.f2">
 								Automatic daily backups &amp; free SSL certificates
 							</span>
 </li>
 <li class="d-flex gap-3">
 <iconify-icon class="fs-24 text-primary flex-shrink-0" icon="f7:phone-circle"></iconify-icon>
-<span class="d-block text-light"> 24/7 expert WordPress support </span>
+<span class="d-block text-light" data-i18n="wpPage.hero.f3"> 24/7 expert WordPress support </span>
 </li>
 </ul>
-<h5 class="mt-6 mb-8 text-primary fw-bold">Starting at €2.49/mo</h5>
-<a class="ch-btn-primary" href="#pricing">
+<h5 class="mt-6 mb-8 text-primary fw-bold" data-i18n="wpPage.hero.price">Starting at €2.49/mo</h5>
+<a class="ch-btn-primary" href="#pricing" data-i18n="wpPage.hero.btn">
 						Choose Your Plan
 					</a>
 </div>
@@ -356,7 +356,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-<h3 class="mb-0 text-light text-center">
+<h3 class="mb-0 text-light text-center" data-i18n="wpPage.pricing.title">
 							Choose Your WordPress Hosting Plan
 						</h3>
 </div>
@@ -368,8 +368,8 @@
 <!-- WordPress Starter -->
 <div class="col-md-6 col-lg-4 col-xl-3">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-10 text-center h-100 d-flex flex-column">
-<h6 class="mb-1 fs-20">WordPress Starter</h6>
-<p class="mb-6 fs-14">Essential plan for new blogs and small personal WordPress sites.</p>
+<h6 class="mb-1 fs-20" data-i18n="wpPage.pricing.p1Title">WordPress Starter</h6>
+<p class="mb-6 fs-14" data-i18n="wpPage.pricing.p1Desc">Essential plan for new blogs and small personal WordPress sites.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -378,7 +378,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/wordp/wordpress-starter">
-    Buy Now
+    <span data-i18n="wpPage.pricing.buyBtn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -418,8 +418,8 @@
 <!-- WordPress Basic -->
 <div class="col-md-6 col-lg-4 col-xl-3">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-10 text-center h-100 d-flex flex-column">
-<h6 class="mb-1 fs-20">WordPress Basic</h6>
-<p class="mb-6 fs-14">Perfect for growing blogs and professional websites needing more space.</p>
+<h6 class="mb-1 fs-20" data-i18n="wpPage.pricing.p2Title">WordPress Basic</h6>
+<p class="mb-6 fs-14" data-i18n="wpPage.pricing.p2Desc">Perfect for growing blogs and professional websites needing more space.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -428,7 +428,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/wordp/wordpress-basic">
-    Buy Now
+    <span data-i18n="wpPage.pricing.buyBtn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -469,8 +469,8 @@
 <div class="col-md-6 col-lg-4 col-xl-3">
 <div class="bg-body border border-primary border-2 rounded px-4 px-xxl-8 py-6 py-xl-10 text-center position-relative shadow-lg h-100 d-flex flex-column">
 <span class="badge bg-primary text-light px-3 py-1 position-absolute top-0 end-0 m-3 fs-12">Popular</span>
-<h6 class="mb-1 fs-20 text-primary">WordPress Pro</h6>
-<p class="mb-6 fs-14">Highly resource-optimized for business sites and eCommerce stores.</p>
+<h6 class="mb-1 fs-20 text-primary" data-i18n="wpPage.pricing.p3Title">WordPress Pro</h6>
+<p class="mb-6 fs-14" data-i18n="wpPage.pricing.p3Desc">Highly resource-optimized for business sites and eCommerce stores.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -479,7 +479,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-primary text-light border-0 align-items-center w-100 mb-6 py-2.5 fw-semibold" href="https://my.cloudhoste.eu/index.php?rp=/store/wordp/wordpress-pro">
-    Buy Now
+    <span data-i18n="wpPage.pricing.buyBtn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -519,8 +519,8 @@
 <!-- WordPress Agency -->
 <div class="col-md-6 col-lg-4 col-xl-3">
 <div class="bg-body border rounded px-4 px-xxl-8 py-6 py-xl-10 text-center h-100 d-flex flex-column">
-<h6 class="mb-1 fs-20">WordPress Agency</h6>
-<p class="mb-6 fs-14">Ultimate plan for client websites and high-volume digital agencies.</p>
+<h6 class="mb-1 fs-20" data-i18n="wpPage.pricing.p4Title">WordPress Agency</h6>
+<p class="mb-6 fs-14" data-i18n="wpPage.pricing.p4Desc">Ultimate plan for client websites and high-volume digital agencies.</p>
 
 <div class="d-flex justify-content-center align-items-center gap-1 mt-auto mb-6">
     <span class="fs-18 fw-medium text-heading">€</span>
@@ -529,7 +529,7 @@
 </div>
 
 <a aria-label="Go to your CloudHoste shopping cart to place an order" class="btn btn-secondary-subtle hover:text-light border-0 align-items-center w-100 mb-6" href="https://my.cloudhoste.eu/index.php?rp=/store/wordp/wordpress-agency">
-    Buy Now
+    <span data-i18n="wpPage.pricing.buyBtn">Buy Now</span>
     <iconify-icon class="align-middle flex-shrink-0 ms-2" icon="bitcoin-icons:arrow-right-filled"></iconify-icon>
 </a>
 
@@ -788,11 +788,11 @@
 <div class="container">
 <div class="row g-4 align-items-center">
 <div class="col-md-7 col-lg-6">
-<h3>All-inclusive WordPress hosting solution</h3>
-<p class="mb-12">
+<h3 data-i18n="wpPage.featuresBlock.title">All-inclusive WordPress hosting solution</h3>
+<p class="mb-12" data-i18n="wpPage.featuresBlock.desc">
 						Our Managed WordPress Hosting provides you with a highly-optimized, secure environment dedicated to running your WordPress site at lightning speed. Enjoy pre-configured caching, automatic updates, and robust staging environments.
 					</p>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-secondary-emphasis hover:text-light fw-medium" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-secondary-emphasis hover:text-light fw-medium" href="https://my.cloudhoste.eu/contact.php" data-i18n="wpPage.featuresBlock.btn">
 						Talk to Specialist
 					</a>
 </div>
@@ -810,8 +810,8 @@
 <div class="w-12 h-12 d-grid place-content-center rounded-4 bg-light shadow mb-6">
 <iconify-icon class="fs-24 text-secondary" icon="solar:cart-4-bold-duotone"></iconify-icon>
 </div>
-<h6 class="mb-2 fs-20">Free SSL</h6>
-<p class="fs-14 mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.featuresBlock.f1Title">Free SSL</h6>
+<p class="fs-14 mb-0" data-i18n="wpPage.featuresBlock.f1Desc">
 					Secure your store and customer transactions with automatic SSL certificates deployed instantly on your WordPress site.
 				</p>
 </div>
@@ -819,8 +819,8 @@
 <div class="w-12 h-12 d-grid place-content-center rounded-4 bg-light shadow mb-6">
 <iconify-icon class="fs-24 text-secondary" icon="solar:square-academic-cap-bold-duotone"></iconify-icon>
 </div>
-<h6 class="mb-2 fs-20">Professional email address</h6>
-<p class="fs-14 mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.featuresBlock.f2Title">Professional email address</h6>
+<p class="fs-14 mb-0" data-i18n="wpPage.featuresBlock.f2Desc">
 					Create custom, professional email addresses matching your domain to build trust and authority with your audience.
 				</p>
 </div>
@@ -828,8 +828,8 @@
 <div class="w-12 h-12 d-grid place-content-center rounded-4 bg-light shadow mb-6">
 <iconify-icon class="fs-24 text-secondary" icon="uim:briefcase"></iconify-icon>
 </div>
-<h6 class="mb-2 fs-20">WP-CLI and SSH</h6>
-<p class="fs-14 mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.featuresBlock.f3Title">WP-CLI and SSH</h6>
+<p class="fs-14 mb-0" data-i18n="wpPage.featuresBlock.f3Desc">
 					Advanced developers get full command-line control over their sites using WP-CLI commands and secure SSH shell access.
 				</p>
 </div>
@@ -837,8 +837,8 @@
 <div class="w-12 h-12 d-grid place-content-center rounded-4 bg-light shadow mb-6">
 <iconify-icon class="fs-24 text-secondary" icon="solar:calculator-bold-duotone"></iconify-icon>
 </div>
-<h6 class="mb-2 fs-20">Access management</h6>
-<p class="fs-14 mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.featuresBlock.f4Title">Access management</h6>
+<p class="fs-14 mb-0" data-i18n="wpPage.featuresBlock.f4Desc">
 					Grant team members or clients controlled dashboard access, database permissions, and file credentials easily.
 				</p>
 </div>
@@ -846,8 +846,8 @@
 <div class="w-12 h-12 d-grid place-content-center rounded-4 bg-light shadow mb-6">
 <iconify-icon class="fs-24 text-secondary" icon="si:dashboard-customize-duotone"></iconify-icon>
 </div>
-<h6 class="mb-2 fs-20">Content delivery network</h6>
-<p class="fs-14 mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.featuresBlock.f5Title">Content delivery network</h6>
+<p class="fs-14 mb-0" data-i18n="wpPage.featuresBlock.f5Desc">
 					Accelerate website asset delivery, page speed, and image loading worldwide with our integrated global CDN network.
 				</p>
 </div>
@@ -855,8 +855,8 @@
 <div class="w-12 h-12 d-grid place-content-center rounded-4 bg-light shadow mb-6">
 <iconify-icon class="fs-24 text-secondary" icon="solar:server-2-bold-duotone"></iconify-icon>
 </div>
-<h6 class="mb-2 fs-20">99.9% Uptime Guarantee</h6>
-<p class="fs-14 mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.featuresBlock.f6Title">99.9% Uptime Guarantee</h6>
+<p class="fs-14 mb-0" data-i18n="wpPage.featuresBlock.f6Desc">
 					Keep your site accessible 24/7 with a 99.9% uptime guarantee backed by redundant cloud server architecture.
 				</p>
 </div>
@@ -870,7 +870,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8 col-xl-7">
-<h3 class="mb-0 text-center">
+<h3 class="mb-0 text-center" data-i18n="wpPage.whyChoose.title">
 						Why CloudHoste Web for WordPress hosting?
 					</h3>
 </div>
@@ -882,8 +882,8 @@
 <div class="col-md-6">
 <div class="bg-body p-4 p-sm-8 p-md-10 rounded-4 h-100 position-relative z-1 overflow-hidden">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 7" class="img-fluid" src="assets/img/icon-feature-7.webp"/>
-<h6 class="mt-6">Supercharged WordPress Hosting</h6>
-<p class="mb-8">
+<h6 class="mt-6" data-i18n="wpPage.whyChoose.w1Title">Supercharged WordPress Hosting</h6>
+<p class="mb-8" data-i18n="wpPage.whyChoose.w1Desc">
 						Our WordPress Hosting platform is purpose-built for speed,
 						reliability and security. Powered by cutting-edge HP
 						enterprise-class hardware, featuring high-frequency
@@ -897,8 +897,8 @@
 <div class="col-md-6">
 <div class="bg-body p-4 p-sm-8 p-md-10 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 8" class="img-fluid" src="assets/img/icon-feature-8.webp"/>
-<h6 class="mt-6">Advanced WordPress Security</h6>
-<p class="mb-8">
+<h6 class="mt-6" data-i18n="wpPage.whyChoose.w2Title">Advanced WordPress Security</h6>
+<p class="mb-8" data-i18n="wpPage.whyChoose.w2Desc">
 						Our WordPress Hosting platform is purpose-built for speed,
 						reliability and security. Powered by cutting-edge HP
 						enterprise-class hardware, featuring high-frequency
@@ -912,8 +912,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 9" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-9.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Complete customization</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.whyChoose.w3Title">Complete customization</h6>
+<p class="mb-0" data-i18n="wpPage.whyChoose.w3Desc">
 							Blazing fast premium cloud web hosting that's easily scalable
 							and affordable feature
 						</p>
@@ -924,8 +924,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 10" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-10.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Complete Control</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.whyChoose.w4Title">Complete Control</h6>
+<p class="mb-0" data-i18n="wpPage.whyChoose.w4Desc">
 							Ensures high reliability and robust infrastructure for your
 							web hosting
 						</p>
@@ -936,8 +936,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 11" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-11.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Unmatched Security</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.whyChoose.w5Title">Unmatched Security</h6>
+<p class="mb-0" data-i18n="wpPage.whyChoose.w5Desc">
 							Easily install popular applications with just one click,
 							simplifying setup
 						</p>
@@ -948,8 +948,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 12" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-12.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Optional Managed Backups</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.whyChoose.w6Title">Optional Managed Backups</h6>
+<p class="mb-0" data-i18n="wpPage.whyChoose.w6Desc">
 							Take full control of your data protection with our managed
 							backup solution
 						</p>
@@ -960,8 +960,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 13" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-13.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Money Back Guarantee</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.whyChoose.w7Title">Money Back Guarantee</h6>
+<p class="mb-0" data-i18n="wpPage.whyChoose.w7Desc">
 							Blazing fast premium cloud web hosting that's easily scalable
 							and affordable
 						</p>
@@ -972,8 +972,8 @@
 <div class="d-flex align-items-center gap-3 bg-body p-4 p-sm-6 p-xxl-8 rounded-4 h-100">
 <img alt="CloudHoste professional hosting features and utilities icon - icon feature 14" class="img-fluid flex-shrink-0" src="assets/img/icon-feature-14.webp"/>
 <div class="flex-grow-1">
-<h6 class="mb-2 fs-20">Affordable Power</h6>
-<p class="mb-0">
+<h6 class="mb-2 fs-20" data-i18n="wpPage.whyChoose.w8Title">Affordable Power</h6>
+<p class="mb-0" data-i18n="wpPage.whyChoose.w8Desc">
 							Blazing fast premium cloud web hosting that's easily scalable
 							and affordable
 						</p>
@@ -990,8 +990,8 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8 col-xl-7">
-<h3 class="text-light">Compare WordPress Plans</h3>
-<p class="mb-0 max-text-14 mx-auto text-light">
+<h3 class="text-light" data-i18n="wpPage.compare.title">Compare WordPress Plans</h3>
+<p class="mb-0 max-text-14 mx-auto text-light" data-i18n="wpPage.compare.desc">
 						Find the perfect plan optimized for your WordPress speed, security, and traffic requirements.
 					</p>
 </div>
@@ -1005,118 +1005,118 @@
 <table class="table align-middle text-center text-white">
 <thead>
 <tr class="fs-15 border-bottom border-white border-opacity-10 text-white fw-bold">
-<th class="text-start py-4 ps-4" style="width: 24%;">Feature / Specification</th>
-<th class="py-4 text-center">WordPress Starter</th>
-<th class="py-4 text-center">WordPress Basic</th>
-<th class="py-4 text-center text-primary">WordPress Professional</th>
-<th class="py-4 text-center">WordPress Agency</th>
+<th class="text-start py-4 ps-4" style="width: 24%;" data-i18n="wpPage.compare.th1">Feature / Specification</th>
+<th class="py-4 text-center" data-i18n="wpPage.compare.th2">WordPress Starter</th>
+<th class="py-4 text-center" data-i18n="wpPage.compare.th3">WordPress Basic</th>
+<th class="py-4 text-center text-primary" data-i18n="wpPage.compare.th4">WordPress Professional</th>
+<th class="py-4 text-center" data-i18n="wpPage.compare.th5">WordPress Agency</th>
 </tr>
 </thead>
 <tbody class="fs-14">
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-bold py-3 ps-4 text-white">Monthly Price</td>
+<td class="text-start fw-bold py-3 ps-4 text-white" data-i18n="wpPage.compare.tr1">Monthly Price</td>
 <td class="py-3 text-white">€3.95</td>
 <td class="py-3 text-white">€6.95</td>
 <td class="py-3 fw-bold text-primary">€9.95</td>
 <td class="py-3 text-white">€14.95</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">CPU Limit</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr2">CPU Limit</td>
 <td class="py-3 text-white">100% (1 Core)</td>
 <td class="py-3 text-white">100% (1 Core)</td>
 <td class="py-3 text-white">100% (1 Core)</td>
 <td class="py-3 text-white">100% (1 Core)</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">RAM (Memory Limit)</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr3">RAM (Memory Limit)</td>
 <td class="py-3 text-white">10 GB</td>
 <td class="py-3 text-white">1 GB</td>
 <td class="py-3 text-white">1 GB</td>
 <td class="py-3 text-white">1 GB</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">NVMe SSD Storage</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr4">NVMe SSD Storage</td>
 <td class="py-3 text-white">20 GB</td>
 <td class="py-3 text-white">50 GB</td>
 <td class="py-3 text-white">70 GB</td>
 <td class="py-3 text-white">100 GB</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">Inodes Limit</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr5">Inodes Limit</td>
 <td class="py-3 text-white">10,000</td>
 <td class="py-3 text-white">10,000</td>
 <td class="py-3 text-white">10,000</td>
 <td class="py-3 text-white">10,000</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">I/O Speed (Transfer Rate)</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr6">I/O Speed (Transfer Rate)</td>
 <td class="py-3 text-white">50 MB/s</td>
 <td class="py-3 text-white">50 MB/s</td>
 <td class="py-3 text-white">50 MB/s</td>
 <td class="py-3 text-white">50 MB/s</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">IOPS Limit</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr7">IOPS Limit</td>
 <td class="py-3 text-white">1,024</td>
 <td class="py-3 text-white">1,024</td>
 <td class="py-3 text-white">1,024</td>
 <td class="py-3 text-white">1,024</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">Addon Domains</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr8">Addon Domains</td>
 <td class="py-3 text-white">1</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">50</td>
 <td class="py-3 text-white">100</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">MySQL Databases</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr9">MySQL Databases</td>
 <td class="py-3 text-white">5</td>
 <td class="py-3 text-white">50</td>
-<td class="py-3 text-white">Unlimited</td>
-<td class="py-3 text-white">Unlimited</td>
+<td class="py-3 text-white" data-i18n="wpPage.compare.unlimited">Unlimited</td>
+<td class="py-3 text-white" data-i18n="wpPage.compare.unlimited">Unlimited</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">Email Accounts</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr10">Email Accounts</td>
 <td class="py-3 text-white">5</td>
 <td class="py-3 text-white">50</td>
-<td class="py-3 text-white">Unlimited</td>
-<td class="py-3 text-white">Unlimited</td>
+<td class="py-3 text-white" data-i18n="wpPage.compare.unlimited">Unlimited</td>
+<td class="py-3 text-white" data-i18n="wpPage.compare.unlimited">Unlimited</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">Max Hourly Emails</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr11">Max Hourly Emails</td>
 <td class="py-3 text-white">100</td>
 <td class="py-3 text-white">100</td>
 <td class="py-3 text-white">100</td>
 <td class="py-3 text-white">100</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">Max Total Processes</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr12">Max Total Processes</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">10</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">Max PHP-FPM Processes</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr13">Max PHP-FPM Processes</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">10</td>
 <td class="py-3 text-white">10</td>
 </tr>
 <tr class="border-bottom border-white border-opacity-10">
-<td class="text-start fw-medium py-3 ps-4 text-white-50">SSL Certificate</td>
-<td class="py-3 text-success">Free SSL</td>
-<td class="py-3 text-success">Free SSL</td>
-<td class="py-3 text-success">Free SSL</td>
-<td class="py-3 text-success">Free SSL</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50" data-i18n="wpPage.compare.tr14">SSL Certificate</td>
+<td class="py-3 text-success" data-i18n="wpPage.compare.freeSsl">Free SSL</td>
+<td class="py-3 text-success" data-i18n="wpPage.compare.freeSsl">Free SSL</td>
+<td class="py-3 text-success" data-i18n="wpPage.compare.freeSsl">Free SSL</td>
+<td class="py-3 text-success" data-i18n="wpPage.compare.freeSsl">Free SSL</td>
 </tr>
 <tr class="border-0">
-<td class="text-start fw-medium py-3 ps-4 text-white-50 border-0">Backups</td>
-<td class="py-3 border-0 text-success">Daily Backups</td>
-<td class="py-3 border-0 text-success">Daily Backups</td>
-<td class="py-3 border-0 text-success">Daily Backups</td>
-<td class="py-3 border-0 text-success">Daily Backups</td>
+<td class="text-start fw-medium py-3 ps-4 text-white-50 border-0" data-i18n="wpPage.compare.tr15">Backups</td>
+<td class="py-3 border-0 text-success" data-i18n="wpPage.compare.dailyBackups">Daily Backups</td>
+<td class="py-3 border-0 text-success" data-i18n="wpPage.compare.dailyBackups">Daily Backups</td>
+<td class="py-3 border-0 text-success" data-i18n="wpPage.compare.dailyBackups">Daily Backups</td>
+<td class="py-3 border-0 text-success" data-i18n="wpPage.compare.dailyBackups">Daily Backups</td>
 </tr>
 </tbody>
 </table>
@@ -1136,14 +1136,14 @@
 </div>
 <div class="col-md-6">
 <div class="ps-xl-12">
-<h3 class="mb-6">Powerful WordPress plugins</h3>
-<p class="mb-12">
+<h3 class="mb-6" data-i18n="wpPage.about1.title">Powerful WordPress plugins</h3>
+<p class="mb-12" data-i18n="wpPage.about1.desc">
 							Enhance your website's functionality with our array of
 							powerful WordPress Plugins. From SEO optimization to
 							e-commerce capabilities, unlock endless possibilities and
 							tailor your site to meet your unique needs
 						</p>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn fs-14 btn-secondary-emphasis hover:text-light fw-medium" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn fs-14 btn-secondary-emphasis hover:text-light fw-medium" href="https://my.cloudhoste.eu/contact.php" data-i18n="wpPage.about1.btn">
 							Talk to Specialist
 						</a>
 </div>
@@ -1155,14 +1155,14 @@
 <div class="row g-4 align-items-center">
 <div class="col-md-6">
 <div class="pe-xl-12">
-<h3 class="mb-6">Easy custom code snippets</h3>
-<p class="mb-12">
+<h3 class="mb-6" data-i18n="wpPage.about2.title">Easy custom code snippets</h3>
+<p class="mb-12" data-i18n="wpPage.about2.desc">
 						Seamlessly enhance your website's insights and reach with Custom
 						Code Snippets. Effortlessly integrate essential tools like Google
 						Analytics, Facebook Pixel, and Google Ads tracking. Empower your
 						WordPress
 					</p>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn fs-14 btn-secondary-emphasis hover:text-light fw-medium" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn fs-14 btn-secondary-emphasis hover:text-light fw-medium" href="https://my.cloudhoste.eu/contact.php" data-i18n="wpPage.about2.btn">
 						Talk to Specialist
 					</a>
 </div>
@@ -1182,19 +1182,19 @@
 <div class="section-space-bottom">
 <div class="row g-4 justify-content-xxl-between">
 <div class="col-md-5">
-<h2 class="display-1 fw-semibold text-light">24/7</h2>
-<p class="mb-0 fs-20 text-light max-text-6">
+<h2 class="display-1 fw-semibold text-light" data-i18n="wpPage.cta1.highlight">24/7</h2>
+<p class="mb-0 fs-20 text-light max-text-6" data-i18n="wpPage.cta1.sub">
 								support helped maximize business efficiency
 							</p>
 </div>
 <div class="col-md-7 col-xxl-6">
 <div class="d-flex align-items-center gap-3 mb-6">
 <iconify-icon class="fs-24 text-light flex-shrink-0" icon="ic:twotone-wordpress"></iconify-icon>
-<span class="d-block text-light">
+<span class="d-block text-light" data-i18n="wpPage.cta1.feat">
 									WordPress runs better on CloudHoste
 								</span>
 </div>
-<h4 class="mb-8 text-light">
+<h4 class="mb-8 text-light" data-i18n="wpPage.cta1.quote">
 								“We can quickly create new accounts and set up
 								application"
 							</h4>
@@ -1206,11 +1206,11 @@
 <div class="d-flex align-items-center gap-2">
 <div class="d-flex gap-2 align-items-center">
 <span class="d-inline-block w-2 h-2 rounded-circle bg-success"></span>
-<span class="d-block fw-bold text-light">Calls</span>
+<span class="d-block fw-bold text-light" data-i18n="wpPage.cta1.call">Calls</span>
 </div>
-<span class="d-block fs-14 text-light">(Last 7 days)</span>
+<span class="d-block fs-14 text-light" data-i18n="wpPage.cta1.time">(Last 7 days)</span>
 </div>
-<h4 class="mb-0 text-light">+12 125879654</h4>
+<h4 class="mb-0 text-light" data-i18n="wpPage.cta1.num">+12 125879654</h4>
 </div>
 </div>
 </div>
@@ -1223,14 +1223,14 @@
 <div class="flex-shrink-0">
 <img alt="Icon Support - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-support.webp"/>
 </div>
-<h6 class="mb-0 fw-semibold text-light">
+<h6 class="mb-0 fw-semibold text-light" data-i18n="wpPage.cta1.alert">
 									Let our experts help you get your projects up and
 									running without delay
 								</h6>
 </div>
 </div>
 <div class="col-md-4 text-md-end">
-<a class="btn fs-14 btn-primary" href="https://my.cloudhoste.eu/contact.php">
+<a class="btn fs-14 btn-primary" href="https://my.cloudhoste.eu/contact.php" data-i18n="wpPage.cta1.btn">
 								Chat with Export
 							</a>
 </div>
@@ -1247,8 +1247,8 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10">
-<h3>Frequently asked questions</h3>
-<p class="mb-0 max-text-14 mx-auto">
+<h3 data-i18n="wpPage.faq.title">Frequently asked questions</h3>
+<p class="mb-0 max-text-14 mx-auto" data-i18n="wpPage.faq.desc">
 						Get clear answers to common questions about our managed, high-performance WordPress hosting services.
 					</p>
 </div>
@@ -1261,72 +1261,72 @@
 <div class="accordion accordion--primary accordion-separate-body" id="accordion-separate-rounded">
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="true" class="accordion-button fw-medium shadow" data-bs-target="#accordion-s1" data-bs-toggle="collapse" type="button">
+<button aria-expanded="true" class="accordion-button fw-medium shadow" data-bs-target="#accordion-s1" data-bs-toggle="collapse" type="button" data-i18n="wpPage.faq.q1">
 								What is Managed WordPress Hosting?
 							</button>
 </h2>
 <div class="accordion-collapse shadow collapse show" data-bs-parent="#accordion-separate-rounded" id="accordion-s1">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="wpPage.faq.a1">
 								Managed WordPress hosting is a specialized hosting service where the server environment is optimized specifically for WordPress speed, performance, and security. We handle caching, updates, and server configuration so you can focus on building your website.
 							</div>
 </div>
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s2" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s2" data-bs-toggle="collapse" type="button" data-i18n="wpPage.faq.q2">
 								How does WordPress Starter compare to Basic?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s2">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="wpPage.faq.a2">
 								The WordPress Starter plan is perfect for new websites and personal blogs with a single domain and up to 5 databases. The Basic plan supports up to 10 websites, larger NVMe SSD storage, and more databases for expanding projects.
 							</div>
 </div>
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s3" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s3" data-bs-toggle="collapse" type="button" data-i18n="wpPage.faq.q3">
 								Can I migrate my existing WordPress site?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s3">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="wpPage.faq.a3">
 								Absolutely! We provide 100% free website migrations. Our WordPress experts will move your files and database from your old host to our optimized platform with zero downtime.
 							</div>
 </div>
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s4" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s4" data-bs-toggle="collapse" type="button" data-i18n="wpPage.faq.q4">
 								Are backups included?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s4">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="wpPage.faq.a4">
 								Yes, all our WordPress hosting packages include free daily automated backups of your files, media, and databases, allowing you to restore your site with a single click if needed.
 							</div>
 </div>
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s5" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s5" data-bs-toggle="collapse" type="button" data-i18n="wpPage.faq.q5">
 								Do I get a free SSL certificate?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s5">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="wpPage.faq.a5">
 								Yes! Every site hosted under our WordPress plans gets a free SSL certificate automatically generated and renewed, securing your traffic and improving search engine rankings.
 							</div>
 </div>
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s6" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s6" data-bs-toggle="collapse" type="button" data-i18n="wpPage.faq.q6">
 								Is email hosting included?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s6">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="wpPage.faq.a6">
 								Yes, you can set up professional email addresses matching your domain on all plans (from 5 addresses on Starter to unlimited addresses on Professional and Agency).
 							</div>
 </div>
@@ -1344,17 +1344,17 @@
 <div class="section-space-y px-4 px-sm-6 px-md-12 bg-body rounded-4 text-center position-relative z-1">
 <div class="row justify-content-center">
 <div class="col-md-11">
-<h3>Get a free web host migration</h3>
-<p class="mb-8 max-text-15 mx-auto">
+<h3 data-i18n="wpPage.cta2.title">Get a free web host migration</h3>
+<p class="mb-8 max-text-15 mx-auto" data-i18n="wpPage.cta2.desc">
 								We'll take care of the process of moving your website from
 								your old web hosting company to our platform so you can
 								focus on what matters
 							</p>
 <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
-<a aria-label="Create a new client account with CloudHoste" class="btn btn-primary" href="https://my.cloudhoste.eu/clientarea.php?action=register">
+<a aria-label="Create a new client account with CloudHoste" class="btn btn-primary" href="https://my.cloudhoste.eu/clientarea.php?action=register" data-i18n="wpPage.cta2.btn1">
 									Get Started now
 								</a>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark" href="https://my.cloudhoste.eu/contact.php" data-i18n="wpPage.cta2.btn2">
 									Contact Us
 								</a>
 </div>
@@ -1578,6 +1578,7 @@
 <script src="assets/js/simplebar.js"></script>
 <script src="assets/js/swiper.js"></script>
 <script src="assets/js/prism.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

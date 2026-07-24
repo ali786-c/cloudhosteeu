@@ -176,164 +176,38 @@
     });
 </script>
 <!-- Hero -->
-<div class="hero-7">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-12">
-<div class="text-center">
-<h1 class="h2 text-light fw-bold">Discover Your Ideal Domain Name</h1>
-<p class="mb-12 text-light">
-						Search for new domains and register your name before someone else
-						does
-					</p>
-<form action="https://my.cloudhoste.eu/cart.php" method="get" class="search-filter search-filter--light bg-light rounded-1 max-text-18 mx-auto">
-	<input type="hidden" name="a" value="add"/>
-	<input type="hidden" name="domain" value="register"/>
-	<input name="query" class="form-control search-filter__input placeholder::text-dark-subtle text-dark" placeholder="Search Now..." type="text" required/>
-	<button class="btn btn-primary align-items-center flex-shrink-0" type="submit">
-		<iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
-		Search
-	</button>
-</form>
-<ul class="list list-row flex-wrap gap-4 justify-content-center align-items-center max-text-18 mx-auto mt-6">
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.com
-									<span class="d-inline-block fs-12 fw-normal">
-										€13.48/Year
-									</span>
-</span>
-</button>
-</li>
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.de
-									<span class="d-inline-block fs-12 fw-normal">
-										€4.78/Year
-									</span>
-</span>
-</button>
-</li>
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.eu
-									<span class="d-inline-block fs-12 fw-normal">
-										€5.90/Year
-									</span>
-</span>
-</button>
-</li>
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.co.uk
-									<span class="d-inline-block fs-12 fw-normal">
-										€7.51/Year
-									</span>
-</span>
-</button>
-</li>
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.blog
-									<span class="d-inline-block fs-12 fw-normal">
-										€2.39/Year
-									</span>
-</span>
-</button>
-</li>
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.biz
-									<span class="d-inline-block fs-12 fw-normal">
-										€7.94/Year
-									</span>
-</span>
-</button>
-</li>
-<li>
-<button class="btn btn-sm bg-light bg-opacity-10 text-light hover:bg-opacity-100 hover:text-dark" type="button">
-<span class="d-inline-block fs-18 fw-bold">
-									.club
-									<span class="d-inline-block fs-12 fw-normal">
-										€4.78/Year
-									</span>
-</span>
-</button>
-</li>
-</ul>
-<p class="mt-8 mb-0 fs-14 text-light">
-						Free WHOIS privacy protection is included with every eligible
-						domain registration.
-					</p>
-</div>
-</div>
-</div>
-</div>
-<img alt="CloudHoste SSD cloud server and web hosting platform hero showcase - hero 7 shape 1" class="img-fluid hero-7__shape-1" src="assets/img/shapes/hero-7-shape-1.webp"/>
+<div class="position-relative overflow-hidden" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); padding: 180px 0 140px;">
+    <!-- Concentric circular waves -->
+    <div class="position-absolute top-50 start-50 translate-middle w-100 h-100" style="pointer-events: none;">
+        <div class="position-absolute top-50 start-50 translate-middle rounded-circle" style="width: 250vw; height: 250vw; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);"></div>
+        <div class="position-absolute top-50 start-50 translate-middle rounded-circle" style="width: 150vw; height: 150vw; background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);"></div>
+        <div class="position-absolute top-100 start-50 translate-middle rounded-circle" style="width: 120vw; height: 120vw; background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);"></div>
+    </div>
+    
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <div class="text-center">
+                    <h1 class="display-3 text-white fw-bold mb-3" data-i18n="domainPage.hero.title">Discover Your Ideal Domain Name</h1>
+                    <p class="fs-5 text-white mb-8 mx-auto" style="opacity: 0.9;" data-i18n="domainPage.hero.desc">
+                        Find the perfect identity for your brand and secure your online presence in seconds.
+                    </p>
+                    
+                    <form action="https://my.cloudhoste.eu/cart.php" method="get" class="search-filter search-filter--light border border-secondary border-opacity-60 rounded-1 max-text-18 mx-auto mb-6">
+                        <input type="hidden" name="a" value="add"/>
+                        <input type="hidden" name="domain" value="register"/>
+                        <input name="query" class="form-control search-filter__input placeholder::text-light-emphasis text-white" placeholder="Search Now..." type="text" required data-i18n="[placeholder]domainPage.hero.placeholder" />
+                        <button class="btn btn-primary align-items-center flex-shrink-0" type="submit">
+                            <iconify-icon class="align-middle flex-shrink-0" icon="iconamoon:search-duotone"></iconify-icon>
+                            <span data-i18n="domainPage.hero.btn">Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Hero End -->
-<!-- CTA -->
-<div class="cta-5">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-xxl-10">
-<div class="section-space-md-y px-6 px-sm-12 px-xl-15 bg-body rounded-4">
-<div class="row g-4 justify-content-lg-between">
-<div class="col-md-6 col-lg-4">
-<div class="d-flex align-items-center gap-2 mb-3">
-<div class="w-3 h-3 rounded-circle bg-secondary flex-shrink-0"></div>
-<h6 class="mb-0">
-									com for
-									<span class="text-secondary fw-semibold">
-<span class="text-decoration-underline">€13.48</span>
-										Today!
-									</span>
-</h6>
-</div>
-<p class="fs-14 mb-2">Applicable for 3-Year Purchase</p>
-<p class="fs-14 fw-medium mb-0">
-								1st Year: <span class="text-secondary">€13.48</span> only
-								<span class="text-secondary">€19.00</span>
-</p>
-<p class="fs-14 fw-medium mb-0">
-								2nd and 3rd Year:
-								<span class="text-secondary">€13.48</span> per year
-							</p>
-</div>
-<div class="col-md-6 col-lg-4">
-<div class="d-flex align-items-center gap-2 mb-3">
-<div class="w-3 h-3 rounded-circle bg-secondary flex-shrink-0"></div>
-<h6 class="mb-0">
-									de for
-									<span class="text-secondary fw-semibold">
-<span class="text-decoration-underline">€4.78</span>
-										Today!
-									</span>
-</h6>
-</div>
-<p class="fs-14 mb-2">Applicable for 3-Year Purchase</p>
-<p class="fs-14 fw-medium mb-0">
-								1st Year: <span class="text-secondary">€4.78</span> only
-								<span class="text-secondary">€7.00</span>
-</p>
-<p class="fs-14 fw-medium mb-0">
-								2nd and 3rd Year:
-								<span class="text-secondary">€4.78</span> per year
-							</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- CTA End -->
 
 <!-- Easy Steps  -->
 <div class="step-section section-space-y">
@@ -341,7 +215,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-<h3 class="mb-0 text-light">
+<h3 class="mb-0 text-light" data-i18n="domainPage.steps.title">
 						Get Your Business Online in 3 Easy Steps
 					</h3>
 </div>
@@ -353,8 +227,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="text-center p-xl-6">
 <img alt="Step 1 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/shapes/step-1.webp"/>
-<h6 class="mt-8 text-light fs-20">Select a Domain Name</h6>
-<p class="mb-0 text-light">
+<h6 class="mt-8 text-light fs-20" data-i18n="domainPage.steps.s1Title">Select a Domain Name</h6>
+<p class="mb-0 text-light" data-i18n="domainPage.steps.s1Desc">
 						Pick the right domain name extension from a range, including .com,
 						.in, .org
 					</p>
@@ -363,8 +237,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="text-center p-xl-6">
 <img alt="Step 2 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/shapes/step-2.webp"/>
-<h6 class="mt-8 text-light fs-20">Select Hosting Plan</h6>
-<p class="mb-0 text-light">
+<h6 class="mt-8 text-light fs-20" data-i18n="domainPage.steps.s2Title">Select Hosting Plan</h6>
+<p class="mb-0 text-light" data-i18n="domainPage.steps.s2Desc">
 						Choose the best web hosting price from MilesWeb, that's
 						competitive
 					</p>
@@ -373,8 +247,8 @@
 <div class="col-md-6 col-lg-4">
 <div class="text-center p-xl-6">
 <img alt="Step 3 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/shapes/step-3.webp"/>
-<h6 class="mt-8 text-light fs-20">Launch Your Website</h6>
-<p class="mb-0 text-light">
+<h6 class="mt-8 text-light fs-20" data-i18n="domainPage.steps.s3Title">Launch Your Website</h6>
+<p class="mb-0 text-light" data-i18n="domainPage.steps.s3Desc">
 						Setup your website and get the instant account from us to launch
 						website
 					</p>
@@ -390,7 +264,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-<h3 class="mb-0">Explore the Perks of Owning a Domain Name</h3>
+<h3 class="mb-0" data-i18n="domainPage.perks.title">Explore the Perks of Owning a Domain Name</h3>
 </div>
 </div>
 </div>
@@ -402,8 +276,8 @@
 <div class="mb-4">
 <img alt="Icon About 6 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-about-6.webp"/>
 </div>
-<h6 class="fs-20">Represent your business</h6>
-<p class="mb-0">
+<h6 class="fs-20" data-i18n="domainPage.perks.p1Title">Represent your business</h6>
+<p class="mb-0" data-i18n="domainPage.perks.p1Desc">
 						Clients will definitely check out your website before reaching to
 						you, and your website representation starts right from
 					</p>
@@ -414,8 +288,8 @@
 <div class="mb-4">
 <img alt="Icon About 7 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-about-7.webp"/>
 </div>
-<h6 class="fs-20">Get easily visible</h6>
-<p class="mb-0">
+<h6 class="fs-20" data-i18n="domainPage.perks.p2Title">Get easily visible</h6>
+<p class="mb-0" data-i18n="domainPage.perks.p2Desc">
 						A clean and easy domain name attracts many visitors. Also, it is
 						easy to remember the next time when you visitor wants to recall it
 					</p>
@@ -426,8 +300,8 @@
 <div class="mb-4">
 <img alt="Icon About 8 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-about-8.webp"/>
 </div>
-<h6 class="fs-20">Send professional emails</h6>
-<p class="mb-0">
+<h6 class="fs-20" data-i18n="domainPage.perks.p3Title">Send professional emails</h6>
+<p class="mb-0" data-i18n="domainPage.perks.p3Desc">
 						A domain name that relates to your business or organization,
 						improves your website ranking on search engine pages
 					</p>
@@ -438,8 +312,8 @@
 <div class="mb-4">
 <img alt="Icon About 9 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-about-9.webp"/>
 </div>
-<h6 class="fs-20">Establishes your brand identity</h6>
-<p class="mb-0">
+<h6 class="fs-20" data-i18n="domainPage.perks.p4Title">Establishes your brand identity</h6>
+<p class="mb-0" data-i18n="domainPage.perks.p4Desc">
 						Your brand's identity starts with a domain name. Choose from our
 						powerful, memorable names that go perfectly with your audience
 					</p>
@@ -450,8 +324,8 @@
 <div class="mb-4">
 <img alt="Icon About 10 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-about-10.webp"/>
 </div>
-<h6 class="fs-20">Business Safety</h6>
-<p class="mb-0">
+<h6 class="fs-20" data-i18n="domainPage.perks.p5Title">Business Safety</h6>
+<p class="mb-0" data-i18n="domainPage.perks.p5Desc">
 						Domain squatting and hi-jacking is a common practice carried out
 						by hackers on your online business safety
 					</p>
@@ -462,8 +336,8 @@
 <div class="mb-4">
 <img alt="Icon About 11 - CloudHoste secure European hosting" class="img-fluid" src="assets/img/icon-about-11.webp"/>
 </div>
-<h6 class="fs-20">Better Online Exposure</h6>
-<p class="mb-0">
+<h6 class="fs-20" data-i18n="domainPage.perks.p6Title">Better Online Exposure</h6>
+<p class="mb-0" data-i18n="domainPage.perks.p6Desc">
 						A domain name that relates to your business or organization,
 						improves your website ranking on search engine pages
 					</p>
@@ -482,17 +356,17 @@
 </div>
 <div class="col-md-6">
 <div class="ps-xl-6">
-<h3>
+<h3 data-i18n="domainPage.about1.title">
 						Have you already chosen the ideal domain name? That's fantastic!
 					</h3>
-<p class="mb-12">
+<p class="mb-12" data-i18n="domainPage.about1.desc">
 						We won't mind. You can move your hosting to HostJar even if your
 						domain name is already registered. We always welcome new customers
 						to join our web hosting family and guarantee to give you the same
 						superior hosting experience as others. Once you're affiliated with
 						us, you'll feel safe and appreciated
 					</p>
-<a class="btn btn-secondary text-light fs-14" href="domain-transfer.html">
+<a class="btn btn-secondary text-light fs-14" href="domain-transfer.html" data-i18n="domainPage.about1.btn">
 						Transfer Now
 					</a>
 </div>
@@ -507,18 +381,18 @@
 <div class="row g-4 align-items-center">
 <div class="col-md-6">
 <div class="pe-xl-6">
-<h3>Purchased a Domain Already? Transfer It to Hostjar Today</h3>
-<p>
+<h3 data-i18n="domainPage.about2.title">Purchased a Domain Already? Transfer It to Hostjar Today</h3>
+<p data-i18n="domainPage.about2.desc1">
 						Manage your website domain at Hostjar by quickly transferring it
 						from your current registrar - it only takes a few clicks
 					</p>
-<p class="mb-12">
+<p class="mb-12" data-i18n="domainPage.about2.desc2">
 						With a simple "one click" setup feature you can connect your
 						domain instantly to Web Hosting, Email Hosting or any services,
 						without any tech knowledge. The Domain Manager comes complete with
 						quick.
 					</p>
-<a class="btn btn-secondary text-light fs-14" href="domain-search.html">
+<a class="btn btn-secondary text-light fs-14" href="domain-search.html" data-i18n="domainPage.about2.btn">
 						Search Domain
 					</a>
 </div>
@@ -539,13 +413,13 @@
 </div>
 <div class="col-md-6">
 <div class="ps-xl-6">
-<h3>How Do You Manage Your Domain Name?</h3>
-<p class="mb-12">
+<h3 data-i18n="domainPage.about3.title">How Do You Manage Your Domain Name?</h3>
+<p class="mb-12" data-i18n="domainPage.about3.desc">
 						Most of Hostinger's web hosting packages come with free domains.
 						You can get popular generic top-level domain names like .com,
 						.net, .org, and other extensions for free
 					</p>
-<a class="btn btn-secondary text-light fs-14" href="domain.html">
+<a class="btn btn-secondary text-light fs-14" href="domain.html" data-i18n="domainPage.about3.btn">
 						Register Domain
 					</a>
 </div>
@@ -1097,7 +971,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-12">
-<h3 class="mb-0">Frequently Asked Questions</h3>
+<h3 class="mb-0" data-i18n="domainPage.faq.title">Frequently Asked Questions</h3>
 </div>
 </div>
 </div>
@@ -1108,12 +982,12 @@
 <div class="accordion accordion--primary accordion-separate-body" id="accordion-separate-rounded">
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="true" class="accordion-button fw-medium shadow" data-bs-target="#accordion-s1" data-bs-toggle="collapse" type="button">
+<button aria-expanded="true" class="accordion-button fw-medium shadow" data-bs-target="#accordion-s1" data-bs-toggle="collapse" type="button" data-i18n="domainPage.faq.q1">
 								Do you charge for stopped instances?
 							</button>
 </h2>
 <div class="accordion-collapse shadow collapse show" data-bs-parent="#accordion-separate-rounded" id="accordion-s1">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="domainPage.faq.a1">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1123,12 +997,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s2" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s2" data-bs-toggle="collapse" type="button" data-i18n="domainPage.faq.q2">
 								What is Vultr's role with respect to GDPR?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s2">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="domainPage.faq.a2">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1138,12 +1012,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s3" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s3" data-bs-toggle="collapse" type="button" data-i18n="domainPage.faq.q3">
 								How will I know if I was admitted into the program?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s3">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="domainPage.faq.a3">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1153,12 +1027,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s4" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s4" data-bs-toggle="collapse" type="button" data-i18n="domainPage.faq.q4">
 								What operating system templates do you offer?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s4">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="domainPage.faq.a4">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1168,12 +1042,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s5" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s5" data-bs-toggle="collapse" type="button" data-i18n="domainPage.faq.q5">
 								Is pricing the same in all data center locations?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s5">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="domainPage.faq.a5">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1183,12 +1057,12 @@
 </div>
 <div class="accordion-item">
 <h2 class="accordion-header">
-<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s6" data-bs-toggle="collapse" type="button">
+<button aria-expanded="false" class="accordion-button collapsed fw-medium shadow" data-bs-target="#accordion-s6" data-bs-toggle="collapse" type="button" data-i18n="domainPage.faq.q6">
 								What payment methods do you accept?
 							</button>
 </h2>
 <div class="accordion-collapse collapse shadow" data-bs-parent="#accordion-separate-rounded" id="accordion-s6">
-<div class="accordion-body border border-dark border-opacity-5 fs-14">
+<div class="accordion-body border border-dark border-opacity-5 fs-14" data-i18n="domainPage.faq.a6">
 								We have not charged your card. What you have observed is a
 								temporary authorization in order to validate the card
 								provided. The hold will automatically expire based on your
@@ -1210,17 +1084,17 @@
 <div class="section-space-y px-4 px-sm-6 px-md-12 bg-body rounded-4 text-center position-relative z-1">
 <div class="row justify-content-center">
 <div class="col-md-11">
-<h3>Get a free web host migration</h3>
-<p class="mb-8 max-text-15 mx-auto">
+<h3 data-i18n="cta.title">Get a free web host migration</h3>
+<p class="mb-8 max-text-15 mx-auto" data-i18n="cta.desc">
 								We'll take care of the process of moving your website from
 								your old web hosting company to our platform so you can
 								focus on what matters
 							</p>
 <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
-<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="https://my.cloudhoste.eu/clientarea.php">
+<a aria-label="Log in to your secure client billing dashboard" class="btn btn-secondary text-light" href="https://my.cloudhoste.eu/clientarea.php" data-i18n="cta.btn1">
 									Get Started now
 								</a>
-<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark" href="https://my.cloudhoste.eu/contact.php">
+<a aria-label="Contact the CloudHoste customer service and developer support team" class="btn btn-dark" href="https://my.cloudhoste.eu/contact.php" data-i18n="cta.btn2">
 									Contact Us
 								</a>
 </div>
@@ -1443,8 +1317,12 @@
 <script src="assets/js/swiper.js"></script>
 <script src="assets/js/prism.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>
+
+
+
 
 
 

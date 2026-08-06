@@ -598,43 +598,43 @@ window.locales['en'] = {
       "p3Title": "Send professional emails",
       "p3Desc": "A domain name that relates to your business or organization, improves your website ranking on search engine pages",
       "p4Title": "Establishes your brand identity",
-      "p4Desc": "Your brand's identity starts with a domain name. Choose from our powerful, memorable names that go perfectly with your audience",
+      "p4Desc": "Your brand identity starts here. Choose from powerful, cheap domain extensions that resonate with your audience.",
       "p5Title": "Business Safety",
-      "p5Desc": "Domain squatting and hi-jacking is a common practice carried out by hackers on your online business safety",
+      "p5Desc": "We protect your business from domain hijacking and provide free WHOIS privacy for all eligible registrations.",
       "p6Title": "Better Online Exposure",
-      "p6Desc": "A domain name that relates to your business or organization, improves your website ranking on search engine pages"
+      "p6Desc": "A highly relevant domain name registration improves your website ranking on search engine pages naturally."
     },
     "about1": {
-      "title": "Have you already chosen the ideal domain name? That's fantastic!",
-      "desc": "We won't mind. You can move your hosting to HostJar even if your domain name is already registered. We always welcome new customers to join our web hosting family and guarantee to give you the same superior hosting experience as others. Once you're affiliated with us, you'll feel safe and appreciated",
+      "title": "Have you already registered your ideal domain name?",
+      "desc": "We won't mind. You can move your hosting to CloudHoste even if your domain name is already registered elsewhere. We welcome new customers to join our EU web hosting family and guarantee to give you a superior hosting experience. Our platform is fully optimized for your domain.",
       "btn": "Transfer Now"
     },
     "about2": {
-      "title": "Purchased a Domain Already? Transfer It to Hostjar Today",
-      "desc1": "Manage your website domain at Hostjar by quickly transferring it from your current registrar - it only takes a few clicks",
-      "desc2": "With a simple \"one click\" setup feature you can connect your domain instantly to Web Hosting, Email Hosting or any services, without any tech knowledge. The Domain Manager comes complete with quick.",
+      "title": "Transfer Your EU Domain to CloudHoste Today",
+      "desc1": "Manage your website domain at CloudHoste by quickly transferring it from your current registrar - it only takes a few clicks to migrate.",
+      "desc2": "With a simple \"one click\" setup feature you can connect your EU domain buy instantly to Web Hosting or Email Hosting, without any tech knowledge. Our Domain Manager makes the process seamless.",
       "btn": "Search Domain"
     },
     "about3": {
-      "title": "How Do You Manage Your Domain Name?",
-      "desc": "Most of Hostinger's web hosting packages come with free domains. You can get popular generic top-level domain names like .com, .net, .org, and other extensions for free",
+      "title": "How to Manage Your Cheap Domain Registration",
+      "desc": "When you register domain name cheap with CloudHoste, you gain access to a powerful control panel. Many of our premium web hosting packages even come with free domains for your first year.",
       "btn": "Register Domain"
     },
     "faq": {
-      "title": "Frequently asked questions",
-      "desc": "Our domain services have transformed the way our customers manage their websites.",
-      "q1": "Do you charge for stopped instances?",
-      "a1": "We have not charged your card. What you have observed is a temporary authorization in order to validate the card provided. The hold will automatically expire based on your bank's policy, generally within a few days.",
-      "q2": "What is Vultr's role with respect to GDPR?",
-      "a2": "We have not charged your card. What you have observed is a temporary authorization in order to validate the card provided. The hold will automatically expire based on your bank's policy, generally within a few days.",
-      "q3": "How will I know if I was admitted into the program?",
-      "a3": "We have not charged your card. What you have observed is a temporary authorization in order to validate the card provided. The hold will automatically expire based on your bank's policy, generally within a few days.",
-      "q4": "What operating system templates do you offer?",
-      "a4": "We have not charged your card. What you have observed is a temporary authorization in order to validate the card provided. The hold will automatically expire based on your bank's policy, generally within a few days.",
-      "q5": "Is pricing the same in all data center locations?",
-      "a5": "We have not charged your card. What you have observed is a temporary authorization in order to validate the card provided. The hold will automatically expire based on your bank's policy, generally within a few days.",
-      "q6": "What payment methods do you accept?",
-      "a6": "We have not charged your card. What you have observed is a temporary authorization in order to validate the card provided. The hold will automatically expire based on your bank's policy, generally within a few days."
+      "title": "Frequently Asked Questions",
+      "desc": "Find answers to common questions about our domain registration services.",
+      "q1": "How quickly is my domain registered after purchase?",
+      "a1": "Your domain name is registered instantly upon payment confirmation with automated DNS control and immediate active status across global root nameservers.",
+      "q2": "Do you offer free WHOIS Privacy Protection?",
+      "a2": "Yes! CloudHoste provides 100% free WHOIS privacy protection with all eligible domain registrations to shield your personal phone number, home address, and email address from spammers.",
+      "q3": "Can I transfer my existing domain to CloudHoste?",
+      "a3": "Yes, transferring your domain to CloudHoste is fast and seamless. Simply request your EPP/Auth code from your current registrar and start the transfer with zero website downtime.",
+      "q4": "Which domain extensions (.TLDs) are available in Europe?",
+      "a4": "We support over 400+ TLDs including .eu, .com, .de, .nl, .org, .net, .co.uk, .it, and .fr with competitive renewal rates and instant DNS setup.",
+      "q5": "What DNS management features are included for free?",
+      "a5": "Every domain comes with free full DNS management (A, AAAA, CNAME, MX, TXT records), domain forwarding, email masking, and custom nameserver routing.",
+      "q6": "Is domain WHOIS privacy compliant with EU GDPR regulations?",
+      "a6": "Yes, all domain privacy protections and data handling at CloudHoste strictly adhere to European Union GDPR data sovereignty laws and registrar privacy guidelines."
     }
   }
 };

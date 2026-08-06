@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" data-theme="vps-hosting" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="preconnect" href="https://api.iconify.design">
+<title>How to Self-Host n8n on Docker VPS (Ultimate 2026 Guide) | CloudHoste</title>
+<meta content="Learn how to deploy n8n self-hosted workflow automation on a Docker VPS in Europe with Nginx Reverse Proxy, Free SSL, PostgreSQL, and sub-100ms execution speeds." name="description"/>
+<meta content="self host n8n docker vps, n8n docker compose tutorial, n8n self hosted cost, n8n vs zapier self hosted, n8n nginx ssl setup, cheap nvme vps n8n" name="keywords"/>
+<meta content="CloudHoste" name="author"/>
+<link href="https://cloudhoste.eu/self-hosted-n8n-workflow-automation-europe-guide.html" rel="canonical"/>
+
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="How to Self-Host n8n on Docker VPS (Ultimate 2026 Guide) | CloudHoste" property="og:title"/>
+<meta content="Deploy self-hosted n8n workflow automation on NVMe Cloud VPS with Docker, Nginx, PostgreSQL & Let's Encrypt SSL." property="og:description"/>
+<meta content="https://cloudhoste.eu/self-hosted-n8n-workflow-automation-europe-guide.html" property="og:url"/>
+<meta content="CloudHoste" property="og:site_name"/>
+<meta content="en_EU" property="og:locale"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" property="og:image"/>
+
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How to Self-Host n8n on Docker VPS (Ultimate 2026 Guide) | CloudHoste" name="twitter:title"/>
+<meta content="Step-by-step production blueprint to deploy private n8n workflow automation on cheap NVMe Cloud VPS." name="twitter:description"/>
+<meta content="https://cloudhoste.eu/assets/img/logo-dark.svg" name="twitter:image"/>
+
+<!-- JSON-LD Structured Schema -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Self-Host n8n Workflow Automation on Docker VPS: 2026 Setup Guide",
+    "description": "Learn how to deploy n8n self-hosted workflow automation on a Docker VPS with Nginx Reverse Proxy, Free SSL, PostgreSQL, and sub-100ms execution speeds.",
+    "datePublished": "2026-07-29",
+    "author": {
+      "@type": "Organization",
+      "name": "CloudHoste",
+      "url": "https://cloudhoste.eu"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CloudHoste",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudhoste.eu/assets/img/logo-dark.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cloudhoste.eu/self-hosted-n8n-workflow-automation-europe-guide.html"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cloudhoste.eu/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Self-Hosted n8n Guide",
+        "item": "https://cloudhoste.eu/self-hosted-n8n-workflow-automation-europe-guide.html"
+      }
+    ]
+  }
+]
+</script>
+
+<link href="assets/img/favicon.webp" rel="icon" type="image/png"/>
+<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="assets/css/bootstrap-icons.css" rel="stylesheet"/>
+<link rel="preload" href="assets/css/simplebar.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="assets/css/simplebar.css"></noscript>
+<link href="assets/css/swiper-bundle.css" rel="stylesheet"/>
+<link rel="preload" href="assets/css/prism.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="assets/css/prism.css"></noscript>
+<style>:root{--ff-1:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}</style>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/responsive-fixes.css" rel="stylesheet"/>
+<link href="assets/css/dark-theme.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light dark:bg-dark-subtle">
+<div class="preloader">
+<div class="preloader__content">
+<img width="160" height="35" alt="CloudHoste official brand logo" class="img-fluid preloader__img" src="assets/img/logo-light.svg"/>
+</div>
+</div>
+<style>
+    .mini-header {
+        font-size: 13px;
+        background-color: #0f172a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mini-header a {
+        color: rgba(255, 255, 255, 0.6) !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+    .mini-header a:hover {
+        color: #fff !important;
+    }
+    pre {
+        background-color: #0f172a !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 16px;
+        color: #f8fafc;
+        overflow-x: auto;
+    }
+    code {
+        color: #38bdf8;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+</style>
+<div class="header-wrapper fixed-top shadow-sm">
+<div class="mini-header py-2 text-white-50">
+<div class="container-fluid px-4 px-md-8 px-lg-12 d-flex justify-content-between align-items-center">
+<div class="d-flex align-items-center gap-3">
+<a class="d-flex align-items-center gap-1.5" href="mailto:support@cloudhoste.eu">
+<iconify-icon class="fs-16 align-middle" icon="solar:letter-broken"></iconify-icon>
+                    support@cloudhoste.eu
+                </a>
+</div>
+<div class="d-flex align-items-center gap-4">
+<a href="knowledge-base.html">Support</a>
+<a href="faq.html">FAQ</a>
+<a href="https://my.cloudhoste.eu/contact.php">Contact</a>
+</div>
+</div>
+</div>
+<div id="global-header"></div>
+<script src="assets/js/header.js"></script>
+</div>
+
+<!-- Banner -->
+<div class="banner-1 pt-24 pb-12">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="banner-1__content">
+<div class="row align-items-center">
+<div class="col-md-10 col-lg-10">
+<nav class="mb-3">
+<ol class="breadcrumb breadcrumb-modifier">
+<li class="breadcrumb-item"><a class="link fs-14 text-light" href="index.html">Home</a></li>
+<li class="breadcrumb-item"><iconify-icon class="align-middle fs-14 text-white-50" icon="bi:chevron-right"></iconify-icon></li>
+<li class="breadcrumb-item"><a class="link fs-14 text-light" href="blog.html">Blog</a></li>
+<li class="breadcrumb-item"><iconify-icon class="align-middle fs-14 text-white-50" icon="bi:chevron-right"></iconify-icon></li>
+<li class="breadcrumb-item active fs-14 text-white-50" aria-current="page">Self-Hosted n8n Docker Guide</li>
+</ol>
+</nav>
+<h1 class="h2 mb-4 fw-bold text-light">How to Self-Host n8n on Docker VPS (Ultimate 2026 Guide)</h1>
+<p class="text-white-50 fs-16 mb-0">Ditch expensive per-execution API bills. Here is the step-by-step production blueprint to deploy a private, enterprise-grade n8n workflow engine on an NVMe Cloud VPS with Docker, Nginx, PostgreSQL, and automatic SSL.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Main Content -->
+<div class="section-space-y">
+<div class="container">
+<div class="row g-4">
+<div class="col-lg-8">
+<div class="bg-body p-6 p-md-10 rounded-4 shadow-sm">
+
+<!-- Article Intro -->
+<div class="alert alert-primary bg-primary bg-opacity-10 border-primary text-body p-4 rounded-3 mb-6">
+  <div class="d-flex gap-3 align-items-center">
+    <iconify-icon icon="solar:shield-check-bold" class="fs-24 text-primary flex-shrink-0"></iconify-icon>
+    <div>
+      <strong>Production Ready Blueprint:</strong> Tested on Ubuntu 22.04/24.04 LTS with Docker 26+, Nginx Reverse Proxy, PostgreSQL 16, and Let's Encrypt SSL. Includes automated database backup & log pruning scripts.
+    </div>
+  </div>
+</div>
+
+<h3 class="mb-4">1. Why Self-Host n8n in 2026? (Zapier vs. n8n Self-Hosted)</h3>
+<p>
+    SaaS workflow automation platforms like Zapier, Make (Integromat), and Workato have revolutionized business automation. However, their pricing model scales aggressively based on <strong>task executions</strong>.
+</p>
+<p>
+    If your business processes <strong>50,000 tasks per month</strong>:
+</p>
+<ul>
+    <li><strong>Zapier Pro Plan:</strong> ~$389 to $499 / month</li>
+    <li><strong>Make.com Pro Plan:</strong> ~$120 / month</li>
+    <li><strong>Self-Hosted n8n on CloudHoste VPS:</strong> <strong>€4.99 / month (Flat Rate, Unlimited Executions)</strong></li>
+</ul>
+
+<h4 class="mt-8 mb-4">Monthly Cost & Limit Comparison</h4>
+<div class="table-responsive my-6">
+<table class="table table-bordered align-middle">
+<thead class="table-dark text-white">
+<tr>
+<th>Tasks / Month</th>
+<th>Zapier Pro Plan</th>
+<th>Make.com Pro</th>
+<th>CloudHoste Self-Hosted n8n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>10,000 tasks</strong></td>
+<td>$89 / mo</td>
+<td>$29 / mo</td>
+<td><strong>€4.99 / mo</strong></td>
+</tr>
+<tr>
+<td><strong>50,000 tasks</strong></td>
+<td>$389 / mo</td>
+<td>$120 / mo</td>
+<td><strong>€4.99 / mo</strong></td>
+</tr>
+<tr>
+<td><strong>500,000 tasks</strong></td>
+<td>$1,599+ / mo</td>
+<td>$499+ / mo</td>
+<td><strong>€9.99 / mo</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Beyond massive cost savings, <strong>n8n self-hosting</strong> offers two key architectural advantages:</p>
+<ol>
+    <li><strong>100% Data Sovereignty &amp; GDPR Compliance:</strong> Sensitive customer payloads (CRMs, webhooks, databases) never leave your private European VPS server.</li>
+    <li><strong>Native AI Agent Integration:</strong> n8n natively supports LangChain nodes, OpenAI GPT-4o, Anthropic Claude, and local LLM endpoints (via Ollama or vLLM).</li>
+</ol>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">2. Prerequisites &amp; System Hardware Requirements</h3>
+<p>To deploy n8n in production, ensure your server meets the following specs:</p>
+<ul>
+    <li><strong>Operating System:</strong> Ubuntu 22.04 LTS or Ubuntu 24.04 LTS.</li>
+    <li><strong>Minimum Hardware:</strong> 1 vCPU, 2 GB RAM, 25 GB NVMe SSD storage.</li>
+    <li><strong>Recommended Hardware:</strong> 2 vCPU, 4 GB RAM, 50 GB NVMe SSD (e.g., <a href="vps-hosting.html" class="text-primary fw-medium">CloudHoste KVM NVMe VPS</a>).</li>
+    <li><strong>Domain Name:</strong> A registered domain or subdomain pointing to your server's IP address (e.g., <code>n8n.yourdomain.com</code>).</li>
+</ul>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">3. Step 1: Provisioning Your Cloud VPS &amp; Domain DNS</h3>
+<p>1. Connect to your VPS server via SSH:</p>
+<pre><code>ssh root@YOUR_SERVER_IP</code></pre>
+
+<p>2. Update system packages:</p>
+<pre><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></pre>
+
+<p>3. <strong>Configure DNS A Record:</strong> In your domain DNS manager, add an <code>A</code> Record:</p>
+<ul>
+    <li><strong>Host:</strong> <code>n8n</code> (or <code>automation</code>)</li>
+    <li><strong>Points to:</strong> <code>YOUR_SERVER_IP</code></li>
+    <li><strong>TTL:</strong> 300 seconds</li>
+</ul>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">4. Step 2: Installing Docker &amp; Docker Compose</h3>
+<p>Run the following commands to install Docker Engine and the Docker Compose plugin:</p>
+
+<pre><code># 1. Install prerequisites
+sudo apt install -y curl apt-transport-https ca-certificates software-properties-common gnupg lsb-release
+
+# 2. Add Docker official GPG key
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+# 3. Add stable repository
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# 4. Install Docker &amp; Docker Compose
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# 5. Verify installation
+docker --version
+docker compose version</code></pre>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">5. Step 3: Creating Production Docker Compose Configuration</h3>
+<p>Create an isolated directory for n8n configuration:</p>
+<pre><code>mkdir -p /opt/n8n-docker &amp;&amp; cd /opt/n8n-docker</code></pre>
+
+<p>Create <code>docker-compose.yml</code> file:</p>
+<pre><code>version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: n8n_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres_storage:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: n8n_app
+    restart: always
+    ports:
+      - "127.0.0.1:5678:5678"
+    environment:
+      - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - NODE_ENV=production
+      - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
+      - GENERIC_TIMEZONE=UTC
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - n8n_storage:/home/node/.n8n
+
+volumes:
+  postgres_storage:
+  n8n_storage:</code></pre>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">6. Step 4: Configuring Environment Variables &amp; Secrets</h3>
+<p>Create the <code>.env</code> file inside <code>/opt/n8n-docker/.env</code>:</p>
+<pre><code># Domain Configuration
+DOMAIN_NAME=yourdomain.com
+SUBDOMAIN=n8n
+
+# PostgreSQL Secrets
+POSTGRES_USER=n8n_db_user
+POSTGRES_PASSWORD=SUPER_SECRET_STRONG_PASSWORD_2026
+POSTGRES_DB=n8n_production</code></pre>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">7. Step 5: Setting Up Nginx Reverse Proxy &amp; SSL</h3>
+<p>1. Install Nginx and Certbot:</p>
+<pre><code>sudo apt install -y nginx certbot python3-certbot-nginx</code></pre>
+
+<p>2. Create Nginx site configuration in <code>/etc/nginx/sites-available/n8n.conf</code>:</p>
+<pre><code>server {
+    server_name n8n.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:5678;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # WebSockets support
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        
+        proxy_buffering off;
+        proxy_cache off;
+    }
+}</code></pre>
+
+<p>3. Enable site and request SSL certificate:</p>
+<pre><code>sudo ln -s /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+sudo certbot --nginx -d n8n.yourdomain.com --non-interactive --agree-tos -m admin@yourdomain.com</code></pre>
+
+<p>4. Start n8n Docker containers:</p>
+<pre><code>cd /opt/n8n-docker
+docker compose up -d</code></pre>
+
+<hr class="my-8 opacity-25">
+
+<h3 class="mb-4">8. Step 6: Automated Backups &amp; Log Pruning</h3>
+<p>To prevent execution logs from bloating your disk, n8n database pruning is configured in our `.env`. For database backups, create <code>/usr/local/bin/n8n-backup.sh</code>:</p>
+
+<pre><code>#!/bin/bash
+BACKUP_DIR="/var/backups/n8n"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+mkdir -p $BACKUP_DIR
+docker exec -t n8n_postgres pg_dump -U n8n_db_user n8n_production > $BACKUP_DIR/n8n_db_$TIMESTAMP.sql
+tar -czf $BACKUP_DIR/n8n_storage_$TIMESTAMP.tar.gz /opt/n8n-docker
+
+find $BACKUP_DIR -type f -mtime +14 -delete</code></pre>
+
+<p>Set execution permissions and add to crontab:</p>
+<pre><code>chmod +x /usr/local/bin/n8n-backup.sh
+(crontab -l 2>/dev/null; echo "0 2 * * * /usr/local/bin/n8n-backup.sh") | crontab -</code></pre>
+
+<div class="my-10 p-6 bg-primary bg-opacity-10 border border-primary rounded-3 text-center">
+<h4 class="text-primary mb-3">Deploy Your Dedicated n8n Automation VPS in Europe</h4>
+<p class="mb-6">Fixed €4.99/mo pricing, dedicated KVM NVMe storage, 99.9% uptime &amp; instant Docker deployment.</p>
+<a class="btn btn-primary fw-semibold px-8 py-3" href="n8n-hosting.html">Deploy Dedicated n8n Server</a>
+</div>
+
+</div>
+</div>
+
+<!-- Sidebar -->
+<div class="col-lg-4">
+<div class="bg-body p-6 rounded-4 shadow-sm mb-6">
+<h5 class="mb-4">Related Technical Guides</h5>
+<ul class="list-unstyled gap-3 d-flex flex-column mb-0">
+<li><a class="text-heading hover:text-primary fw-medium d-flex align-items-center gap-2" href="self-hosted-n8n-startups-cost.html"><iconify-icon icon="solar:document-text-broken" class="text-primary"></iconify-icon> n8n Startup Cost Savings Guide</a></li>
+<li><a class="text-heading hover:text-primary fw-medium d-flex align-items-center gap-2" href="cheap-nvme-vps-hosting-europe-guide.html"><iconify-icon icon="solar:document-text-broken" class="text-primary"></iconify-icon> Cheap NVMe Cloud VPS Guide</a></li>
+<li><a class="text-heading hover:text-primary fw-medium d-flex align-items-center gap-2" href="gdpr-compliant-vps-hosting-guide-europe.html"><iconify-icon icon="solar:document-text-broken" class="text-primary"></iconify-icon> GDPR Compliant VPS Guide</a></li>
+<li><a class="text-heading hover:text-primary fw-medium d-flex align-items-center gap-2" href="fastest-litespeed-wordpress-hosting-europe-guide.html"><iconify-icon icon="solar:document-text-broken" class="text-primary"></iconify-icon> LiteSpeed WordPress Setup Guide</a></li>
+</ul>
+</div>
+
+<div class="bg-body p-6 rounded-4 shadow-sm">
+<h5 class="mb-3">Need Managed Setup?</h5>
+<p class="fs-14 text-white-50 mb-4">Our CloudHoste Linux engineering team can provision your dedicated n8n Docker instance with Nginx, SSL &amp; PostgreSQL pre-configured for free.</p>
+<a href="https://my.cloudhoste.eu/contact.php" class="btn btn-outline-primary btn-sm w-100 fw-medium">Contact Server Support</a>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="global-footer"></div>
+<script src="assets/js/footer.js"></script>
+<script src="assets/js/bootstrap.bundle.js" defer></script>
+<script src="assets/js/iconify.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

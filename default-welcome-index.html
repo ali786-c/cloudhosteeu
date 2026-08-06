@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to CloudHoste | Your Web Hosting Account is Live!</title>
+  <meta name="description" content="Welcome to your new high-performance European cloud hosting account on CloudHoste.eu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0b0e1a;
+      --card-bg: rgba(22, 28, 48, 0.65);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --primary: #4942e4;
+      --primary-glow: #7000ff;
+      --accent: #c4ee18;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glow */
+    .glow-orb-1 {
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(73, 66, 228, 0.25) 0%, rgba(112, 0, 255, 0.08) 50%, transparent 70%);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-orb-2 {
+      position: absolute;
+      bottom: -200px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(196, 238, 24, 0.12) 0%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Navbar */
+    .header-bar {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      background: rgba(11, 14, 26, 0.75);
+      position: relative;
+      z-index: 10;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Main Container */
+    .hero-section {
+      position: relative;
+      z-index: 5;
+      padding: 60px 0 80px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(73, 66, 228, 0.5);
+      box-shadow: 0 20px 40px -15px rgba(73, 66, 228, 0.3);
+    }
+
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, rgba(73, 66, 228, 0.3) 0%, rgba(112, 0, 255, 0.2) 100%);
+      border: 1px solid rgba(73, 66, 228, 0.4);
+      border-radius: 12px;
+      display: grid;
+      place-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* CTA Buttons */
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
+      color: #ffffff;
+      border: none;
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(73, 66, 228, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-gradient:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(73, 66, 228, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Server Tip Alert */
+    .server-tip-box {
+      background: rgba(196, 238, 24, 0.06);
+      border: 1px dashed rgba(196, 238, 24, 0.3);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-orb-1"></div>
+  <div class="glow-orb-2"></div>
+
+  <!-- Header -->
+  <header class="header-bar py-4">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="https://cloudhoste.eu" class="d-flex align-items-center text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 35" width="180" height="40">
+          <defs>
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap');
+              .logo-text-header {
+                font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-weight: 800;
+                font-size: 21.5px;
+                letter-spacing: -0.5px;
+                fill: #ffffff;
+              }
+            </style>
+          </defs>
+          <polygon points="15,2.5 28,10 28,25 15,32.5 2,25 2,10" fill="#4942e4" />
+          <path d="M 13,9 L 7.5,12.2 L 7.5,22.8 L 13,26" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 16.5,12.2 L 16.5,22.8 M 22.5,12.2 L 22.5,22.8 M 16.5,17.5 L 22.5,17.5" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="36" y="24.5" class="logo-text-header">CloudHoste</text>
+        </svg>
+      </a>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Account Active & Live</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Content -->
+  <main class="hero-section">
+    <div class="container text-center">
+      <div class="badge bg-primary bg-opacity-20 text-primary-emphasis px-3 py-2 rounded-pill fs-13 mb-4 border border-primary border-opacity-30 d-inline-flex align-items-center gap-2">
+        <iconify-icon icon="solar:rocket-bold-duotone" class="fs-18 text-warning"></iconify-icon>
+        <span>Congratulations! Your Web Hosting Space is Ready</span>
+      </div>
+
+      <h1 class="hero-title">Welcome to Your New Website Space</h1>
+      <p class="hero-subtitle">
+        Your high-performance European NVMe Cloud Hosting account has been successfully provisioned. You can now start building, uploading your files, or setting up your WordPress site.
+      </p>
+
+      <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap mb-5">
+        <a href="https://my.cloudhoste.eu/clientarea.php" class="btn-gradient">
+          <iconify-icon icon="solar:user-bold-duotone" class="fs-20"></iconify-icon>
+          Go to Control Panel / Client Area
+        </a>
+        <a href="https://my.cloudhoste.eu/contact.php" class="btn-outline">
+          <iconify-icon icon="solar:help-bold-duotone" class="fs-20"></iconify-icon>
+          24/7 Support Center
+        </a>
+      </div>
+
+      <!-- Quick Steps Grid -->
+      <div class="row g-4 text-start mt-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="icon-box">
+              <iconify-icon icon="solar:folder-with-files-bold-duotone" class="fs-28 text-white"></iconify-icon>
+            </div>
+            <h3 class="card-title">1. Upload Website Files</h3>
+            <p class="card-text">
+              Upload your website HTML, PHP, or framework files into the <code>public_html</code> directory using File Manager or FTPS.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="icon-box">
+              <iconify-icon icon="solar:globus-bold-duotone" class="fs-28 text-white"></iconify-icon>
+            </div>
+            <h3 class="card-title">2. Point Your Domain</h3>
+            <p class="card-text">
+              Make sure your domain DNS A Record points to your CloudHoste server IP address or use CloudHoste European Nameservers.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="icon-box">
+              <iconify-icon icon="solar:shield-check-bold-duotone" class="fs-28 text-white"></iconify-icon>
+            </div>
+            <h3 class="card-title">3. Free SSL Certificate</h3>
+            <p class="card-text">
+              Automated Let's Encrypt SSL security is active. Your website will be encrypted with HTTPS automatically.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="icon-box">
+              <iconify-icon icon="solar:database-bold-duotone" class="fs-28 text-white"></iconify-icon>
+            </div>
+            <h3 class="card-title">4. Create MySQL Databases</h3>
+            <p class="card-text">
+              Need a database for WordPress or web apps? Easily create MySQL databases and database users via Control Panel.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Server Admin Tip -->
+      <div class="server-tip-box">
+        <iconify-icon icon="solar:info-square-bold-duotone" class="fs-22 text-warning flex-shrink-0"></iconify-icon>
+        <span><strong>Webmasters Note:</strong> To replace this default welcome page, simply delete or overwrite the <code>index.html</code> file inside your <code>public_html</code> folder with your own website files.</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2026 CloudHoste.eu — European NVMe Cloud Infrastructure &amp; Managed Hosting Services.</p>
+    </div>
+  </footer>
+</body>
+</html>
